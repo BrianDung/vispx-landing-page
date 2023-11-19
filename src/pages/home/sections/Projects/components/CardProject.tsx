@@ -37,7 +37,10 @@ const CardProject: React.FC<{
               <span className="network-name">BSC</span>
             </div>
           </div>
-          <div className="flex justify-between pointer" style={{ alignItems: 'center' , marginTop: 42 }}>
+          <div
+            className="flex justify-between pointer"
+            style={{ alignItems: 'center', marginTop: 42 }}
+          >
             <ButtonLinear>Trailer</ButtonLinear>
             <div className="flex" style={{ alignItems: 'center' }}>
               <div className="view-detail">View detail</div>

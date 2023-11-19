@@ -1,4 +1,5 @@
 import AboutSection from './sections/About';
+import Bottom from './sections/Bottom';
 import OurService from './sections/OurService';
 import ProjectMatrix from './sections/ProjectMatrix';
 import ProjectsSection from './sections/Projects';
@@ -12,6 +13,7 @@ const HomePage: React.FC = () => {
       <AboutSection/>
       <OurService/>
       <ProjectsSection/>
+      <Bottom/>
     </div>
   );
 };

@@ -1,0 +1,54 @@
+.bottom {
+  background: #030407;
+  .layout-bottom {
+    padding: 80px 175px;
+    .text-custom {
+      background: -webkit-linear-gradient(90deg, #ef40ea 0%, #12def6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      margin-right: 20px;
+    }
+  }
+  .input-search {
+    width: 380px;
+    .anticon-search {
+      color: #ffffff;
+    }
+    .ant-input-group-addon {
+      border: 1px solid #64646c;
+      border-left: none;
+    }
+    .ant-input {
+      border: 1px solid #64646c;
+      background: transparent;
+      color: #ffffff;
+      height: 52px;
+      border-right: none;
+      &::placeholder {
+        color: #93939b;
+      }
+    }
+  }
+  .info-bottom {
+    flex-direction: column;
+    .text1 {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      color: #ffffff;
+      margin-bottom: 32px;
+    }
+    .text {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+      color: #cecece;
+    }
+  }
+}

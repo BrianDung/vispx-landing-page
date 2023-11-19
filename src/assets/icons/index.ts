@@ -171,6 +171,7 @@ export { default as SolanaIconWhite } from '../icons/common/solana-icon.svg';
 export { default as PolygonIconWhite } from '../icons/common/polygon-icon.svg';
 export { default as Trailer } from '../icons/common/trailer.svg';
 export { default as RightIcon } from '../icons/common/right-icon.svg';
+export { default as SendIcon } from '../icons/common/send.svg';
 export { default as Slider1Icon } from '../images/Slider1.png';
 export { default as Service } from '../images/Service.svg';
 export { default as Project1 } from '../images/project1.svg';
