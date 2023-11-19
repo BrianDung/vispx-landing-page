@@ -1,0 +1,27 @@
+.table-tx {
+  background: #11122E;
+  border-radius: 16px;
+  margin-top: 60px;
+  .head {
+    padding: 19px 0;
+    color: #fff;
+    font-family: 'ChakraPetch-Medium';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px; /* 150% */
+    text-transform: capitalize;
+    border-bottom: 1px solid #38383C;
+  }
+
+  .record {
+    color: #fff;
+    font-family: 'ChakraPetch-Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 150% */
+    text-transform: capitalize;
+    border-bottom: 1px solid #38383C;
+  }
+}
