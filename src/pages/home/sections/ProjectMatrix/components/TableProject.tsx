@@ -11,7 +11,7 @@ const RowRecord = ({ record }: { record: History }) => {
       <Row className="record">
         <Col span={3} style={{ padding: 16, textAlign: 'center' }}>
           <div className="flex">
-            <img src={XborgProjectIcon} />
+            <img src={XborgProjectIcon} alt='icon'/>
             <span style={{ marginLeft: 10 }}>Xborg</span>
           </div>
         </Col>

@@ -167,3 +167,4 @@ export { default as Icon1 } from './header/icon1.svg';
 export { default as Icon2 } from './header/icon2.svg';
 export { default as Icon3 } from './header/icon3.svg';
 export { default as Slider1Icon } from '../images/Slider1.png';
+export { default as Service } from '../images/Service.svg';
