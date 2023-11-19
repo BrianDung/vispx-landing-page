@@ -158,3 +158,7 @@ export { default as TelegramIcon } from './account/telegram.svg';
 export { default as TwitterIcon } from './account/twitter.svg';
 export { default as LinkIcon } from './account/link.svg';
 export { default as CopyLink } from './account/copy.svg';
+
+export { default as LogoVispx } from './header/logo-vispx.svg';
+export { default as LaunchIcon } from './header/launch-icon.svg';
+export { default as Slider1Icon } from '../images/Slider1.png';

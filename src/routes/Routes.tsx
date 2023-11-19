@@ -30,12 +30,13 @@ function loadableWFallback(loadFn: (props: {}) => Promise<DefaultComponent<{}>>)
 }
 
 const NotFound = loadableWFallback(() => import('./components/NotFound'));
+const HomePageComponent = loadableWFallback(() => import('../pages/home'));
 
 
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route exact path={PATHS.default} component={NotFound} />
+      <Route exact path={PATHS.default} component={HomePageComponent} />
       <PrivateRoute exact path={PATHS.notFound} component={NotFound} />
       <Route path="*" component={NotFound} />
     </Switch>
