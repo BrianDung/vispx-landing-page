@@ -1,0 +1,58 @@
+.card-project {
+  background: #11122e;
+  border-radius: 24px;
+  .layout-project {
+    flex-direction: column;
+    .icon {
+      max-height: 164px;
+    }
+    .content {
+      padding: 20px;
+      .title {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 26px;
+        color: #fff;
+        margin-right: 12px;
+      }
+      .description-project {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: #c3c3c3;
+        margin-top: 20px;
+      }
+      .blc-info {
+        margin-top: 30px;
+        align-items: center;
+        .text {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+          color: #c3c3c3;
+        }
+        .network-name {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          color: #fff;
+        }
+        .network-info {
+          align-items: center;
+        }
+      }
+      .view-detail {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        color: #fff;
+        margin-right: 12px;
+      }
+    }
+  }
+}

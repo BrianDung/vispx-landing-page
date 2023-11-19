@@ -1,0 +1,45 @@
+.button-linear {
+  .ant-btn {
+    background: none;
+    border-color: transparent;
+  }
+
+  button {
+    color: #fff !important;
+    border-radius: 52px;
+    padding: 14px 16px;
+    height: 48px;
+    width: 120px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    &:hover {
+      background: none;
+      border-color: transparent !important;
+      color: #fff !important;
+    }
+    &::before {
+      border-radius: 52px;
+      opacity: 1;
+      content: '';
+      height: 48px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      padding: 1px;
+      background: linear-gradient(
+        102.92deg,
+        #b347ff 6.55%,
+        #454cf9 47.11%,
+        #0961fe 71.51%,
+        #02acd3 98.22%
+      );
+      transition: all 0.25s ease-in-out;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+    }
+  }
+}
