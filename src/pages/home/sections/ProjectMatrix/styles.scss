@@ -1,0 +1,32 @@
+.project-matrix {
+  background: #05061c;
+  .layout {
+    padding: 120px 64px 64px 80px;
+  }
+  .header {
+    .label {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      color: #ffffff;
+    }
+    .input-search {
+      width: 380px;
+      .anticon-search {
+        color: #ffffff;
+      }
+      .ant-input-group-addon {
+        border: 1px solid #64646c;
+      }
+      .ant-input {
+        border: 1px solid #64646c;
+        background: transparent;
+        color: #ffffff;
+        height: 40px;
+        &::placeholder {
+            color: #93939B;
+        }
+      }
+    }
+  }
+}
