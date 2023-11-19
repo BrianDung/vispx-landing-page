@@ -1,0 +1,44 @@
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
+
+.select-container {
+  .ant-select {
+    .ant-select-selection-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .ant-select-selector {
+    height: 48px !important;
+    border-radius: 10px;
+  }
+  // .icon-box {
+  //   position: relative;
+  //   &::before {
+  //     border-left: 1px solid $color-neutral-neutral-4;
+  //     content: '';
+  //     height: 20px;
+  //     position: absolute;
+  //     top: 0px;
+  //     left: -7px;
+  //   }
+  // }
+}
+
+.custom-select-popup {
+  padding: 0;
+  border-radius: 8px;
+  color: $color-neutral-white;
+ 
+
+  .ant-select-item {
+    padding: 12px 16px;
+    font-family: 'Hind-Regular';
+    font-size: $font-size-3;
+    color: $color-neutral-neutral-1;
+  }
+
+  .ant-select-item-option-active {
+    background-color: $color-neutral-button !important;
+  }
+}

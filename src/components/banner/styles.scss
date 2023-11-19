@@ -1,0 +1,30 @@
+.banner {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  &-content {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+  }
+  &-title {
+    font-size: 40px;
+    color: white;
+    line-height: 46px; /* 115% */
+    letter-spacing: -0.6px;
+  }
+  &-description {
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+    letter-spacing: -0.16px;
+    opacity: 0.7;
+  }
+  img {
+    object-fit: cover;
+  }
+}

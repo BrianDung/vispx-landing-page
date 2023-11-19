@@ -1,0 +1,25 @@
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
+@import 'src/assets/scss/_themes.scss';
+
+.form-item {
+  .title {
+    font-size: $font-size-3;
+    font-family: 'Hind-SemiBold';
+    color: var(--modal-text-neutral-2-color, $color-neutral-neutral-2);
+    letter-spacing: -0.16px;
+    margin: 0;
+    & > span {
+      color: var(--error-color, $color-state-error);
+      margin-left: 4px;
+    }
+  }
+}
+
+.ant-form-item-explain {
+  margin-top: 6px;
+}
+
+.ant-form-item-explain-error {
+  color: var(--input-error, $color-state-error) !important;
+}

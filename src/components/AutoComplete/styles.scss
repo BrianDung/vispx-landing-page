@@ -1,0 +1,22 @@
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
+
+.votee-autocomplete {
+}
+
+.votee-popup-autocomplete {
+  padding: 0;
+  border-radius: 8px;
+  color: $color-neutral-white;
+
+  .ant-select-item {
+    padding: 12px 16px;
+    font-family: 'Hind-Regular';
+    font-size: $font-size-3;
+    color: $color-neutral-neutral-1;
+  }
+
+  .ant-select-item-option-active {
+    background-color: $color-neutral-button !important;
+  }
+}

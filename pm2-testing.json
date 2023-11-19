@@ -1,0 +1,10 @@
+{
+    "apps": [
+        {
+            "name": "rollbit-frontend-user",
+            "script": "yarn prod:testing",
+            "node_args": "",
+            "instances": 1
+        }
+    ]
+}

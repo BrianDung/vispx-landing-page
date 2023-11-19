@@ -1,0 +1,45 @@
+@import 'src/assets/scss/variable.scss';
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/responsive.scss';
+
+.votee-modal {
+  .ant-modal-content {
+    border-radius: 20px;
+    padding: 32px;
+    background: $color-neutral-white-1;
+
+    @include mobileFrac {
+      padding: 30px 16px;
+    }
+
+    .ant-modal-header {
+      margin-bottom: 0;
+      .ant-modal-title {
+        font-size: $font-size-8;
+        color: $color-neutral-neutral-1;
+        font-family: 'Hind-Bold';
+        font-weight: $font-weight-7;
+
+        @include mobileFrac {
+          font-size: $font-size-7;
+        }
+      }
+    }
+
+    .ant-modal-close {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .close-modal-icon {
+    padding: 8px;
+    border: 2px solid $color-neutral-neutral-5;
+    border-radius: 100%;
+
+    &:hover {
+      background-color: var(--modal-close-hover, $color-neutral-neutral-5);
+    }
+  }
+}

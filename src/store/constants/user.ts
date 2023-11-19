@@ -1,0 +1,4 @@
+export const SET_ACCESS_TOKEN = 'SET_ACCESS_TOKEN';
+export const SET_MY_TIER = 'SET_MY_TIER';
+export const SET_USER_INFO_IAO = 'SET_USER_INFO_IAO';
+export const SET_ROLE_AFFILIATE_IAO = 'SET_ROLE_AFFILIATE_IAO';

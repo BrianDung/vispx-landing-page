@@ -1,0 +1,28 @@
+.banner-lend {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  &-content {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+  }
+  &-title {
+    font-size: 40px;
+    color: white;
+  }
+  &-description {
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.16px;
+    text-align: center;
+  }
+  img {
+    object-fit: cover;
+  }
+}

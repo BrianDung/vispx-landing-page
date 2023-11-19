@@ -1,0 +1,80 @@
+$color-white-0: #fff;
+$color-white-1: #f7f7f7;
+$color-white-2: #fcfcfc;
+
+$color-grey-0: #d1d1d1;
+$color-grey-1: #adadad;
+$color-grey-2: #99a0b1;
+$color-grey-3: #56607a;
+$color-grey-4: #e6e8ec;
+$color-grey-5: #20232c73;
+
+$color-black-0: #787878;
+$color-black-1: #454545;
+$color-black-2: #303030;
+$color-black-3: #242424;
+$color-black-4: #121212;
+$color-black-5: #000;
+$color-black-6: #20232c;
+$color-black-7: #393d49;
+
+$color-orange-0: #ff9b05;
+$color-orange-1: #fff7ea;
+
+$color-blue-0: #1e6fd9;
+$color-blue-1: #e9f1fc;
+
+$color-gray-4: #99a0b1;
+
+$color-pink-0: #fbeaed;
+
+$color-link: #1e6fd9;
+$color-success: #4ecc79;
+$color-warning: #ff9b05;
+$color-error: #f35b37;
+
+//NEW COLOR THEME
+$color-primary-primary: #1e6fd9;
+$color-primary-rgb: 30, 111, 217;
+
+$color-state-success: #11af50;
+$color-state-info: #1cbce4;
+$color-state-warning: #ff9b05;
+$color-state-error: #ff3033;
+
+$color-neutral-neutral-1: #20232c;
+$color-neutral-neutral-2: #393d49;
+$color-neutral-neutral-3: #56607a;
+$color-neutral-neutral-4: #99a0b1;
+$color-neutral-neutral-5: #e6e8ec;
+$color-neutral-neutral-6: #f3f5f8;
+
+$color-neutral-button: #e9f1fc;
+
+$color-neutral-white: #ffffff;
+$color-neutral-white-1: #fcfcfc;
+$color-neutral-white-2: #fcfcfd;
+
+$color-neutral-blue: #0f3f9c;
+$color-neutral-blue-1: rgba(28, 188, 228, 0.1);
+
+$color-neutral-red: rgba(255, 48, 51, 0.1);
+
+$color-neutral-blue-1: rgba(28, 188, 228, 0.1);
+
+$color-neutral-green-1: #58bd7d;
+
+$color-neutral-orange-1: #ffb45d;
+
+$color-disable: rgba(0, 0, 0, 0.25);
+$color-bg-disable: rgba(0, 0, 0, 0.04);
+$color-border-disable: #d9d9d9;
+
+// NFT detail
+$text-text-1: #333;
+
+:export {
+  primaryPrimaryColor: $color-primary-primary;
+  neutralGreen1Color: $color-neutral-green-1;
+  neutralOrange1Color: $color-neutral-orange-1;
+}

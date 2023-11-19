@@ -1,0 +1,40 @@
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
+
+.input-box {
+  margin-bottom: 0;
+  .ant-typograp hy {
+    margin-bottom: 4px;
+    font-family: 'Hind-SemiBold';
+  }
+  .input-default {
+    height: 48px;
+    border: 1px solid var(--input-border-color, $color-neutral-neutral-5);
+    border-radius: 12px;
+    width: 100%;
+    background: transparent;
+    input {
+      background: transparent;
+      font-family: 'Hind-Regular';
+      font-size: $font-size-3;
+      margin-top: 2px;
+    }
+    &:focus-within {
+      border: 1px solid var(--input-border-focus-color, $color-state-info) !important ;
+      box-shadow: none;
+    }
+    &:hover {
+      background: var(--input-border-background-hover, $color-neutral-neutral-6);
+      border: 1px solid var(--input-border-hover, $color-neutral-neutral-5);
+    }
+
+    .ant-input-prefix {
+      margin-inline-end: 8px;
+    }
+  }
+  .ant-form-item-required {
+    &::before {
+      display: none !important;
+    }
+  }
+}

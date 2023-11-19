@@ -1,0 +1,57 @@
+@import 'src/assets/scss/variable.scss';
+@import 'src/assets/scss/responsive.scss';
+
+.connect-wallet {
+  &__container {
+    width: 100%;
+    padding: $padding-xxxxl $padding-xxl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include mobileFrac {
+      padding: $padding-xxl 24px;
+    }
+  }
+
+  &--bordered {
+    width: 100%;
+    border-radius: $border-radius-20;
+    border: 1px solid var(--collection-filter-border, $color-neutral-neutral-5);
+    height: fit-content;
+  }
+
+  &__title {
+    font-family: 'Hind-Bold';
+    font-size: $font-size-7;
+    font-weight: $font-weight-7;
+    letter-spacing: -0.36px;
+    color: var(--color-title, $color-neutral-neutral-1);
+  }
+
+  &__subtitle {
+    font-family: 'Hind-Regular';
+    font-size: $font-size-4;
+    font-weight: $font-weight-4;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: -0.18px;
+    color: var(--color-subtitle, $color-neutral-neutral-3);
+    margin: $padding-xs 0 $padding-xxl;
+
+    @include mobileFrac {
+      font-size: $font-size-4;
+      line-height: 24px;
+      margin: $margin-xs 0 $margin-xxl;
+    }
+  }
+
+  &__btn {
+    box-shadow: $shadow-blue;
+
+    @include mobileFrac {
+      width: 250px;
+    }
+  }
+}

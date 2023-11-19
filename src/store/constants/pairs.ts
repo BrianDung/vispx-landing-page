@@ -1,0 +1,3 @@
+export const SET_CURRENT_PAIR = 'SET_CURRENT_PAIR';
+export const SET_LIST_PAIR = 'SET_LIST_PAIR';
+export const SET_LIST_TOKEN = 'SET_LIST_TOKEN';

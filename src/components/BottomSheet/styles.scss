@@ -1,0 +1,39 @@
+@import 'src/assets/scss/variable.scss';
+@import 'src/assets/scss/_colors.scss';
+
+.ant-drawer-bottom {
+  .ant-drawer-content-wrapper {
+    display: flex;
+    align-items: end;
+  }
+  .ant-drawer-content-wrapper-hidden {
+    display: none !important;
+  }
+}
+
+.bottom-sheet {
+  max-height: calc(100vh - 100px);
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .title {
+    color: $color-neutral-neutral-1;
+    font-size: 20px;
+    font-family: 'Hind-Bold';
+  }
+  .ant-drawer-header-title {
+    flex-direction: row-reverse;
+  }
+  .ant-drawer-header {
+    position: fixed;
+    width: 100%;
+    background: $color-white-0;
+    z-index: 10;
+    border-radius: 20px 20px 0 0;
+  }
+  .ant-drawer-body {
+    margin-top: 64px;
+  }
+}

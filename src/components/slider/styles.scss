@@ -1,0 +1,44 @@
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
+
+.default-slider {
+  position: relative;
+  width: 100%;
+
+  .ant-carousel {
+    width: 100%;
+  }
+
+  .slick-btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border-radius: 5px;
+    background: rgba(32, 35, 44, 0.45);
+    opacity: 0.9;
+    cursor: pointer;
+    color: white;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .next-slick {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .prev-slick {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

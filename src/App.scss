@@ -1,0 +1,237 @@
+@import 'src/assets/scss/responsive.scss';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+.nft-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  white-space: nowrap;
+
+  @include mobileFrac {
+    max-width: 140px;
+  }
+
+  @include mobile {
+    max-width: 100px;
+  }
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.ant-tabs-tabpane {
+  outline: none !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 5px;
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #bebebe;
+}
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.w-auto {
+  width: auto !important;
+}
+.w-full {
+  width: 100% !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.container-votee {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button-icon {
+  border: none;
+}
+// TODO: ?
+img[alt='eth'],
+img[alt='usdt'],
+img[alt='usdc'],
+img[alt='WETH'],
+img[alt='USDT'],
+img[alt='USDC'],
+img[alt='eth-icon'],
+.ant-input-prefix > img {
+  max-width: 24px;
+  aspect-ratio: 1/1;
+}
+
+@media (min-width: 476px) {
+  .container-votee {
+    // padding-right: 15px;
+    // padding-left: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .container-votee {
+    // padding-right: 15px;
+    // padding-left: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .container-votee {
+    // padding-right: 15px;
+    // padding-left: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-votee {
+    // padding-right: 15px;
+    // padding-left: 15px;
+  }
+}
+@media (min-width: 476px) {
+  .container-votee {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container-votee {
+    // width: 720px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .container-votee {
+    // width: 960px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container-votee {
+    // width: 1140px;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1440px) {
+  .container-votee {
+    width: 1440px;
+    max-width: 100%;
+  }
+}
+
+.ant-menu-item:hover::after {
+  border-bottom: none !important;
+  line-height: 0px;
+}
+
+.ant-tabs-nav-wrap {
+  &::after,
+  &::before {
+    content: none !important;
+  }
+}
+
+.rotate {
+  width: 80px;
+  height: 80px;
+  animation: rotation infinite 3s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

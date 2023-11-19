@@ -1,0 +1,25 @@
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
+
+.votee-tooltip {
+  .ant-tooltip-arrow {
+    &::before {
+      background: $color-neutral-white;
+    }
+  }
+
+  .ant-tooltip-content {
+    .ant-tooltip-inner {
+      padding: 6px 8px;
+      background: $color-neutral-white;
+      color: $color-neutral-neutral-1;
+      font-size: $font-size-2;
+      font-family: 'Hind-Regular';
+      border-radius: 2px;
+    }
+  }
+}
+
+.tooltip-wrapper {
+  line-height: 12px;
+}

@@ -1,0 +1,18 @@
+.outlined-default {
+  &--type1 {
+    color: var(--btn-outline-text-color, $color-primary-primary);
+    background: var(--btn-outline-bg, $color-neutral-white);
+    border: 1px solid var(--btn-outline-border-color, $color-primary-primary);
+    &:hover:disabled,
+    &:disabled {
+      color: var(--btn-outline-text-color-disable, $color-neutral-neutral-4);
+      background: var(--btn-outline-bg-disable, $color-neutral-white);
+      border: 1px solid var(--btn-outline-border-color-disable, $color-neutral-neutral-4);
+    }
+    &:hover {
+      color: var(--btn-outline-text-color-hover, $color-neutral-blue) !important;
+      background: var(--btn-outline-bg-hover, $color-neutral-button) !important;
+      border: 1px solid var(--btn-outline-border-color-hover, $color-neutral-blue) !important;
+    }
+  }
+}
