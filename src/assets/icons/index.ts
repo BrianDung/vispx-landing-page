@@ -163,4 +163,7 @@ export { default as LogoVispx } from './header/logo-vispx.svg';
 export { default as LaunchIcon } from './header/launch-icon.svg';
 export { default as XborgProjectIcon } from './header/xborg-project-icon.svg';
 export { default as BSCIcon } from './header/bsc-icon.svg';
+export { default as Icon1 } from './header/icon1.svg';
+export { default as Icon2 } from './header/icon2.svg';
+export { default as Icon3 } from './header/icon3.svg';
 export { default as Slider1Icon } from '../images/Slider1.png';
