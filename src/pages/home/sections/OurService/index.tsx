@@ -1,9 +1,15 @@
-import { Service } from 'src/assets/icons';
 import './styles.scss';
 import { useState } from 'react';
+import { useFetch } from 'src/hooks/useFetch';
+import { get } from 'lodash';
 
 const OurService: React.FC = () => {
-  const [isShown, setIsShown] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data, error } = useFetch(
+    `${process.env.REACT_APP_API_ENDPOINT}/vispx-our-services?page=${currentPage}&limit=3`,
+  );
+
+  const [idShow, setIdShow] = useState(null);
 
   return (
     <div className="ourservice-section">
@@ -14,25 +20,24 @@ const OurService: React.FC = () => {
           tailored services for project needs.
         </div>
         <div className="images">
-          <img
-            src={Service}
-            alt="banner"
-            className="pointer full-width"
-            onMouseEnter={(e) => {
-              console.log('move', { e });
-              setIsShown(true);
-            }}
-            onMouseLeave={() => setIsShown(false)}
-          />
-          {isShown && (
-            <div className="content-show">
-              <div className="title-show">Capital Raise</div>
-              <div className="description-show">
-                Our partnership program raises capital on behalf of projects to give them a
-                kickstart. Capital is raised through token and game asset sales.
+          {get(data, 'data.data', [1, 2, 3]).map((elm: any) => {
+            return (
+              <div
+                className="project"
+                key={elm?.id || elm}
+                onMouseEnter={() => setIdShow(elm?.id)}
+                onMouseLeave={() => setIdShow(null)}
+              >
+                <div className="project--name">{elm?.service_name}</div>
+                {elm?.service_name && idShow === elm?.id && (
+                  <div className="content-show">
+                    <div className="title-show">{elm?.service_name}</div>
+                    <div className="description-show">{elm?.description}</div>
+                  </div>
+                )}
               </div>
-            </div>
-          )}
+            );
+          })}
         </div>
       </div>
     </div>

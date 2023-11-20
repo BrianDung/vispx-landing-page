@@ -1,7 +1,12 @@
+@import '../../../../responsive.scss';
+
 .about-section {
   background: #05061c;
   .layout {
     padding: 80px 64px 64px 80px;
+    @include maxWidth($tablet) {
+      padding: 30px 20px;
+    }
   }
   .title-1 {
     font-size: 40px;
@@ -9,7 +14,7 @@
     font-weight: 700;
     line-height: 48px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 24px;
   }
   .description {
@@ -23,6 +28,6 @@
     margin: auto;
   }
   .list-card {
-     margin-top: 60px;
+    margin-top: 60px;
   }
 }

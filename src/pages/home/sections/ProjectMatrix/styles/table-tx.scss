@@ -1,5 +1,14 @@
+@import '../../../../../responsive.scss';
+
+.ant-table-cell {
+  border-bottom: 1px solid #38383C !important;
+  &::before {
+    background-color: #11122E !important;
+  }
+}
+
 .table-tx {
-  background: #11122E;
+  background: #11122e;
   border-radius: 16px;
   margin-top: 60px;
   .head {
@@ -11,7 +20,9 @@
     font-weight: 500;
     line-height: 21px; /* 150% */
     text-transform: capitalize;
-    border-bottom: 1px solid #38383C;
+    border-bottom: 1px solid #38383c;
+    overflow: scroll;
+    width: 100%;
   }
 
   .record {
@@ -22,6 +33,6 @@
     font-weight: 400;
     line-height: 21px; /* 150% */
     text-transform: capitalize;
-    border-bottom: 1px solid #38383C;
+    border-bottom: 1px solid #38383c;
   }
 }

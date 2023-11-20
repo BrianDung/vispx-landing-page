@@ -1,8 +1,13 @@
+@import "../../../../responsive.scss";
+
 .bottom {
   background: #030407;
   border-bottom: 1px solid #ffffff;
   .layout-bottom {
     padding: 80px 175px;
+    @include maxWidth($tablet) {
+      padding: 20px 30px;
+    }
     .text-custom {
       background: -webkit-linear-gradient(90deg, #ef40ea 0%, #12def6 100%);
       -webkit-background-clip: text;

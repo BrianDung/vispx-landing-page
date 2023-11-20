@@ -1,7 +1,12 @@
+@import "../../../../responsive.scss";
+
 .projects-section {
   background: #05061c;
   .layout {
     padding: 80px 64px 64px 80px;
+    @include maxWidth($mobile) {
+      padding: 20px 20px;
+    }
   }
   .title-1 {
     font-size: 40px;

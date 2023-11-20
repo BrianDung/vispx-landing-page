@@ -1,3 +1,5 @@
+@import '../../../../responsive.scss';
+
 .slider {
   background-image: url('./Desktop-BG.png');
   // background-repeat: no-repeat;
@@ -6,6 +8,9 @@
   min-height: 100vh;
   .layout {
     padding: 0 64px;
+    @include maxWidth($mobile) {
+     padding: 0 12px;
+    }
   }
   .header {
     padding-top: 32px;
