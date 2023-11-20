@@ -3,6 +3,11 @@ import './styles.scss';
 import Card from './components/Card';
 import { Icon1, Icon2, Icon3 } from 'src/assets/icons';
 
+const colProps = {
+  xs: 24,
+  md: 8
+}
+
 const AboutSection: React.FC = () => {
   return (
     <div className="about-section">
@@ -14,21 +19,21 @@ const AboutSection: React.FC = () => {
         </div>
         <div className="list-card">
           <Row gutter={[16, 16]}>
-            <Col span={8}>
+            <Col {...colProps}>
               <Card
                 icon={Icon1}
                 title="VispX Genesis NFT Pool"
                 description="VispX has a Genesis Collection of 2,500 NFT holders, ready to invest in your project. XPAD is specifically designed to give exclusive access to our NFT holders amongst some of the biggest utilities in launchpad arena."
               />
             </Col>
-            <Col span={8}>
+            <Col {...colProps}>
               <Card
                 icon={Icon2}
                 title="Executive Lounge Pool"
                 description="VispX exclusively partners with NFT projects and allowing partnered project NFT holders to participate in all IDO token offerings in a dedicated executive lounge pool customized at VispX launchpad."
               />
             </Col>
-            <Col span={8}>
+            <Col {...colProps}>
               <Card
                 icon={Icon3}
                 title="Open IDO Pool"

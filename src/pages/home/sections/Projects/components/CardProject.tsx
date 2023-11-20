@@ -21,7 +21,7 @@ const CardProject: React.FC<{
   return (
     <div className="card-project">
       <div className="layout-project">
-        <img src={icon} alt="icon" className="icon" />
+        <img src={icon} alt="icon" className="icon" width={'100%'} />
         <div className="content">
           <div className="flex">
             <div className="title">{title}</div>

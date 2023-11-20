@@ -41,16 +41,16 @@ const Bottom: React.FC = () => {
           </Col>
         </Row>
         <Row style={{ marginTop: 60 }}>
-          <Col span={6}>
+          <Col xs={12} lg={6}>
             <Info text1="About VispX" text2="IDO Project" text3="Yeild box" text4="XBORG" />
           </Col>
-          <Col span={6}>
+          <Col xs={12} lg={6}>
             <Info text1="Help" text2="Terms & Conditions" text3="Privacy Policy" text4="FAQ" />
           </Col>
-          <Col span={6}>
+          <Col xs={12} lg={6}>
             <Info text1="Information" text2="Apply for IDO" text3="How to use" text4="About Us" />
           </Col>
-          <Col span={6}>
+          <Col xs={12} lg={6}>
             <div className="info-bottom">
               <div className="text1">Social media</div>
             </div>

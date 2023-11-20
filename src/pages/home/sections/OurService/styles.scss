@@ -1,7 +1,12 @@
+@import '../../../../responsive.scss';
+
 .ourservice-section {
   background: #05061c;
   .layout {
     padding: 80px 64px 64px 80px;
+    @include maxWidth($mobile) {
+      padding: 10px 5px;
+    }
   }
   .title-1 {
     font-size: 40px;
@@ -24,30 +29,69 @@
     margin-bottom: 60px;
   }
   .images {
-    position: relative;
-  }
-  .content-show {
-    flex-direction: column;
-    background: #fff;
-    padding: 24px;
-    width: 420px;
-    position: absolute;
-    left: 32.8%;
-    bottom: 4px;
-    .title-show {
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 26px;
-      color: #0b0b0c;
+    background-image: url('../../../../assets/images/Service.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 33vw;
+    display: flex;
+    .content-show {
+      flex-direction: column;
+      background: #fff;
+      padding: 24px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      .title-show {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 26px;
+        color: #0b0b0c;
+      }
+      .description-show {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        color: #444447;
+        margin-top: 10px;
+      }
+      @include maxWidth($tablet) {
+        top: 0;
+        padding: 10px 8px;
+        .title-show {
+          font-size: 16px;
+        }
+        .description-show {
+          font-size: 14px;
+        }
+      }
     }
-    .description-show {
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 24px;
-      color: #444447;
-      margin-top: 10px;
+  }
+
+  .project {
+    position: relative;
+    flex: 1;
+    border-bottom: 1px solid #7b7b84;
+    border-left: 1px solid #7b7b84;
+    &:last-child {
+      border-right: 1px solid #7b7b84;
+    }
+    display: flex;
+    align-items: end;
+    &--name {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 24px;
+      @include maxWidth($mobile) {
+        padding: 5px;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }

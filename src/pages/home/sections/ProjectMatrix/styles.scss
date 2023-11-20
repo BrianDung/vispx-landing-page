@@ -1,7 +1,12 @@
+@import '../../../../responsive.scss';
+
 .project-matrix {
   background: #05061c;
   .layout {
     padding: 120px 64px 64px 80px;
+    @include maxWidth($tablet) {
+      padding: 30px 20px;
+    }
   }
   .header {
     .label {
@@ -9,6 +14,10 @@
       font-weight: 700;
       line-height: 48px;
       color: #ffffff;
+      margin-bottom: 60px;
+      @include maxWidth($tablet) {
+        margin-bottom: 20px;
+      }
     }
     .input-search {
       width: 380px;
@@ -26,7 +35,7 @@
         height: 40px;
         border-left: none;
         &::placeholder {
-            color: #93939B;
+          color: #93939b;
         }
       }
     }

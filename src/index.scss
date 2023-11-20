@@ -40,3 +40,27 @@ code {
   font-family: 'Hind-Bold';
   src: local('Hind-Bold'), url(./assets/fonts/Hind-Bold.ttf) format('truetype');
 }
+
+table {
+  background: #11122e !important;
+  border-radius: 16px;
+  border-color: #11122e !important;
+  color: #fff;
+  tr {
+    border-bottom: 1px solid var(--neutral-700, #38383c) !important;
+  }
+  thead > tr > th {
+    color: var(--neutral-300, #93939b) !important;
+    background: #11122e !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--neutral-700, #38383c) !important;
+  }
+}
+
+.ant-table-cell-row-hover {
+  background-color: #11123e !important;
+}
