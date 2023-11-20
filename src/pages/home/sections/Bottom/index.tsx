@@ -1,6 +1,6 @@
-import { Col, Input, Row } from 'antd';
+import { Col, Divider, Input, Row } from 'antd';
 import './styles.scss';
-import { LogoVispx, SendIcon } from 'src/assets/icons';
+import { DiscordSocial, LogoVispx, SendIcon, TeleIcon, XCodeIcon } from 'src/assets/icons';
 const Info = ({
   text1,
   text2,
@@ -27,7 +27,7 @@ const Bottom: React.FC = () => {
       <div className="layout-bottom">
         <Row>
           <Col span={10}>
-            <img src={LogoVispx} />
+            <img src={LogoVispx} alt="icon" />
           </Col>
           <Col span={14}>
             <div className="flex" style={{ alignItems: 'center' }}>
@@ -51,9 +51,17 @@ const Bottom: React.FC = () => {
             <Info text1="Information" text2="Apply for IDO" text3="How to use" text4="About Us" />
           </Col>
           <Col span={6}>
-            <Info text1="Social media" text2="Service" text3="How to use" text4="About Us" />
+            <div className="info-bottom">
+              <div className="text1">Social media</div>
+            </div>
+            <div style={{ width: 120 }} className="flex justify-between">
+              <img src={TeleIcon} alt="icon-tele" />
+              <img src={DiscordSocial} alt="icon-discord" />
+              <img src={XCodeIcon} alt="icon-xcode" />
+            </div>
           </Col>
         </Row>
+        <Divider />
       </div>
     </div>
   );
