@@ -1,8 +1,9 @@
 @import '../../../../../responsive.scss';
 
 .ant-table-cell {
+  border-bottom: 1px solid #38383C !important;
   &::before {
-    background-color: #05061C !important;
+    background-color: #11122E !important;
   }
 }
 

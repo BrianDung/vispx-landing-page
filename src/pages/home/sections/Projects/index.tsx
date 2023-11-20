@@ -29,6 +29,30 @@ const ProjectsSection: React.FC = () => {
                 description="Chirpley is the world’s first automated, peer-to-peer, all in one influencer marketplace specifically focused on nano and micro influencers. Chirpley will provide marketers with the…."
               />
             </Col>
+            <Col xs={24} md={12} lg={6}>
+              <CardProject
+                networkIcon={BscIconWhite}
+                icon={Project1}
+                title="Chirpley"
+                description="Chirpley is the world’s first automated, peer-to-peer, all in one influencer marketplace specifically focused on nano and micro influencers. Chirpley will provide marketers with the…."
+              />
+            </Col>
+            <Col xs={24} md={12} lg={6}>
+              <CardProject
+                networkIcon={BscIconWhite}
+                icon={Project1}
+                title="Chirpley"
+                description="Chirpley is the world’s first automated, peer-to-peer, all in one influencer marketplace specifically focused on nano and micro influencers. Chirpley will provide marketers with the…."
+              />
+            </Col>
+            <Col xs={24} md={12} lg={6}>
+              <CardProject
+                networkIcon={BscIconWhite}
+                icon={Project1}
+                title="Chirpley"
+                description="Chirpley is the world’s first automated, peer-to-peer, all in one influencer marketplace specifically focused on nano and micro influencers. Chirpley will provide marketers with the…."
+              />
+            </Col>
           </Row>
         </div>
       </div>
