@@ -1,8 +1,11 @@
 @import '../../../../../responsive.scss';
 
-.about {
+.about-slider {
   max-width: 80%;
   margin-top: 150px;
+  @include maxWidth($mobile) {
+    margin-top: 20px;
+  }
   .title {
     font-weight: 700;
     font-size: 64px;
@@ -39,6 +42,10 @@
         line-height: 36px;
         color: #ffffff;
         text-align: center;
+        @include maxWidth($mobile) {
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
       .text2 {
         font-weight: 400;
@@ -46,6 +53,9 @@
         line-height: 20px;
         color: #cecece;
         text-align: center;
+        @include maxWidth($mobile) {
+          font-size: 12px;
+        }
       }
     }
   }

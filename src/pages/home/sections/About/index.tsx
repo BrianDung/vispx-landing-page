@@ -29,14 +29,14 @@ const AboutSection: React.FC = () => {
             <Col {...colProps}>
               <Card
                 icon={Icon2}
-                title="Executive Lounge Pool"
+                title="Partner Pool"
                 description="VispX exclusively partners with NFT projects and allowing partnered project NFT holders to participate in all IDO token offerings in a dedicated executive lounge pool customized at VispX launchpad."
               />
             </Col>
             <Col {...colProps}>
               <Card
                 icon={Icon3}
-                title="Open IDO Pool"
+                title="Open Pool"
                 description="VispX is the first-ever launchpad to allow direct participation in IDOs with ZERO barrier of entry. Within 4 simple clicks, retail investors can invest into your projects IDO"
               />
             </Col>

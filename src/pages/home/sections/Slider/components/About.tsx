@@ -10,7 +10,7 @@ const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
 };
 const About: React.FC = () => {
   return (
-    <div className="about">
+    <div className="about-slider">
       <div className="title flex">
         <div> About </div>
         <div className="relative">

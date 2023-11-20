@@ -1,5 +1,11 @@
 @import '../../../../../responsive.scss';
 
+.ant-table-cell {
+  &::before {
+    background-color: #05061C !important;
+  }
+}
+
 .table-tx {
   background: #11122e;
   border-radius: 16px;

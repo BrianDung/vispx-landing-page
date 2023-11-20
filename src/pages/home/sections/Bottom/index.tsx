@@ -30,14 +30,14 @@ const Bottom: React.FC = () => {
             <img src={LogoVispx} alt="icon" />
           </Col>
           <Col span={14}>
-            <div className="flex" style={{ alignItems: 'center' }}>
+            {/* <div className="flex" style={{ alignItems: 'center' }}>
               <div className="text-custom">Subscribe for our newsletter</div>
               <Input
                 addonAfter={<img src={SendIcon} alt="icon" style={{ width: 40, height: 48 }} />}
                 placeholder="Search for project"
                 className="input-search"
               />
-            </div>
+            </div> */}
           </Col>
         </Row>
         <Row style={{ marginTop: 60 }}>

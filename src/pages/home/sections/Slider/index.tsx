@@ -15,12 +15,12 @@ const Slider: React.FC = () => {
         <img src={LaunchIcon} alt="launch-icon" />
       </div>
       <Row className="layout">
-        <Col span={12} xs={24} md={24}>
+        <Col xl={12} xxl={12} lg={12} xs={24} md={24}>
           <About />
         </Col>
-        {/* <Col span={12}>
+        <Col xl={12} xxl={12} lg={12} xs={24} md={24}>
             <img src={Slider1Icon} alt='slider1-icon' className='icon-slider'/>
-        </Col> */}
+        </Col>
       </Row>
     </div>
   );
