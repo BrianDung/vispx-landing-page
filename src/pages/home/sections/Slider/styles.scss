@@ -9,7 +9,7 @@
   .layout {
     padding: 0 64px;
     @include maxWidth($mobile) {
-     padding: 0 12px;
+      padding: 0 12px;
     }
   }
   .header {
@@ -18,4 +18,29 @@
   .icon-slider {
     width: 90%;
   }
+}
+
+.pop-hover-icon {
+  .ant-popover-content {
+    .ant-popover-inner {
+      border-radius: 8px;
+      background: #0f0734;
+      box-shadow: 1px 2px 0px -4px #8C34F4;
+    }
+  }
+  .ant-popover-arrow {
+    &::before {
+      background: #0f0734;
+    }
+    &::after {
+      background: #0f0734;
+    }
+  }
+}
+.text-launch-app {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: #fff;
 }

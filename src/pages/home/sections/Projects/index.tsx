@@ -2,18 +2,12 @@ import { Col, Row } from 'antd';
 import './styles.scss';
 import CardProject from './components/CardProject';
 import {
-  BscIconWhite,
-  Icon1,
-  Icon2,
-  Icon3,
-  PolygonIconWhite,
-  Project1,
-  SolanaIconWhite,
+  BscIconWhite, Project1
 } from 'src/assets/icons';
-import { useFetch } from 'src/hooks/useFetch';
+// import { useFetch } from 'src/hooks/useFetch';
 
 const ProjectsSection: React.FC = () => {
-  const { data, error } = useFetch(`${process.env.REACT_APP_API_ENDPOINT}/vispx-project-list`);
+  // const { data, error } = useFetch(`${process.env.REACT_APP_API_ENDPOINT}/vispx-project-list`);
   
   return (
     <div className="projects-section">

@@ -4,8 +4,8 @@ import { useFetch } from 'src/hooks/useFetch';
 import { get } from 'lodash';
 
 const OurService: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const { data, error } = useFetch(
+  const [currentPage] = useState(1);
+  const { data } = useFetch(
     `${process.env.REACT_APP_API_ENDPOINT}/vispx-our-services?page=${currentPage}&limit=3`,
   );
 
