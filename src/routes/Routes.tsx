@@ -1,26 +1,12 @@
 import loadable, { DefaultComponent } from '@loadable/component';
 import React from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { PATHS } from 'src/constants/paths';
 import { PrivateRoute } from './components/PrivateRoute';
-import { LoadingPage } from './components/LoadingPage';
+import { ExchangePageLoading } from 'src/pages/loadings';
 
 const LoadingByTemplate: React.FC = () => {
-  const history = useHistory();
-
-  if (history.location.pathname.includes(PATHS.borrow)) {
-    return <LoadingPage />;
-  }
-  if (history.location.pathname.includes(PATHS.forum)) {
-    return <LoadingPage />;
-  }
-  if (history.location.pathname.includes(PATHS.lend)) {
-    return <LoadingPage />;
-  }
-  if (history.location.pathname.includes(PATHS.stake)) {
-    return <LoadingPage />;
-  }
-  return <LoadingPage />;
+  return <ExchangePageLoading />;
 };
 
 function loadableWFallback(loadFn: (props: {}) => Promise<DefaultComponent<{}>>) {
