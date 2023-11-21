@@ -34,6 +34,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 33vw;
+    @include maxWidth($mobile) {
+      height: 40vw;
+    }
     display: flex;
     .content-show {
       flex-direction: column;
@@ -67,10 +70,20 @@
         top: 0;
         padding: 10px 8px;
         .title-show {
-          font-size: 14px;
+          font-size: 16px;
         }
         .description-show {
           font-size: 14px;
+        }
+      }
+      @include maxWidth($mobile) {
+        top: 0;
+        padding: 10px 8px;
+        .title-show {
+          font-size: 12px;
+        }
+        .description-show {
+          font-size: 10px;
         }
       }
     }

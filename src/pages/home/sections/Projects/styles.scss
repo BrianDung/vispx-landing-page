@@ -2,6 +2,9 @@
 
 .projects-section {
   background: #05061C !important;
+  @include maxWidth($mobile) {
+    padding-bottom: 20px;
+  }
   .layout {
     padding: 80px 64px 64px 80px;
     @include maxWidth($tablet) {
