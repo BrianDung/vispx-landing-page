@@ -5,9 +5,8 @@ import useStyles from './style';
 import activeArrowBig from 'src/assets/icons/landing/next-arrow-big.svg';
 import activeArrowPrevBig from 'src/assets/icons/landing/prev-arrow-enable.svg';
 import thumnailStatic from 'src/assets/icons/landing/static-banner.png';
-import bgStatic from 'src/pages/home/sections/Slider/Desktop-BG.png';
 
-const DELAY_TIME = 15000000000000000;
+const DELAY_TIME = 15000;
 const SLIDE_PER_PAGE = 3;
 
 function SampleNextArrow(props: any) {
@@ -86,7 +85,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI }
 
     // eslint-disable-next-line
     idTimer = setTimeout(() => {
-      // handleSelectImage(mediaList[nextImageIndex], false);
+      handleSelectImage(mediaList[nextImageIndex], false);
     }, DELAY_TIME);
 
     const slider = refSlider.current as never as any;
