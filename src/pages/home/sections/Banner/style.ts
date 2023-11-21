@@ -137,6 +137,8 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       },
 
       '&__footer': {
+        display: "flex",
+        alignItems: "center",
         [theme.breakpoints.down('md')]: {
           display: 'flex',
           flexWrap: 'wrap',
