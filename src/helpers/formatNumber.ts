@@ -124,7 +124,7 @@ export const nFormatter = (number: string, digits = 4, roundingMode?: BigNumber.
 };
 
 export const displayNumber = (value: any, decimalPlace = 2) => {
-  if (!value || isNaN(value) || value == Number.POSITIVE_INFINITY) return 0;
+  if (!value || isNaN(value) || value === Number.POSITIVE_INFINITY) return 0;
   else return nFormatter(String(value), decimalPlace);
 };
 
