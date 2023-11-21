@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 import '../styles/about.scss';
+import { nFormatter } from 'src/helpers/formatNumber';
 const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
   return (
     <div className="block">
@@ -8,33 +9,30 @@ const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
     </div>
   );
 };
-const About: React.FC = () => {
+const About = ({ data }: { data: any }) => {
   return (
     <div className="about-slider">
       <div className="title flex">
         <div> About </div>
-        <div className="relative">
-          VispX
+        <div className="relative" style={{whiteSpace: "nowrap"}}>
+          VISPX
           <div className="underline-custom" />
         </div>
       </div>
-      <div className="description">
-        Our XPAD 1.0 is a token-less and NFT powered omni-chain launchpad, focuses on bringing
-        retail investors and projects closer together with zero barrier of entry
-      </div>
+      <div className="description">{data?.description}</div>
       <div className="information">
         <Row className="full-width">
           <Col span={6}>
-            <Information text1="$100M" text2="Total Raise" />
+            <Information text1={`$${nFormatter(data?.total_raise || 0, 2)}`} text2="Total Raise" />
           </Col>
           <Col span={6}>
-            <Information text1="1.23B" text2="Ave ATH" />
+            <Information text1={`${nFormatter(data?.ave_eth || 0, 2)}`} text2="Ave ATH" />
           </Col>
           <Col span={6}>
-            <Information text1="80+" text2="Total Projects" />
+            <Information text1={`${data?.total_project || 0}`} text2="Total Projects" />
           </Col>
           <Col span={6}>
-            <Information text1="250M" text2="User" />
+            <Information text1={`${nFormatter(data?.user || 0, 2)}`} text2="User" />
           </Col>
         </Row>
       </div>

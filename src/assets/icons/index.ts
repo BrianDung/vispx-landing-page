@@ -178,3 +178,4 @@ export { default as SendIcon } from '../icons/common/send.svg';
 export { default as Slider1Icon } from '../images/Slider1.png';
 export { default as Service } from '../images/Service.svg';
 export { default as Project1 } from '../images/project1.svg';
+export { default as ArrowNextActive } from '../icons/landing/arrow-next-active.svg';

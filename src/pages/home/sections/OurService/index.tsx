@@ -1,15 +1,50 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './styles.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFetch } from 'src/hooks/useFetch';
 import { get } from 'lodash';
+import { ArrowNext, ArrowPrevious } from 'src/assets/icons/landing';
+
+const itemsPlaceholder = [1, 2, 3];
 
 const OurService: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const { data, error } = useFetch(
-    `${process.env.REACT_APP_API_ENDPOINT}/vispx-our-services?page=${currentPage}&limit=3`,
+  const { data, error } = useFetch<any>(
+    `${process.env.REACT_APP_API_ENDPOINT}/vispx-our-services?page=1&limit=50`,
   );
 
+  const [isNext, setIsNext] = useState(false);
+  const [isPrevious, setIsPrevious] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const maxPage = Number(Math.ceil(data?.data?.total / 3) || 0);
+
+  useEffect(() => {
+    if (currentPage < maxPage) {
+      setIsNext(true);
+    } else {
+      setIsNext(false);
+    }
+    if (currentPage > 1) {
+      setIsPrevious(true);
+    } else {
+      setIsPrevious(false);
+    }
+  }, [currentPage, maxPage]);
+
   const [idShow, setIdShow] = useState(null);
+
+  const onNextPage = () => {
+    if (currentPage < maxPage) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const onPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const dataShow = get(data, 'data.data', itemsPlaceholder).slice((currentPage - 1) * 3, 3);
 
   return (
     <div className="ourservice-section">
@@ -20,7 +55,7 @@ const OurService: React.FC = () => {
           tailored services for project needs.
         </div>
         <div className="images">
-          {get(data, 'data.data', [1, 2, 3]).map((elm: any) => {
+          {[...dataShow, ...itemsPlaceholder]?.slice(0, 3).map((elm: any) => {
             return (
               <div
                 className="project"
@@ -38,6 +73,14 @@ const OurService: React.FC = () => {
               </div>
             );
           })}
+          <div className="handler">
+            <div className={`button ${isPrevious ? '' : 'disabled'}`} onClick={onPreviousPage}>
+              <ArrowPrevious color={isPrevious ? '#fff' : '#64646c'} />
+            </div>
+            <div className={`button ${isNext ? '' : 'disabled'}`} onClick={onNextPage}>
+              <ArrowNext color={isNext ? '#fff' : '#64646c'} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
