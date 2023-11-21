@@ -87,12 +87,12 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       padding: '15px',
       color: '#fff',
 
-      fontFamily: 'Montserrat-SemiBold',
+      // fontFamily: 'Montserrat-SemiBold',
       '&__status': {
         background: '#FF5E06',
         padding: '2px 10px',
         borderRadius: '40px',
-        fontFamily: 'Montserrat-Regular',
+        // fontFamily: 'Montserrat-Regular',
         fontSize: 12,
         textTransform: 'capitalize',
       },
@@ -109,11 +109,11 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
         },
         '&--name': {
           color: 'rgba(255, 255, 255, 0.6);',
-          fontFamily: 'Montserrat-Medium',
+          // fontFamily: 'Montserrat-Medium',
         },
       },
       '&__content': {
-        fontFamily: 'Montserrat-Regular',
+        // fontFamily: 'Montserrat-Regular',
         fontSize: '16px',
         lineHeight: '26px',
         opacity: 0.8,
@@ -151,7 +151,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
           borderRadius: '40px',
           padding: '10px 22px',
           marginRight: '10px',
-          fontFamily: 'Montserrat-Medium',
+          // fontFamily: 'Montserrat-Medium',
           fontWeight: 500,
           '&:hover': {
             background: 'linear-gradient(270deg,#02acd3,#0961fe 31%,#454cf9 48%,#b347ff)',
