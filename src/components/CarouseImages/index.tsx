@@ -120,6 +120,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI }
             }
             return (
               <div
+                className='none-outline'
                 key={image?.id}
                 onClick={() => handleSelectImage(image, true)}
                 style={{ outline: 'none', width: 110 }}

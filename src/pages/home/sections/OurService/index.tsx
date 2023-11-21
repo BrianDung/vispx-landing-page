@@ -8,7 +8,7 @@ import { ArrowNext, ArrowPrevious } from 'src/assets/icons/landing';
 const itemsPlaceholder = [1, 2, 3];
 
 const OurService: React.FC = () => {
-  const { data, error } = useFetch<any>(
+  const { data } = useFetch<any>(
     `${process.env.REACT_APP_API_ENDPOINT}/vispx-our-services?page=1&limit=50`,
   );
 
