@@ -6,7 +6,7 @@ import { ArrowNext, ArrowPrevious } from 'src/assets/icons/landing';
 import { useEffect, useState } from 'react';
 
 const ProjectMatrix: React.FC = () => {
-  const { data, error } = useFetch<any>(`${process.env.REACT_APP_API_ENDPOINT}/vispx-matrix-list`);
+  const { data } = useFetch<any>(`${process.env.REACT_APP_API_ENDPOINT}/vispx-matrix-list`);
 
   const [isNext, setIsNext] = useState(false);
   const [isPrevious, setIsPrevious] = useState(false);

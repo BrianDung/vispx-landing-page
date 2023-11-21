@@ -58,12 +58,16 @@
         line-height: 24px;
         color: #444447;
         margin-top: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
       @include maxWidth($tablet) {
         top: 0;
         padding: 10px 8px;
         .title-show {
-          font-size: 16px;
+          font-size: 14px;
         }
         .description-show {
           font-size: 14px;
