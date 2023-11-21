@@ -2,13 +2,10 @@
 
 .slider {
   background-image: url('./Desktop-BG.png');
-  // background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  min-height: 100vh;
   .layout {
     padding: 0 64px;
-    @include maxWidth($mobile) {
+    @include maxWidth($tablet) {
       padding: 0 12px;
     }
   }
@@ -17,6 +14,44 @@
   }
   .icon-slider {
     width: 90%;
+    align-items: end;
+    @include maxWidth($tablet) {
+      width: 100%;
+      padding: 20px 0px;
+    }
+  }
+  .carousal {
+    position: relative;
+    margin: 20px 80px 0px 0;
+    width: 350px;
+    margin-left: auto;
+    .card {
+      img {
+        width: 100px;
+        height: 60px;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        &:hover {
+          opacity: 0.85;
+        }
+        outline-style: none;
+      }
+      img.active {
+        border: 1px solid #a84dff;
+      }
+    }
+    @include maxWidth($tablet) {
+      width: 200px;
+      margin: 0 auto;
+      padding-top: 20px;
+      .card {
+        img {
+          width: 50px;
+          height: 30px;
+        }
+      }
+    }
   }
 }
 

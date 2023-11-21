@@ -6,8 +6,11 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { PersistGate } from 'redux-persist/integration/react';
+
 import 'src/assets/scss/_themes.scss';
 import 'src/assets/scss/variable.scss';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './App.scss';
 import LocaleProviderComponent from './components/15.locale-provider';
 import ToastContext from './contexts/toast';
@@ -25,7 +28,7 @@ BigNumber.config({
 });
 
 const App: React.FC = () => {
-  const { store , persistor} = initStore();
+  const { store, persistor } = initStore();
 
   return (
     <Web3ReactProvider connectors={appConnectors}>
@@ -34,8 +37,8 @@ const App: React.FC = () => {
           <LocaleProviderComponent>
             <BrowserRouter basename="/">
               {/* <Layout> */}
-                <ToastContext />
-                <Routes />
+              <ToastContext />
+              <Routes />
               {/* </Layout> */}
             </BrowserRouter>
           </LocaleProviderComponent>

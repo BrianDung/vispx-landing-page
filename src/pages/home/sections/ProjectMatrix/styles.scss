@@ -18,6 +18,7 @@
       margin-bottom: 60px;
       @include maxWidth($tablet) {
         margin-bottom: 20px;
+        font-size: 30px;
       }
     }
     .input-search {
@@ -38,6 +39,54 @@
         &::placeholder {
           color: #93939b;
         }
+      }
+    }
+  }
+  .paging {
+    display: flex;
+    padding-left: 20px;
+    gap: 8px;
+    svg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 16px;
+      display: inline-block;
+      border-radius: 12px;
+      border: 1px solid var(--neutral-white, #fff);
+      cursor: pointer;
+      height: fit-content;
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+    .disabled svg {
+      border: 1px solid #64646c;
+      color: #64646c;
+      opacity: 1;
+      cursor: not-allowed;
+    }
+    .page-size {
+      height: fit-content;
+      color: #dbdbde;
+      margin: 0 20px;
+      opacity: 0.5;
+      line-height: 24px;
+      .current-page {
+        font-size: 36px;
+      }
+      .max-page {
+        font-size: 16px;
+      }
+    }
+    @include maxWidth($tablet) {
+      top: -50px;
+      left: -15px;
+      svg {
+        padding: 6px;
+      }
+      .page-size {
+        margin: 0 5px;
       }
     }
   }

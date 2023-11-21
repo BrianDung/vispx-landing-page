@@ -3,10 +3,8 @@
 .about-slider {
   max-width: 80%;
   margin-top: 150px;
-  @include maxWidth($mobile) {
-    margin-top: 20px;
-  }
   .title {
+    display: flex;
     font-weight: 700;
     font-size: 64px;
     line-height: 72px;
@@ -42,7 +40,7 @@
         line-height: 36px;
         color: #ffffff;
         text-align: center;
-        @include maxWidth($mobile) {
+        @include maxWidth($tablet) {
           font-size: 20px;
           line-height: 24px;
         }
@@ -53,14 +51,17 @@
         line-height: 20px;
         color: #cecece;
         text-align: center;
-        @include maxWidth($mobile) {
+        @include maxWidth($tablet) {
           font-size: 12px;
         }
       }
     }
   }
-  @include maxWidth($mobile) {
+  @include maxWidth($tablet) {
+    max-width: 100%;
+    margin-top: 20px;
     .title {
+      justify-content: center;
       font-size: 40px;
     }
   }

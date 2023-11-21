@@ -64,3 +64,25 @@ table {
 .ant-table-cell-row-hover {
   background-color: #11123e !important;
 }
+
+.ant-table-placeholder {
+  pointer-events: none;
+  background-color: inherit !important;
+}
+
+.ant-table-expanded-row-fixed:hover {
+  background-color: #11123e !important;
+}
+
+.ant-empty-description {
+  color: #fff !important;
+}
+
+.slick-dots li button:before {
+  color: #221561 !important;
+  opacity: 1 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #cecece !important;
+}

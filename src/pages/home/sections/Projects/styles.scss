@@ -1,10 +1,10 @@
 @import "../../../../responsive.scss";
 
 .projects-section {
-  background: #05061c;
+  background: #05061C !important;
   .layout {
     padding: 80px 64px 64px 80px;
-    @include maxWidth($mobile) {
+    @include maxWidth($tablet) {
       padding: 20px 20px;
     }
   }
@@ -30,5 +30,8 @@
   }
   .list-card {
     margin-top: 60px;
+  }
+  .slick-arrow {
+    display: none !important;
   }
 }

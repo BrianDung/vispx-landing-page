@@ -59,11 +59,13 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       key: 'category',
       render: (value: string, row: any) => {
         return (
-          <div>
-            {row?.category1 === 'TOKEN' && <Tag color="#2E90FA">Token</Tag>}
-            {row?.category1 === 'NFT' && <Tag color="#3F2AA5">NFT</Tag>}
-            {row?.category2 === 'TOKEN' && <Tag color="#2E90FA">Token</Tag>}
-            {row?.category2 === 'NFT' && <Tag color="#3F2AA5">NFT</Tag>}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+            {(row?.category1 === 'TOKEN' || row?.category2 === 'TOKEN') && (
+              <Tag color="#2E90FA">Token</Tag>
+            )}
+            {(row?.category1 === 'NFT' || row?.category2 === 'NFT') && (
+              <Tag color="#3F2AA5">NFT</Tag>
+            )}
           </div>
         );
       },
@@ -89,7 +91,13 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
   ];
 
   return (
-    <Table scroll={{ x: 400 }} columns={columns} dataSource={dataSources} pagination={false} />
+    <Table
+      scroll={{ x: 400 }}
+      columns={columns}
+      dataSource={dataSources}
+      pagination={false}
+      rowKey={'project_name'}
+    />
   );
 };
 

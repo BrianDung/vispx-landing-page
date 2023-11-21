@@ -33,7 +33,7 @@ const CardProject: React.FC<{
               Blockchain
             </div>
             <div className="flex network-info">
-              <img src={networkIcon} alt="icon" style={{ marginRight: 6 }} />{' '}
+              <img src={networkIcon} alt="icon" style={{ marginRight: 6, objectFit: "cover" }} />{' '}
               <span className="network-name">BSC</span>
             </div>
           </div>

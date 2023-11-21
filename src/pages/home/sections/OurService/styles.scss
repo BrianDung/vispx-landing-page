@@ -4,7 +4,7 @@
   background: #05061c;
   .layout {
     padding: 80px 64px 64px 80px;
-    @include maxWidth($mobile) {
+    @include maxWidth($tablet) {
       padding: 10px 5px;
     }
   }
@@ -29,6 +29,7 @@
     margin-bottom: 60px;
   }
   .images {
+    position: relative;
     background-image: url('../../../../assets/images/Service.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -69,6 +70,42 @@
         }
       }
     }
+    .handler {
+      background-color: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      gap: 12px;
+      padding-left: 20px;
+      svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        display: inline-block;
+        border-radius: 12px;
+        border: 1px solid var(--neutral-white, #fff);
+        cursor: pointer;
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+      .disabled svg {
+        border: 1px solid #64646c;
+        color: #64646c;
+        opacity: 1;
+        cursor: not-allowed;
+      }
+      @include maxWidth($tablet) {
+        top: -50px;
+        left: -15px;
+        gap: 20px;
+        svg {
+          padding: 6px;
+        }
+      }
+    }
   }
 
   .project {
@@ -86,7 +123,7 @@
       font-size: 20px;
       font-weight: 600;
       padding: 24px;
-      @include maxWidth($mobile) {
+      @include maxWidth($tablet) {
         padding: 5px;
         font-size: 12px;
         overflow: hidden;
