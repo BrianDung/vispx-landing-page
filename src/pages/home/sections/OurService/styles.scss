@@ -62,7 +62,7 @@
         color: #444447;
         margin-top: 10px;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
@@ -71,9 +71,11 @@
         padding: 10px 8px;
         .title-show {
           font-size: 16px;
+          line-height: 20px;
         }
         .description-show {
           font-size: 14px;
+          line-height: 18px;
         }
       }
       @include maxWidth($mobile) {
