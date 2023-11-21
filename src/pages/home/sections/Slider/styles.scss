@@ -1,6 +1,6 @@
 @import '../../../../responsive.scss';
 
-.slider {
+.slider-custom {
   background-image: url('./Desktop-BG.png');
   background-size: cover;
   .layout {
@@ -20,39 +20,6 @@
       padding: 20px 0px;
     }
   }
-  .carousal {
-    position: relative;
-    margin: 20px 80px 0px 0;
-    width: 350px;
-    margin-left: auto;
-    .card {
-      img {
-        width: 100px;
-        height: 60px;
-        object-fit: cover;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        cursor: pointer;
-        &:hover {
-          opacity: 0.85;
-        }
-        outline-style: none;
-      }
-      img.active {
-        border: 1px solid #a84dff;
-      }
-    }
-    @include maxWidth($tablet) {
-      width: 200px;
-      margin: 0 auto;
-      padding-top: 20px;
-      .card {
-        img {
-          width: 50px;
-          height: 30px;
-        }
-      }
-    }
-  }
 }
 
 .pop-hover-icon {
@@ -60,7 +27,7 @@
     .ant-popover-inner {
       border-radius: 8px;
       background: #0f0734;
-      box-shadow: 1px 2px 0px -4px #8C34F4;
+      box-shadow: 1px 2px 0px -4px #8c34f4;
     }
   }
   .ant-popover-arrow {

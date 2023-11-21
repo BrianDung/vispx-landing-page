@@ -86,3 +86,14 @@ table {
 .slick-dots li.slick-active button:before {
   color: #cecece !important;
 }
+
+.slick-active {
+  outline: none;
+  border: none !important;
+  border-color: inherit !important;
+  &:active {
+    outline: none;
+    border: none !important;
+    border-color: inherit !important;
+  }
+}

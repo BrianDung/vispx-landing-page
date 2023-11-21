@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import useStyles from './style';
 
-const activeArrowBig = 'images/landing/next-arrow-big.svg';
-const activeArrowPrevBig = 'images/landing/prev-arrow-enable.svg';
+import activeArrowBig from 'src/assets/icons/landing/next-arrow-big.svg';
+import activeArrowPrevBig from 'src/assets/icons/landing/prev-arrow-enable.svg';
+import thumnailStatic from 'src/assets/icons/landing/static-banner.png';
+import bgStatic from 'src/pages/home/sections/Slider/Desktop-BG.png';
 
-const DELAY_TIME = 15000;
+const DELAY_TIME = 15000000000000000;
 const SLIDE_PER_PAGE = 3;
 
 function SampleNextArrow(props: any) {
@@ -42,7 +43,11 @@ function SamplePrevArrow(props: any) {
   );
 }
 
-export default function CarouselImages({ onClickImage, mediaList }: any) {
+export default function CarouselImages({ onClickImage, mediaList: mediaListAPI }: any) {
+  const mediaList = [
+    ...mediaListAPI,
+    { id: 'STATIC', thumbnail_url: thumnailStatic, url: '', type: 'image' },
+  ];
   const [imageIdSelected, setImageIdSelected] = useState<number>(0);
 
   const refSlider = useRef(null);
@@ -64,6 +69,7 @@ export default function CarouselImages({ onClickImage, mediaList }: any) {
     // eslint-disable-next-line
     [],
   );
+  const classes = useStyles({});
 
   const handleSelectImage = useCallback((image: any, isUserClicking: boolean) => {
     clearTimeout(idTimer);
@@ -80,7 +86,7 @@ export default function CarouselImages({ onClickImage, mediaList }: any) {
 
     // eslint-disable-next-line
     idTimer = setTimeout(() => {
-      handleSelectImage(mediaList[nextImageIndex], false);
+      // handleSelectImage(mediaList[nextImageIndex], false);
     }, DELAY_TIME);
 
     const slider = refSlider.current as never as any;
@@ -102,10 +108,27 @@ export default function CarouselImages({ onClickImage, mediaList }: any) {
     return () => clearTimeout(idTimer);
     // eslint-disable-next-line
   }, []);
-
   return (
-    <div className={'container'} id="carousel-thumbnail">
+    <div className={classes.container} id="carousel-thumbnail">
       <Slider {...settings} ref={refSlider}>
+        {mediaList
+          .filter((image: any) => image?.id % 2 !== 1)
+          .map((image: any) => {
+            let cx = classes.thumbnail;
+
+            if (image?.id === imageIdSelected || image?.id + 1 === imageIdSelected) {
+              cx += ` ${classes.highlight}`;
+            }
+            return (
+              <div
+                key={image?.id}
+                onClick={() => handleSelectImage(image, true)}
+                style={{ outline: 'none', width: 110 }}
+              >
+                <img src={image?.thumbnail_url} alt="banner" className={cx} />
+              </div>
+            );
+          })}
       </Slider>
     </div>
   );
