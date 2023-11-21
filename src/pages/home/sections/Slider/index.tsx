@@ -2,7 +2,7 @@ import Slider from 'react-slick';
 
 import { LaunchIcon, LogoVispx, Slider1Icon } from 'src/assets/icons';
 import './styles.scss';
-import { Col, Row } from 'antd';
+import { Col, Popover, Row } from 'antd';
 import About from './components/About';
 import { useFetch } from 'src/hooks/useFetch';
 import { get } from 'lodash';
@@ -73,12 +73,20 @@ const Sliders: React.FC = () => {
   const handleSelected = (card: any) => {
     setSelected(card);
   };
+  const content = <span className='text-launch-app'>Launch app</span>;
 
   return (
     <div className="slider">
       <div className="header layout flex justify-between pointer">
         <img src={LogoVispx} alt="vispx-logo" />
-        <img src={LaunchIcon} alt="launch-icon" />
+        <Popover
+          placement="leftTop"
+          title={null}
+          content={content}
+          overlayClassName="pop-hover-icon"
+        >
+          <img src={LaunchIcon} alt="launch-icon" />
+        </Popover>
       </div>
       <Row className="layout">
         <Col {...colProps}>
@@ -90,7 +98,7 @@ const Sliders: React.FC = () => {
             alt="slider1-icon"
             className="flex icon-slider"
           />
-        </Col>
+          </Col>
       </Row>
       <div className="carousal">
         <Slider {...settings}>

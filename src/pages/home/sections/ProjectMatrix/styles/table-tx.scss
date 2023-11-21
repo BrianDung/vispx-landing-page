@@ -7,6 +7,22 @@
   }
 }
 
+.ant-table {
+  background: #05061c !important;
+}
+
+.ant-table-cell-row-hover {
+  background: #11123e !important;
+}
+
+.ant-table-row :hover {
+  background: #11123e !important;
+}
+
+.ant-table-wrapper .ant-table-tbody >tr.ant-table-row:hover>td {
+  background: #11123e !important;
+}
+
 .table-tx {
   background: #11122e;
   border-radius: 16px;

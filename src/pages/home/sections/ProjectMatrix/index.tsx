@@ -1,6 +1,4 @@
-import { Input } from 'antd';
 import './styles.scss';
-import { SearchOutlined } from '@ant-design/icons';
 import TableProjectComponent from './components/TableProject';
 import { useFetch } from 'src/hooks/useFetch';
 import { get } from 'lodash';

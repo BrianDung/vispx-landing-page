@@ -7,10 +7,10 @@ import {
   BSCIcon,
   ETHIcon,
 } from 'src/assets/icons';
-import { useFetch } from 'src/hooks/useFetch';
 
 import Slider from 'react-slick';
 import { get } from 'lodash';
+import { useFetch } from 'src/hooks/useFetch';
 
 const settings = {
   dots: true,

@@ -1,6 +1,6 @@
-import { Col, Divider, Input, Row } from 'antd';
+import { Col, Divider, Row } from 'antd';
 import './styles.scss';
-import { DiscordSocial, LogoVispx, SendIcon, TeleIcon, XCodeIcon } from 'src/assets/icons';
+import { DiscordSocial, LogoVispx, TeleIcon, XCodeIcon } from 'src/assets/icons';
 const Info = ({
   text1,
   text2,
