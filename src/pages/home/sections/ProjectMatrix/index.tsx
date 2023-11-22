@@ -43,9 +43,9 @@ const ProjectMatrix: React.FC = () => {
   return (
     <div className="project-matrix">
       <div className="layout">
-        <div className="header flex justify-between align-center">
-          <div className="label">Project matrix</div>
-          <div className="paging">
+        <div className="header flex justify-center align-center">
+          <div className="label center">Project matrix</div>
+          {/* <div className="paging">
             <div className={`button ${isPrevious ? '' : 'disabled'}`} onClick={onPreviousPage}>
               <ArrowPrevious color={isPrevious ? '#fff' : '#64646c'} />
             </div>
@@ -56,7 +56,7 @@ const ProjectMatrix: React.FC = () => {
             <div className={`button ${isNext ? '' : 'disabled'}`} onClick={onNextPage}>
               <ArrowNext color={isNext ? '#fff' : '#64646c'} />
             </div>
-          </div>
+          </div> */}
         </div>
         {!!data && <TableProjectComponent dataSources={dataShow} />}
       </div>
