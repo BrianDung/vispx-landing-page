@@ -11,6 +11,9 @@ import iconMuted from 'src/assets/icons/landing/muted.svg';
 import iconUnMuted from 'src/assets/icons/landing/loudspeaker.svg';
 import iconTrailer from 'src/assets/icons/landing/game.svg';
 import Slider from '../Slider';
+import { Popover } from 'antd';
+import { LaunchIcon } from 'src/assets/icons';
+import '../Slider/styles.scss';
 
 interface BannerMediaProps {
   currentBanner?: {
@@ -63,7 +66,9 @@ function BannerMedia({ currentBanner, muted }: BannerMediaProps) {
 const Banner = () => {
   const [currentBanner, setCurrentBanner] = useState<any>();
   const [muted, setMuted] = useState<boolean>(true);
-  const sidebarCollapsed = true;
+  const isStaticPage = currentBanner?.id === 'STATIC';
+
+  const sidebarCollapsed = isStaticPage ? false : true;
   const [mediaList, setMediaList] = useState<any>([]);
 
   const mediaListConvert = (mediaList: any) => {
@@ -111,10 +116,13 @@ const Banner = () => {
     }
   };
 
-  const isStaticPage = currentBanner?.id === 'STATIC';
+  const content = <span className="text-launch-app">Launch app</span>;
+
   return (
-    <div>
-      {/* <HeaderApp /> */}
+    <div style={{ position: 'relative' }}>
+      <Popover placement="leftTop" title={null} content={content} overlayClassName="pop-hover-icon">
+        <img src={LaunchIcon} alt="launch-icon" style={{ width: 28, height: 28 }} className='image-launch-app'/>
+      </Popover>
       <div className={styles.container}>
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
