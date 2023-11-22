@@ -11,8 +11,6 @@ import iconMuted from 'src/assets/icons/landing/muted.svg';
 import iconUnMuted from 'src/assets/icons/landing/loudspeaker.svg';
 import iconTrailer from 'src/assets/icons/landing/game.svg';
 import Slider from '../Slider';
-import { Popover } from 'antd';
-import { LaunchIcon } from 'src/assets/icons';
 import '../Slider/styles.scss';
 
 interface BannerMediaProps {
@@ -116,13 +114,9 @@ const Banner = () => {
     }
   };
 
-  const content = <span className="text-launch-app">Launch app</span>;
 
   return (
     <div style={{ position: 'relative' }}>
-      <Popover placement="leftTop" title={null} content={content} overlayClassName="pop-hover-icon">
-        <img src={LaunchIcon} alt="launch-icon" style={{ width: 28, height: 28 }} className='image-launch-app'/>
-      </Popover>
       <div className={styles.container}>
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
