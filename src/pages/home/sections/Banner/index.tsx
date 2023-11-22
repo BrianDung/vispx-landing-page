@@ -12,6 +12,7 @@ import iconUnMuted from 'src/assets/icons/landing/loudspeaker.svg';
 import iconTrailer from 'src/assets/icons/landing/game.svg';
 import Slider from '../Slider';
 import '../Slider/styles.scss';
+import LaunchIconComponent from '../Slider/components/LaunchIconComponent';
 
 interface BannerMediaProps {
   currentBanner?: {
@@ -114,10 +115,10 @@ const Banner = () => {
     }
   };
 
-
   return (
     <div style={{ position: 'relative' }}>
       <div className={styles.container}>
+        <LaunchIconComponent isStatic={isStaticPage} />
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
             <BannerMedia currentBanner={currentBanner} muted={muted} />
@@ -201,38 +202,40 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className={styles.socials}>
-          <div className={`${styles.socials}__container`}>
-            <a
-              className={`${styles.socials}__container--item`}
-              href={currentBanner?.twitter}
-              key={1}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={'images/landing/twitter.svg'} alt="" />
-            </a>
-            <a
-              className={`${styles.socials}__container--item`}
-              href={currentBanner?.discord}
-              key={2}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={'images/landing/discord.svg'} alt="" />
-            </a>
+        {!isStaticPage && (
+          <div className={styles.socials}>
+            <div className={`${styles.socials}__container`}>
+              <a
+                className={`${styles.socials}__container--item`}
+                href={currentBanner?.twitter}
+                key={1}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={'images/landing/twitter.svg'} alt="" />
+              </a>
+              <a
+                className={`${styles.socials}__container--item`}
+                href={currentBanner?.discord}
+                key={2}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={'images/landing/discord.svg'} alt="" />
+              </a>
 
-            <a
-              className={`${styles.socials}__container--item`}
-              href={currentBanner?.telegram}
-              key={3}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={'images/landing/telegram.svg'} alt="" />
-            </a>
+              <a
+                className={`${styles.socials}__container--item`}
+                href={currentBanner?.telegram}
+                key={3}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={'images/landing/telegram.svg'} alt="" />
+              </a>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

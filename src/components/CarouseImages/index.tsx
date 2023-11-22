@@ -44,8 +44,8 @@ function SamplePrevArrow(props: any) {
 
 export default function CarouselImages({ onClickImage, mediaList: mediaListAPI }: any) {
   const mediaList = [
-    ...mediaListAPI,
     { id: 'STATIC', thumbnail_url: thumnailStatic, url: '', type: 'image' },
+    ...mediaListAPI,
   ];
   const [imageIdSelected, setImageIdSelected] = useState<number>(0);
 

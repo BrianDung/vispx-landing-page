@@ -8,7 +8,7 @@ const Card: React.FC<{
     <div className="card">
       <div className="layout">
         <div className="header flex">
-          <img src={icon} alt="icon" style={{ objectFit: 'cover' }} />
+          {/* <img src={icon} alt="icon" style={{ objectFit: 'cover' }} /> */}
           <div className="title">{title}</div>
         </div>
         <div className="description">{description}</div>

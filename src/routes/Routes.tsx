@@ -3,7 +3,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { PATHS } from 'src/constants/paths';
 import { PrivateRoute } from './components/PrivateRoute';
-import { ExchangePageLoading } from 'src/pages/loadings';
+import { ExchangePageLoading, TableLoading } from 'src/pages/loadings';
+import { Skeleton } from 'antd';
 
 const LoadingByTemplate: React.FC = () => {
   return <ExchangePageLoading />;
@@ -11,7 +12,9 @@ const LoadingByTemplate: React.FC = () => {
 
 function loadableWFallback(loadFn: (props: {}) => Promise<DefaultComponent<{}>>) {
   return loadable(loadFn, {
-    fallback: <LoadingByTemplate />,
+    fallback: <Skeleton  paragraph={{
+      rows: 20
+    }}/>,
   });
 }
 

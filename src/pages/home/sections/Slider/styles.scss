@@ -46,3 +46,24 @@
   line-height: 20px;
   color: #fff;
 }
+
+.icon-fixed {
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  right: 5%;
+  z-index: 100;
+  top: 5%;
+  cursor: pointer;
+  @include maxWidth($mobile) {
+    right: 5%;
+    top: 2%;
+  }
+}
+
+.is-static {
+  @include maxWidth($mobile) {
+    right: 5% !important;
+    top: 5% !important;
+  }
+}

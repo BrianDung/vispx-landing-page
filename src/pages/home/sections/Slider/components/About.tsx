@@ -12,11 +12,11 @@ const About: React.FC = () => {
   return (
     <div className="about-slider">
       <div className="title flex">
-        <div> About </div>
+        {/* <div> About </div>
         <div className="relative">
           VispX
           <div className="underline-custom" />
-        </div>
+        </div> */}
       </div>
       <div className="description">
         Our XPAD 1.0 is a token-less and NFT powered omni-chain launchpad, focuses on bringing

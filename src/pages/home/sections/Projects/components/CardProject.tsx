@@ -20,7 +20,7 @@ const CardProject: React.FC<{
 }) => {
   return (
     <div className="card-project">
-        <img src={icon} alt="icon" className="icon" width={'100%'} style={{borderRadius: 24}}/>
+        <img src={icon} alt="icon" className="icon" width={'100%'} style={{borderRadius: '24px 24px 0px 0px'}}/>
       <div className="layout-project">
         <div className="content">
           <div className="flex">
