@@ -17,7 +17,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
     banner: {
       minHeight: '100vh',
       '@media only screen and (max-width: 1459px)': {
-        minHeight: 'unset',
+        minHeight: (props: any) => (props.collapsed ? 'unset' : '100.6vh'),
       },
       '& img': {
         objectFit: 'contain',
@@ -40,7 +40,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
     body: {
       [theme.breakpoints.up(1440)]: {
         position: 'absolute',
-        bottom: (props: any) => (props.collapsed ? '12vh' : '20px'),
+        bottom: (props: any) => (props.collapsed ? '12vh' : '0vh'),
         width: '100%',
       },
     },

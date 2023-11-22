@@ -3,7 +3,7 @@
 .projects-section {
   background: #05061C !important;
   @include maxWidth($mobile) {
-    padding-bottom: 20px;
+    padding-bottom: 50px;
   }
   .layout {
     padding: 80px 64px 64px 80px;
@@ -33,6 +33,9 @@
   }
   .list-card {
     margin-top: 60px;
+    .slick-dots {
+      bottom: -45px;
+    }
   }
   .slick-arrow {
     display: none !important;

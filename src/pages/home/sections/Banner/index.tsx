@@ -11,6 +11,7 @@ import iconMuted from 'src/assets/icons/landing/muted.svg';
 import iconUnMuted from 'src/assets/icons/landing/loudspeaker.svg';
 import iconTrailer from 'src/assets/icons/landing/game.svg';
 import Slider from '../Slider';
+import '../Slider/styles.scss';
 
 interface BannerMediaProps {
   currentBanner?: {
@@ -63,7 +64,9 @@ function BannerMedia({ currentBanner, muted }: BannerMediaProps) {
 const Banner = () => {
   const [currentBanner, setCurrentBanner] = useState<any>();
   const [muted, setMuted] = useState<boolean>(true);
-  const sidebarCollapsed = true;
+  const isStaticPage = currentBanner?.id === 'STATIC';
+
+  const sidebarCollapsed = isStaticPage ? false : true;
   const [mediaList, setMediaList] = useState<any>([]);
 
   const mediaListConvert = (mediaList: any) => {
@@ -111,10 +114,9 @@ const Banner = () => {
     }
   };
 
-  const isStaticPage = currentBanner?.id === 'STATIC';
+
   return (
-    <div>
-      {/* <HeaderApp /> */}
+    <div style={{ position: 'relative' }}>
       <div className={styles.container}>
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>

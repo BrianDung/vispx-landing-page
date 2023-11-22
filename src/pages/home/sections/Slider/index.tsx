@@ -16,7 +16,7 @@ const Slider: React.FC = () => {
           content={content}
           overlayClassName="pop-hover-icon"
         >
-          <img src={LaunchIcon} alt="launch-icon" style={{ width: 24, height: 24 }} />
+          <img src={LaunchIcon} alt="launch-icon" style={{ width: 28, height: 28 }} />
         </Popover>
       </div>
       <Row className="layout">
