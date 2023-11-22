@@ -60,3 +60,10 @@
     top: 2%;
   }
 }
+
+.is-static {
+  @include maxWidth($mobile) {
+    right: 5% !important;
+    top: 5% !important;
+  }
+}

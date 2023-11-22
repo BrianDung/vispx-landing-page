@@ -118,7 +118,7 @@ const Banner = () => {
   return (
     <div style={{ position: 'relative' }}>
       <div className={styles.container}>
-        <LaunchIconComponent />
+        <LaunchIconComponent isStatic={isStaticPage} />
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
             <BannerMedia currentBanner={currentBanner} muted={muted} />
