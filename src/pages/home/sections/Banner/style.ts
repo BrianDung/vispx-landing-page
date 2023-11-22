@@ -51,8 +51,8 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       },
     },
     carousels: {
-      marginTop: '50px',
       margin: '50px 15px 0 15px',
+      marginTop : (props: any) => (!props.collapsed ? '0px' : '50px'),
       [theme.breakpoints.up(1440)]: {
         alignSelf: 'flex-end',
         width: '450px',

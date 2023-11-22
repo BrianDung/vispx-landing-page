@@ -6,7 +6,7 @@ import activeArrowBig from 'src/assets/icons/landing/next-arrow-big.svg';
 import activeArrowPrevBig from 'src/assets/icons/landing/prev-arrow-enable.svg';
 import thumnailStatic from 'src/assets/icons/landing/static-banner.png';
 
-const DELAY_TIME = 15000;
+const DELAY_TIME = 150000;
 const SLIDE_PER_PAGE = 3;
 
 function SampleNextArrow(props: any) {
