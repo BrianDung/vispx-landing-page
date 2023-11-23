@@ -8,6 +8,7 @@ import {
   PolygonIconWhite,
 } from 'src/assets/icons';
 import BigNumber from 'bignumber.js';
+import { ColumnProps } from 'antd/es/table';
 
 interface TableTxProps {
   dataSources: any[];
@@ -27,7 +28,7 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
         return <img src={ETHIcon} alt="logo" />;
     }
   };
-  const columns: any[] = [
+  const columns: ColumnProps<any>[] = [
     {
       title: 'PROJECT',
       dataIndex: 'project_name',
@@ -52,46 +53,48 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
     {
       title: 'ATH ROI',
       dataIndex: 'ath_roi',
+      align: 'center',
       width: '100px',
       render: (value: string) => `x${new BigNumber(value || 0).toFormat()}`,
     },
     {
       title: 'TOTAL RAISE',
       dataIndex: 'total_raise',
+      align: 'center',
       key: 'total_raise',
       render: (value: string) => `${new BigNumber(value || 0).toFormat()}`,
     },
     {
       title: 'CATEGORY',
       dataIndex: 'category',
+      align: 'center',
       key: 'category',
       render: (value: string, row: any) => {
         return (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-            {(row?.category1 === 'TOKEN' || row?.category2 === 'TOKEN') && (
-              <Tag color="#2E90FA">Token</Tag>
-            )}
-            {(row?.category1 === 'NFT' || row?.category2 === 'NFT') && (
-              <Tag color="#3F2AA5">NFT</Tag>
-            )}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' , justifyContent: 'center' }}>
+            {row?.category1 && <Tag color="#2E90FA">{row?.category1}</Tag>}
+            {row?.category2 && <Tag color="#3F2AA5">{row?.category2}</Tag>}
           </div>
         );
       },
     },
     {
       title: 'CHAIN',
+      align: 'center',
       dataIndex: 'project_network',
       key: 'project_network',
       render: (value: string) => getNetwork(value),
     },
     {
       title: 'TOTAL SUPPLY',
+      align: 'center',
       dataIndex: 'total_supply',
       key: 'total_supply',
       render: (value: string) => new BigNumber(value || 0).toFormat(),
     },
     {
       title: 'ATH PRICE',
+      align: 'center',
       dataIndex: 'ath_price',
       key: 'ath_price',
       render: (value: string) => new BigNumber(value || 0).toFormat(),
