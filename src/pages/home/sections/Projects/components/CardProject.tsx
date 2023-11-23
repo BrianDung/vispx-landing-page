@@ -10,6 +10,7 @@ const CardProject: React.FC<{
   project_network: string;
   trailer_link: string;
   pool_id: string;
+  project_status: string;
 }> = ({
   title,
   description,
@@ -17,7 +18,8 @@ const CardProject: React.FC<{
   networkIcon,
   project_network,
   trailer_link,
-  pool_id
+  pool_id,
+  project_status,
 }: {
   title: string;
   description: string;
@@ -25,7 +27,8 @@ const CardProject: React.FC<{
   networkIcon: string;
   project_network: string;
   trailer_link: string;
-  pool_id: string
+  pool_id: string;
+  project_status: string;
 }) => {
   const handleClickTrailer = () => {
     if (trailer_link) {
@@ -34,10 +37,10 @@ const CardProject: React.FC<{
   };
 
   const handleClickDetail = () => {
-    if(pool_id) {
-      window.open(pool_id, '_blank')
+    if (pool_id) {
+      window.open(pool_id, '_blank');
     }
-  }
+  };
   return (
     <div className="card-project">
       <img
@@ -45,13 +48,15 @@ const CardProject: React.FC<{
         alt="icon"
         className="icon"
         width={'100%'}
-        style={{ borderRadius: '24px 24px 0px 0px' , maxHeight: 164 }}
+        style={{ borderRadius: '24px 24px 0px 0px', maxHeight: 164 }}
       />
       <div className="layout-project">
         <div className="content">
           <div className="flex">
             <div className="title">{title}</div>
-            <Tag color="rgba(31, 191, 209, 0.60)">Completed</Tag>
+            <Tag style={{ borderRadius: 24 }} color="rgba(31, 191, 209, 0.60)">
+              {project_status || 'Completed'}
+            </Tag>
           </div>
           <div className="description-project">{description}</div>
           <div className="flex blc-info">

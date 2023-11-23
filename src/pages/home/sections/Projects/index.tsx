@@ -78,6 +78,7 @@ const ProjectsSection: React.FC = () => {
             {get(data, 'data.data', []).map((card: any) => {
               return (
                 <CardProject
+                  project_status={card?.project_status}
                   pool_id={card?.pool_id}
                   key={card?.id}
                   networkIcon={getNetwork(card?.project_network)}
