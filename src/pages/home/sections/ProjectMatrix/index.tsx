@@ -2,7 +2,6 @@ import './styles.scss';
 import TableProjectComponent from './components/TableProject';
 import { useFetch } from 'src/hooks/useFetch';
 import { get } from 'lodash';
-import { ArrowNext, ArrowPrevious } from 'src/assets/icons/landing';
 import { useEffect, useState } from 'react';
 
 const ProjectMatrix: React.FC = () => {
@@ -38,7 +37,7 @@ const ProjectMatrix: React.FC = () => {
     }
   };
 
-  const dataShow = get(data, 'data.data', []).slice((currentPage - 1) * 4, 4);
+  const dataShow = get(data, 'data.data', []);
 
   return (
     <div className="project-matrix">

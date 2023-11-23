@@ -1,7 +1,6 @@
 import { CLEAR_ALL_BALANCES, SET_TOKEN_BALANCE } from 'src/store/constants/balances';
 
 export const clearAllBalances = () => {
-  console.log('clear')
   return {
     type: CLEAR_ALL_BALANCES,
   };

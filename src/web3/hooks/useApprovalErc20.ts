@@ -31,7 +31,6 @@ export const useApprovalToken = (token: string, spender: string, skip = false) =
       setGetAllowanceStatus(TX_STATUS.UNKNOWN);
       return allowance;
     } catch (e) {
-      console.log(e);
       voteeToast.error('Network error');
     }
   };

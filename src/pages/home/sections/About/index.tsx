@@ -12,7 +12,7 @@ const AboutSection: React.FC = () => {
   return (
     <div className="about-section">
       <div className="layout">
-        <div className="title-1">About VispX</div>
+        <div className="title-1">About Investment Pool</div>
         <div className="description">
           VispX is a “NO TOKEN” Protocol launchpad allowing investors to directly participate in the
           pool of their choice with ZERO barrier of entry

@@ -8,8 +8,6 @@ const NotFound: React.FC = () => {
   const { t } = useTranslation();
   const userTheme = useSelector((state: any) => state.theme);
 
-  console.log('User casino');
-
   return (
     <div className={`not-found-wrapper ${userTheme}`}>
       <div className="big-font">
