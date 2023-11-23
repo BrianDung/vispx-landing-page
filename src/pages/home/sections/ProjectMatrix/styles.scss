@@ -5,7 +5,7 @@
   .layout {
     padding: 120px 64px 64px 80px;
     @include maxWidth($tablet) {
-      padding: 30px 20px;
+      padding: 10px 20px;
     }
   }
   .header {
@@ -18,7 +18,7 @@
       margin-bottom: 60px;
       @include maxWidth($tablet) {
         margin-bottom: 20px;
-        font-size: 30px;
+        font-size: 40px;
       }
     }
     .input-search {

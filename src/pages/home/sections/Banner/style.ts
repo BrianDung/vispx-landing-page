@@ -12,12 +12,13 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
   return {
     container: {
       position: 'relative',
-      background: '#05061c'
+      background: '#05061c',
     },
     banner: {
       minHeight: '100vh',
-      '@media only screen and (max-width: 1459px)': {
-        minHeight: (props: any) => (props.collapsed ? 'unset' : '100.6vh'),
+      [theme.breakpoints.up(1440)]: {},
+      [theme.breakpoints.down(1440)]: {
+        minHeight: '100vh',
       },
       '& img': {
         objectFit: 'contain',
@@ -40,7 +41,17 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
     body: {
       [theme.breakpoints.up(1440)]: {
         position: 'absolute',
-        bottom: (props: any) => (props.collapsed ? '12vh' : '0vh'),
+        bottom: (props: any) => (props.collapsed ? '12vh' : '12vh'),
+        width: '100%',
+      },
+      [theme.breakpoints.down(1440)]: {
+        position: 'absolute',
+        bottom: (props: any) => (props.collapsed ? '12vh' : '12vh'),
+        width: '100%',
+      },
+      [theme.breakpoints.down(600)]: {
+        position: 'absolute',
+        bottom: (props: any) => (props.collapsed ? '10vh' : '10vh'),
         width: '100%',
       },
     },
@@ -51,8 +62,8 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       },
     },
     carousels: {
-      marginTop: '50px',
       margin: '50px 15px 0 15px',
+      marginTop: (props: any) => (!props.collapsed ? '0px' : '50px'),
       [theme.breakpoints.up(1440)]: {
         alignSelf: 'flex-end',
         width: '450px',
@@ -137,8 +148,8 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       },
 
       '&__footer': {
-        display: "flex",
-        alignItems: "center",
+        display: 'flex',
+        alignItems: 'center',
         [theme.breakpoints.down('md')]: {
           display: 'flex',
           flexWrap: 'wrap',

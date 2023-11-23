@@ -13,7 +13,7 @@ const Slider: React.FC = () => {
         <Col xl={12} xxl={12} lg={12} xs={24} md={24}>
           <About />
         </Col>
-        <Col xl={12} xxl={12} lg={12} xs={24} md={24}>
+        <Col xl={12} xxl={12} lg={12} xs={24} md={24} className='wrapper-icon-slider'>
           <img src={Slider1Icon} alt="slider1-icon" className="icon-slider" />
         </Col>
       </Row>

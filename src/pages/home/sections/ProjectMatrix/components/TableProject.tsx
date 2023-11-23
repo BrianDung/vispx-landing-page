@@ -35,7 +35,15 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       render: (value: string, row: any) => {
         return (
           <div className="flex">
-            <img src={XborgProjectIcon} alt="" width={24} height={24} />
+            <img
+              src={row.project_icon ? row?.project_icon : XborgProjectIcon}
+              alt=""
+              width={24}
+              height={24}
+              style={{
+                borderRadius: 24,
+              }}
+            />
             <span style={{ marginLeft: 5 }}>{value}</span>
           </div>
         );

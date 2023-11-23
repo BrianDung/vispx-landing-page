@@ -4,7 +4,6 @@ import { Popover } from 'antd';
 import { useHistory } from 'react-router-dom';
 
 const LaunchIconComponent = ({ isStatic }: { isStatic: boolean }) => {
-  console.log({isStatic})
   const history = useHistory();
   const content = (
     <span className="text-launch-app pointer" onClick={() => history.push('/xpad')}>

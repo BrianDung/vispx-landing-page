@@ -4,6 +4,7 @@
   background: #05061C !important;
   @include maxWidth($mobile) {
     padding-bottom: 50px;
+    padding-top: 30px;
   }
   .layout {
     padding: 80px 64px 64px 80px;
