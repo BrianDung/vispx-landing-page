@@ -38,7 +38,6 @@ const ProjectMatrix: React.FC = () => {
   };
 
   const dataShow = get(data, 'data.data', []);
-  console.log({dataShow})
 
   return (
     <div className="project-matrix">

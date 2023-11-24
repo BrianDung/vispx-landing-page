@@ -4,7 +4,6 @@ import useStyles from './style';
 
 import activeArrowBig from 'src/assets/icons/landing/next-arrow-big.svg';
 import activeArrowPrevBig from 'src/assets/icons/landing/prev-arrow-enable.svg';
-import thumnailStatic from 'src/assets/icons/landing/static-banner.png';
 
 const DELAY_TIME = 150000;
 const SLIDE_PER_PAGE = 3;
@@ -42,11 +41,8 @@ function SamplePrevArrow(props: any) {
   );
 }
 
-export default function CarouselImages({ onClickImage, mediaList: mediaListAPI }: any) {
-  const mediaList = [
-    { id: 'STATIC', thumbnail_url: thumnailStatic, url: '', type: 'image' },
-    ...mediaListAPI,
-  ];
+export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, staticItem }: any) {
+  const mediaList = [staticItem, ...mediaListAPI];
   const [imageIdSelected, setImageIdSelected] = useState<number>(0);
 
   const refSlider = useRef(null);
@@ -120,7 +116,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI }
             }
             return (
               <div
-                className='none-outline'
+                className="none-outline"
                 key={image?.id}
                 onClick={() => handleSelectImage(image, true)}
                 style={{ outline: 'none', width: 110 }}

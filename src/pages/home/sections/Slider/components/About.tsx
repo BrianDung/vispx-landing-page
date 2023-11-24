@@ -1,5 +1,7 @@
 import { Col, Row } from 'antd';
 import '../styles/about.scss';
+import BigNumber from 'bignumber.js';
+import { nFormatter } from 'src/helpers/formatNumber';
 const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
   return (
     <div className="block">
@@ -8,7 +10,14 @@ const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
     </div>
   );
 };
-const About: React.FC = () => {
+const About: React.FC<any> = (props: any) => {
+  const { staticItem } = props;
+  const description = `Our XPAD 1.0 is a token-less and NFT powered omni-chain launchpad, focuses on bringing
+  retail investors and projects closer together with zero barrier of entry`;
+  const total_raise = staticItem?.total_raise || '';
+  const ave_eth = staticItem?.ave_eth || '';
+  const total_project = staticItem?.total_project || '';
+  const user = staticItem?.user || '';
   return (
     <div className="about-slider">
       <div className="title flex">
@@ -18,23 +27,20 @@ const About: React.FC = () => {
           <div className="underline-custom" />
         </div> */}
       </div>
-      <div className="description">
-        Our XPAD 1.0 is a token-less and NFT powered omni-chain launchpad, focuses on bringing
-        retail investors and projects closer together with zero barrier of entry
-      </div>
+      <div className="description">{staticItem?.description || description}</div>
       <div className="information">
         <Row className="full-width">
           <Col span={6}>
-            <Information text1="$100M" text2="Total Raise" />
+            <Information text1={`$ ${nFormatter(total_raise)}`} text2="Total Raise" />
           </Col>
           <Col span={6}>
-            <Information text1="1.23B" text2="Ave ATH" />
+            <Information text1={nFormatter(ave_eth)} text2="Ave ATH" />
           </Col>
           <Col span={6}>
-            <Information text1="80+" text2="Total Projects" />
+            <Information text1={total_project ? `${total_project} +` : ''} text2="Total Projects" />
           </Col>
           <Col span={6}>
-            <Information text1="250M" text2="User" />
+            <Information text1={nFormatter(user)} text2="Users" />
           </Col>
         </Row>
       </div>

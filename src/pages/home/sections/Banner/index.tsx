@@ -6,6 +6,7 @@ import ReactPlayer from 'react-player/lazy';
 import axios from 'src/services/axios';
 import CarouselImages from 'src/components/CarouseImages';
 import useStyles from './style';
+import thumnailStatic from 'src/assets/icons/landing/static-banner.png';
 
 import iconMuted from 'src/assets/icons/landing/muted.svg';
 import iconUnMuted from 'src/assets/icons/landing/loudspeaker.svg';
@@ -65,6 +66,12 @@ function BannerMedia({ currentBanner, muted }: BannerMediaProps) {
 const Banner = () => {
   const [currentBanner, setCurrentBanner] = useState<any>();
   const [muted, setMuted] = useState<boolean>(true);
+  const [staticItem, setStaticItem] = useState({
+    id: 'STATIC',
+    thumbnail_url: thumnailStatic,
+    url: '',
+    type: 'image',
+  });
   const isStaticPage = currentBanner?.id === 'STATIC';
 
   const sidebarCollapsed = isStaticPage ? false : true;
@@ -80,12 +87,33 @@ const Banner = () => {
   };
 
   useEffect(() => {
+    const getMediaList2 = async () => {
+      try {
+        const resp = (await axios.get('/media-list')) as any;
+        const data = _.get(resp, 'data.data', []);
+        const mediaConverted: any = _.flattenDeep(mediaListConvert(data));
+        setMediaList(mediaConverted);
+      } catch (err: any) {
+        console.error(err);
+      }
+    };
+    getMediaList2();
+  }, []);
+
+  useEffect(() => {
     const getMediaList = async () => {
       try {
         const resp = (await axios.get('/vispx-slider-list')) as any;
-        const data = _.get(resp, 'data.data.data', []);
-        const mediaConverted: any = _.flattenDeep(mediaListConvert(data));
-        setMediaList(mediaConverted);
+        const data = _.get(resp, 'data.data.data', []) as any[];
+        if (data.length > 0) {
+          const item = data[0];
+          const result = {
+            ...item,
+            id: 'STATIC',
+          };
+          console.log({ result });
+          setStaticItem(result);
+        }
       } catch (err: any) {
         console.error(err);
       }
@@ -122,7 +150,7 @@ const Banner = () => {
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
             <BannerMedia currentBanner={currentBanner} muted={muted} />
-            {isStaticPage && <Slider />}
+            {isStaticPage && <Slider staticItem={staticItem}/>}
           </div>
         </div>
         <div className={styles.body}>
@@ -197,7 +225,11 @@ const Banner = () => {
             )}
             <div className={styles.carousels}>
               {mediaList?.length > 1 && (
-                <CarouselImages onClickImage={onClickImage} mediaList={mediaList} />
+                <CarouselImages
+                  onClickImage={onClickImage}
+                  mediaList={mediaList}
+                  staticItem={staticItem}
+                />
               )}
             </div>
           </div>
