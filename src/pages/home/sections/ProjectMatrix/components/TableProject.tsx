@@ -62,7 +62,7 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       dataIndex: 'total_raise',
       align: 'center',
       key: 'total_raise',
-      render: (value: string) => `${new BigNumber(value || 0).toFormat()}`,
+      render: (value: string) => `$ ${new BigNumber(value || 0).toFormat()}`,
     },
     {
       title: 'CATEGORY',
@@ -71,7 +71,7 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       key: 'category',
       render: (value: string, row: any) => {
         return (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' , justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', justifyContent: 'center' }}>
             {row?.category1 && <Tag color="#2E90FA">{row?.category1}</Tag>}
             {row?.category2 && <Tag color="#3F2AA5">{row?.category2}</Tag>}
           </div>
@@ -97,7 +97,20 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       align: 'center',
       dataIndex: 'ath_price',
       key: 'ath_price',
-      render: (value: string) => new BigNumber(value || 0).toFormat(),
+      render: (value: string) => {
+        const allPart = value?.split('_');
+        let price = '';
+        let post_fix = '';
+        let final = `${new BigNumber(price || 0).toFormat()} ${post_fix}`;
+        if (allPart?.length > 1) {
+          price = allPart[0];
+          post_fix = allPart[1];
+          final = `${new BigNumber(price || 0).toFormat()} ${post_fix}`;
+        } else {
+          final = new BigNumber(value || 0).toFormat();
+        }
+        return final;
+      },
     },
   ];
 
