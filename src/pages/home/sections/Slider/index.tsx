@@ -15,7 +15,7 @@ const Slider: React.FC<any> = (props : any) => {
           <About staticItem={staticItem}/>
         </Col>
         <Col xl={12} xxl={12} lg={12} xs={24} md={24} className='wrapper-icon-slider'>
-          <img src={Slider1Icon} alt="slider1-icon" className="icon-slider" />
+          <img src={staticItem?.media_link_upload || Slider1Icon} alt="slider1-icon" className="icon-slider" />
         </Col>
       </Row>
     </div>
