@@ -3,12 +3,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { PATHS } from 'src/constants/paths';
 import { PrivateRoute } from './components/PrivateRoute';
-import { ExchangePageLoading, TableLoading } from 'src/pages/loadings';
 import { Skeleton } from 'antd';
 
-const LoadingByTemplate: React.FC = () => {
-  return <ExchangePageLoading />;
-};
 
 function loadableWFallback(loadFn: (props: {}) => Promise<DefaultComponent<{}>>) {
   return loadable(loadFn, {
