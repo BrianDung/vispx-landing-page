@@ -2,6 +2,12 @@ import { Tag } from 'antd';
 import '../styles/card.scss';
 import { ButtonLinear } from './ButtonLinear';
 import { RightIcon } from 'src/assets/icons';
+export const STATUS_LANDING_PROJECT_AVAILABLE = {
+  COMPLETED: 'Completed',
+  COMING_SOON: 'Coming Soon',
+  IN_PROGRESS: 'In progress',
+};
+
 const CardProject: React.FC<{
   title: string;
   description: string;
@@ -41,6 +47,18 @@ const CardProject: React.FC<{
       window.open(pool_id, '_blank');
     }
   };
+
+  
+
+  const color = () => {
+    if(project_status === STATUS_LANDING_PROJECT_AVAILABLE.IN_PROGRESS) {
+      return `rgba(31, 209, 180, 0.60)`
+    }
+    if(project_status === STATUS_LANDING_PROJECT_AVAILABLE.COMING_SOON) {
+      return `rgba(249, 25, 61, 0.60)`
+    }
+    return `rgba(31, 191, 209, 0.60)`
+  }
   return (
     <div className="card-project">
       <img
@@ -54,7 +72,7 @@ const CardProject: React.FC<{
         <div className="content">
           <div className="flex">
             <div className="title">{title}</div>
-            <Tag style={{ borderRadius: 24 }} color="rgba(31, 191, 209, 0.60)">
+            <Tag style={{ borderRadius: 24 , maxHeight:26 }} color={color()}>
               {project_status || 'Completed'}
             </Tag>
           </div>
