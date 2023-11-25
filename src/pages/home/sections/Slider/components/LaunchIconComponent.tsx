@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 const LaunchIconComponent = ({ isStatic }: { isStatic: boolean }) => {
   const history = useHistory();
   const content = (
-    <span className="text-launch-app pointer" onClick={() => history.push('/xpad')}>
+    <span className="text-launch-app pointer" onClick={() => window.open('https://xpad.vispx.io/' ,'_blank')}>
       Launch app
     </span>
   );
