@@ -18,7 +18,7 @@ const Slider: React.FC<any> = (props: any) => {
           volume={1}
           width="100%"
           height="100%"
-          className='video-new-slider'
+          className="video-new-slider"
         />
       );
     }

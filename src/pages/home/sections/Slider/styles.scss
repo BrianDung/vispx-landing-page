@@ -80,6 +80,10 @@
 }
 
 .video-new-slider {
+  video {
+    border-radius: 30px;
+    box-shadow: 5px 5px 30px 0px #320063;
+  }
   @include maxWidth($mobile) {
     margin-top: 20px;
   }
