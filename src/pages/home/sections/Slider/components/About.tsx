@@ -12,6 +12,7 @@ const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
 };
 const About: React.FC<any> = (props: any) => {
   const { staticItem } = props;
+  console.log({staticItem})
   const description = `Our XPAD 1.0 is a token-less and NFT powered omni-chain launchpad, focuses on bringing
   retail investors and projects closer together with zero barrier of entry`;
   const total_raise = staticItem?.total_raise || '';
@@ -31,16 +32,16 @@ const About: React.FC<any> = (props: any) => {
       <div className="information">
         <Row className="full-width">
           <Col span={6}>
-            <Information text1={`$ ${nFormatter(total_raise)}`} text2="Total Raise" />
+            <Information text1={`$${total_raise}`} text2="Total Raise" />
           </Col>
           <Col span={6}>
-            <Information text1={nFormatter(ave_eth)} text2="Ave ATH" />
+            <Information text1={ave_eth} text2="Ave ATH" />
           </Col>
           <Col span={6}>
             <Information text1={total_project ? `${total_project} +` : ''} text2="Total Projects" />
           </Col>
           <Col span={6}>
-            <Information text1={nFormatter(user)} text2="Users" />
+            <Information text1={user} text2="Users" />
           </Col>
         </Row>
       </div>
