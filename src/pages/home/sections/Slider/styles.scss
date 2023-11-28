@@ -9,6 +9,10 @@
     padding: 0 64px;
   }
 
+  @include maxWidth($mobile) {
+    padding: 0 12px;
+  }
+
   .layout {
     margin-top: 10%;
     @media only screen and (max-width: 1680px) {
@@ -26,6 +30,9 @@
   }
   .header {
     padding-top: 32px;
+    @include maxWidth($tablet) {
+      padding-left: 12px;
+    }
   }
   .icon-slider {
     width: 90%;
