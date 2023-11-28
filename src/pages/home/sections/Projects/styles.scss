@@ -1,7 +1,7 @@
 @import "../../../../responsive.scss";
 
 .projects-section {
-  background: #05061C !important;
+  // background: #05061C !important;
   @include maxWidth($mobile) {
     padding-bottom: 50px;
     padding-top: 30px;

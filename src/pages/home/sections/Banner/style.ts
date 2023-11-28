@@ -12,7 +12,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
   return {
     container: {
       position: 'relative',
-      background: '#05061c',
+      // background: '#05061c',
     },
     banner: {
       minHeight: '100vh',
@@ -41,12 +41,12 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
     body: {
       [theme.breakpoints.up(1440)]: {
         position: 'absolute',
-        bottom: (props: any) => (props.collapsed ? '12vh' : '12vh'),
+        bottom: (props: any) => (props.collapsed ? '12vh' : '10vh'),
         width: '100%',
       },
       [theme.breakpoints.down(1440)]: {
-        position: 'absolute',
-        bottom: (props: any) => (props.collapsed ? '12vh' : '12vh'),
+        // position: 'absolute',
+        // bottom: (props: any) => (props.collapsed ? '10vh' : '0vh'),
         width: '100%',
       },
       [theme.breakpoints.down(600)]: {

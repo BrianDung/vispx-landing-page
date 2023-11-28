@@ -2,17 +2,19 @@ import { LogoVispx, Slider1Icon } from 'src/assets/icons';
 import './styles.scss';
 import { Col, Row } from 'antd';
 import About from './components/About';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/lazy';
+
 import { CircularProgress, Grid } from '@material-ui/core';
 
 const Slider: React.FC<any> = (props: any) => {
   const { staticItem } = props;
   const renderInfor = () => {
+    console.log({src: staticItem?.media_link_upload})
     if (staticItem?.media_link_type === 'video') {
       return (
         <ReactPlayer
           url={staticItem?.media_link_upload}
-          muted={false}
+          muted={true}
           loop={true}
           playing={true}
           volume={1}
@@ -48,7 +50,7 @@ const Slider: React.FC<any> = (props: any) => {
   };
   return (
     <div className="slider-custom">
-      <div className="header layout flex justify-between pointer">
+      <div className="header flex justify-between pointer">
         <img src={LogoVispx} alt="vispx-logo" style={{ width: 110, height: 'auto' }} />
       </div>
       <Row className="layout">

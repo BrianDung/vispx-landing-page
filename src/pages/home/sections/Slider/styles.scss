@@ -1,10 +1,25 @@
 @import '../../../../responsive.scss';
 
 .slider-custom {
-  background-image: url('./Desktop-BG.png');
-  background-size: cover;
-  .layout {
+  // background-image: url('./Desktop-BG.png');
+  // background-size: cover;
+  max-width: 1440px;
+  margin: auto;
+  @media only screen and (max-width: 1440px) {
     padding: 0 64px;
+  }
+
+  .layout {
+    margin-top: 10%;
+    @media only screen and (max-width: 1680px) {
+      margin-top: 5%;
+    }
+    @media only screen and (max-width: 1600px) {
+      margin-top: 3%;
+    }
+    @media only screen and (max-width: 1440px) {
+      margin-top: 2%;
+    }
     @include maxWidth($tablet) {
       padding: 0 12px;
     }
