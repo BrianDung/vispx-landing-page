@@ -19,6 +19,9 @@
   .title-1 {
     font-size: 40px;
     margin-top: 120px;
+    @include maxWidth($mobile) {
+      margin-top: 0px;
+    }
     font-style: normal;
     font-weight: 700;
     line-height: 48px;

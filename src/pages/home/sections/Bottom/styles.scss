@@ -6,6 +6,9 @@
   .layout-bottom {
     .logo-bottom {
       padding-top: 120px;
+      @include maxWidth($mobile) {
+        padding-top: 0px;
+      }
     }
     margin: auto;
     max-width: 1440px;

@@ -13,6 +13,9 @@
     @include maxWidth($tablet) {
       padding: 10px 20px;
     }
+    @include maxWidth($mobile) {
+      margin-top: 0px;
+    }
   }
   .header {
     text-align: center;
