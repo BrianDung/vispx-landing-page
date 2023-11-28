@@ -4,7 +4,14 @@
   background: #030407;
   border-bottom: 1px solid #ffffff;
   .layout-bottom {
-    padding: 80px 175px;
+    .logo-bottom {
+      padding-top: 120px;
+    }
+    margin: auto;
+    max-width: 1440px;
+    @media only screen and (max-width: 1440px) {
+      padding: 0 64px;
+    }
     @include maxWidth($tablet) {
       padding: 20px 30px;
     }

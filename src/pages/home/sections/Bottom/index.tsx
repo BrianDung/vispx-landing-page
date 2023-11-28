@@ -25,7 +25,7 @@ const Bottom: React.FC = () => {
   return (
     <div className="bottom">
       <div className="layout-bottom">
-        <Row>
+        <Row className='logo-bottom'>
           <Col span={10}>
             <img src={LogoVispx} alt="icon" />
           </Col>
