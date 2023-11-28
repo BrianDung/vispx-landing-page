@@ -72,6 +72,7 @@ const Banner = () => {
     url: '',
     type: 'image',
   });
+
   const isStaticPage = currentBanner?.id === 'STATIC';
 
   const sidebarCollapsed = isStaticPage ? false : true;
@@ -150,7 +151,7 @@ const Banner = () => {
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
             <BannerMedia currentBanner={currentBanner} muted={muted} />
-            {isStaticPage && <Slider staticItem={staticItem}/>}
+            {isStaticPage && <Slider staticItem={staticItem} />}
           </div>
         </div>
         <div className={styles.body}>
@@ -223,7 +224,9 @@ const Banner = () => {
                 </div>
               </div>
             )}
-            <div className={styles.carousels}>
+            <div
+              className={styles.carousels}
+            >
               {mediaList?.length > 1 && (
                 <CarouselImages
                   onClickImage={onClickImage}

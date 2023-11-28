@@ -24,7 +24,7 @@ const ProjectsSection: React.FC = () => {
 
   const settings = {
     dots: true,
-    infinite: get(data, 'data.data', []).length > 4 ? true : false,
+    infinite: get(data, 'data.data', []).length > 3 ? true : false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,

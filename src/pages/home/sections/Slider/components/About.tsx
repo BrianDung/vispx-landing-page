@@ -1,7 +1,5 @@
 import { Col, Row } from 'antd';
 import '../styles/about.scss';
-import BigNumber from 'bignumber.js';
-import { nFormatter } from 'src/helpers/formatNumber';
 const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
   return (
     <div className="block">
