@@ -91,6 +91,8 @@
   @include maxWidth($mobile) {
     right: 5%;
     top: 2%;
+    width: 35px;
+    height: 35px;
   }
 }
 
