@@ -45,13 +45,13 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
         width: '100%',
       },
       [theme.breakpoints.down(1440)]: {
-        // position: 'absolute',
-        // bottom: (props: any) => (props.collapsed ? '10vh' : '0vh'),
+        position: 'absolute',
+        bottom: (props: any) => (props.collapsed ? '10vh' : '0vh'),
         width: '100%',
       },
       [theme.breakpoints.down(600)]: {
         position: 'absolute',
-        bottom: (props: any) => (props.collapsed ? '10vh' : '10vh'),
+        bottom: (props: any) => (props.collapsed ? '10vh' : '0'),
         width: '100%',
       },
     },
@@ -63,7 +63,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
     },
     carousels: {
       margin: '50px 15px 0 15px',
-      marginTop: (props: any) => (!props.collapsed ? '0px' : '50px'),
+      marginTop: (props: any) => (!props.collapsed ? '10px' : '50px'),
       [theme.breakpoints.up(1440)]: {
         alignSelf: 'flex-end',
         width: '450px',

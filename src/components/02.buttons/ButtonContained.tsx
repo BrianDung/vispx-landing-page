@@ -3,7 +3,7 @@ import React from 'react';
 import './styles/index.scss';
 
 interface IButtonContainedProps extends ButtonProps {
-  buttonType?: 'type1' | 'type2';
+  buttonType?: 'type1' | 'type2' | 'btn-launch-pad';
   mode?: 'large' | 'medium' | 'small';
   fullWidth?: boolean
 }

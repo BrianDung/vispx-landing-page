@@ -41,5 +41,10 @@
   }
   .list-card {
     margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 68px;
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -3,6 +3,7 @@ import TableProjectComponent from './components/TableProject';
 import { useFetch } from 'src/hooks/useFetch';
 import { get } from 'lodash';
 import { useEffect, useState } from 'react';
+import { ArrowNext, ArrowPrevious } from 'src/assets/icons/landing';
 
 const ProjectMatrix: React.FC = () => {
   const { data } = useFetch<any>(`${process.env.REACT_APP_API_ENDPOINT}/vispx-matrix-list`);

@@ -1,14 +1,15 @@
 import { Table, Tag } from 'antd';
-import '../styles/table-tx.scss';
+import { ColumnProps } from 'antd/es/table';
+import BigNumber from 'bignumber.js';
 import {
   BSCIcon,
-  XborgProjectIcon,
   ETHIcon,
-  SolanaIconWhite,
   PolygonIconWhite,
+  SolanaIconWhite,
+  XborgProjectIcon,
 } from 'src/assets/icons';
-import BigNumber from 'bignumber.js';
-import { ColumnProps } from 'antd/es/table';
+import { formatATHPrice, formatATHROI } from 'src/helpers/formatValue';
+import '../styles/table-tx.scss';
 
 interface TableTxProps {
   dataSources: any[];
@@ -55,7 +56,7 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       dataIndex: 'ath_roi',
       align: 'center',
       width: '100px',
-      render: (value: string) => `x${new BigNumber(value || 0).toFormat()}`,
+      render: (value: string) => formatATHROI(value),
     },
     {
       title: 'TOTAL RAISE',
@@ -97,20 +98,7 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       align: 'center',
       dataIndex: 'ath_price',
       key: 'ath_price',
-      render: (value: string) => {
-        const allPart = value?.split('_');
-        let price = '';
-        let post_fix = '';
-        let final = `${new BigNumber(price || 0).toFormat()} ${post_fix}`;
-        if (allPart?.length > 1) {
-          price = allPart[0];
-          post_fix = allPart[1];
-          final = `${new BigNumber(price || 0).toFormat()} ${post_fix}`;
-        } else {
-          final = new BigNumber(value || 0).toFormat();
-        }
-        return final;
-      },
+      render: (value: string) => formatATHPrice(value),
     },
   ];
 

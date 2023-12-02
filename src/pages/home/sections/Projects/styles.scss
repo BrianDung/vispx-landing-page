@@ -1,4 +1,4 @@
-@import "../../../../responsive.scss";
+@import '../../../../responsive.scss';
 
 .projects-section {
   // background: #05061C !important;
@@ -10,7 +10,7 @@
     max-width: 1440px;
     margin: auto;
     @media only screen and (max-width: 1440px) {
-      padding: 0 64px;
+      padding: 0 130px;
     }
     @include maxWidth($tablet) {
       padding: 20px 20px;
@@ -18,7 +18,7 @@
   }
   .title-1 {
     font-size: 40px;
-    margin-top: 120px;
+    margin-top: 50px;
     @include maxWidth($mobile) {
       margin-top: 0px;
     }
@@ -46,7 +46,15 @@
       bottom: -45px;
     }
   }
-  .slick-arrow {
+  .slick-arrow::before {
     display: none !important;
+  }
+
+  .slick-arrow {
+    margin-top: -45px;
+  }
+
+  .slick-prev {
+    margin-left: -20px;
   }
 }

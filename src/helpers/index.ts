@@ -4,6 +4,7 @@ import { STABLE_COINS } from 'src/constants/exchange';
 import { convertRoundFloor } from './formatNumber';
 import get from 'lodash/get';
 import { voteeToast } from 'src/components/Toast';
+import { isNaN } from 'lodash';
 
 export const KEY_CODE = {
   E: 69, //e

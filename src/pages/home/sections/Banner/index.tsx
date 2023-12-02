@@ -13,7 +13,7 @@ import iconUnMuted from 'src/assets/icons/landing/loudspeaker.svg';
 import iconTrailer from 'src/assets/icons/landing/game.svg';
 import Slider from '../Slider';
 import '../Slider/styles.scss';
-import LaunchIconComponent from '../Slider/components/LaunchIconComponent';
+import LaunchBtnComponent from '../Slider/components/LaunchBtnComponent';
 
 interface BannerMediaProps {
   currentBanner?: {
@@ -147,7 +147,7 @@ const Banner = () => {
   return (
     <div style={{ position: 'relative' }}>
       <div className={styles.container}>
-        <LaunchIconComponent isStatic={isStaticPage} />
+        {isStaticPage && <LaunchBtnComponent isStatic={isStaticPage} />}
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
             <BannerMedia currentBanner={currentBanner} muted={muted} />
@@ -224,9 +224,7 @@ const Banner = () => {
                 </div>
               </div>
             )}
-            <div
-              className={styles.carousels}
-            >
+            <div className={styles.carousels}>
               {mediaList?.length > 1 && (
                 <CarouselImages
                   onClickImage={onClickImage}

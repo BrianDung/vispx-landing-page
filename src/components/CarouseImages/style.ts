@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme: any) => {
   return {
     container: {
-      width: '100%',
+      width: '100px',
       margin: 'auto',
     },
     thumbnail: {

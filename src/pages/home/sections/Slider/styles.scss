@@ -1,4 +1,6 @@
 @import '../../../../responsive.scss';
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
 
 .slider-custom {
   // background-image: url('./Desktop-BG.png');
@@ -14,7 +16,13 @@
   }
 
   .layout {
-    margin-top: 10%;
+    // margin-top: 10%;
+    .button-join-revolution {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin-top: 100px;
+    }
     @media only screen and (max-width: 1680px) {
       margin-top: 5%;
     }
@@ -81,18 +89,18 @@
 }
 
 .icon-fixed {
-  width: 45px;
-  height: 45px;
   position: fixed;
   right: 5%;
   z-index: 100;
   top: 5%;
   cursor: pointer;
+  border-radius: 8px !important;
+  span {
+    line-height: 20px !important;
+  }
   @include maxWidth($mobile) {
     right: 5%;
     top: 2%;
-    width: 35px;
-    height: 35px;
   }
 }
 
@@ -104,11 +112,23 @@
 }
 
 .video-new-slider {
+  display: flex;
   video {
+    height: unset !important;
+    margin: auto;
     border-radius: 30px;
     box-shadow: 5px 5px 30px 0px #320063;
   }
   @include maxWidth($mobile) {
     margin-top: 20px;
+  }
+}
+
+.button-lunch-pad {
+  background-color: #0f0734 !important;
+  box-shadow: 2px 3px #8c34f4 !important;
+  &:hover {
+    color: var(--btn-contained-text-color, $color-neutral-white) !important;
+    top: 4.8%;
   }
 }

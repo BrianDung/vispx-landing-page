@@ -72,7 +72,7 @@ const OurService: React.FC = () => {
       <div className="layout">
         <div className="title-1">Our Services</div>
         <div className="description">
-          VispX offers extensive end to end solutions for blockchain gaming projects with its
+          VispX offers extensive end to end solutions for blockchain projects with its
           tailored services for project needs.
         </div>
         <div className="images">

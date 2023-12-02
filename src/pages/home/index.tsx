@@ -9,10 +9,10 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-vispx">
       <Banner />
+      <ProjectsSection />
       <ProjectMatrix />
       <AboutSection />
       <OurService />
-      <ProjectsSection />
       <Bottom />
       <div className="copy-right">©2023 VispX. All Rights Reserved.</div>
     </div>

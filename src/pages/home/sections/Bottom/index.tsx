@@ -6,11 +6,13 @@ const Info = ({
   text2,
   text3,
   text4,
+  text5,
 }: {
   text1: string;
   text2: string;
   text3: string;
   text4: string;
+  text5?: string;
 }) => {
   return (
     <div className="info-bottom">
@@ -18,6 +20,7 @@ const Info = ({
       <div className="text">{text2}</div>
       <div className="text">{text3}</div>
       <div className="text">{text4}</div>
+      <div className="text">{text5}</div>
     </div>
   );
 };
@@ -25,7 +28,7 @@ const Bottom: React.FC = () => {
   return (
     <div className="bottom">
       <div className="layout-bottom">
-        <Row className='logo-bottom'>
+        <Row className="logo-bottom">
           <Col span={10}>
             <img src={LogoVispx} alt="icon" />
           </Col>
@@ -41,16 +44,22 @@ const Bottom: React.FC = () => {
           </Col>
         </Row>
         <Row style={{ marginTop: 60 }}>
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={7}>
             <Info text1="About VispX" text2="IDO Project" text3="Yeild box" text4="XBORG" />
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={7}>
             <Info text1="Help" text2="Terms & Conditions" text3="Privacy Policy" text4="FAQ" />
           </Col>
-          <Col xs={12} lg={6}>
-            <Info text1="Information" text2="Apply for IDO" text3="How to use" text4="About Us" />
+          <Col xs={12} lg={7}>
+            <Info
+              text1="Information"
+              text2="Apply for IDO"
+              text3="How to use"
+              text4="About Us"
+              text5="Service"
+            />
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={3}>
             <div className="info-bottom">
               <div className="text1">Social media</div>
             </div>

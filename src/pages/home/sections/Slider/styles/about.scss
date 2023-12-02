@@ -1,7 +1,7 @@
 @import '../../../../../responsive.scss';
 
 .about-slider {
-  max-width: 80%;
+  max-width: 90%;
   margin-top: 150px;
   .title {
     display: flex;
@@ -9,6 +9,7 @@
     font-size: 64px;
     line-height: 72px;
     color: #ffffff;
+    padding-right: 30px;
     .relative {
       position: relative;
       margin-left: 10px;
@@ -30,10 +31,25 @@
     color: #c3c3c3;
     margin-top: 32px;
   }
+
+  .button-launch-pad {
+    margin-top: 32px;
+    display: flex;
+    &:hover {
+      -webkit-transform: translateY(0px);
+      transform: translateY(-2px);
+    }
+  }
+
   .information {
-    margin-top: 50px;
+    margin-top: 32px;
     .block {
+      padding-top: 11px;
+      width: 100%;
       flex-direction: column;
+      background-image: url('./frame-tab-banner.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
       .text1 {
         font-weight: 500;
         font-size: 32px;

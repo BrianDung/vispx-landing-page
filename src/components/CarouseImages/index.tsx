@@ -1,22 +1,24 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import Slider from 'react-slick';
+import Slider, { Settings } from 'react-slick';
 import useStyles from './style';
 
 import activeArrowBig from 'src/assets/icons/landing/next-arrow-big.svg';
 import activeArrowPrevBig from 'src/assets/icons/landing/prev-arrow-enable.svg';
+import { PrevArrowSidlerBanner } from 'src/assets/icons/IconComponent';
 
 const DELAY_TIME = 150000;
-const SLIDE_PER_PAGE = 3;
+const SLIDE_PER_PAGE = 1;
 
 function SampleNextArrow(props: any) {
   const { className, style, onClick } = props;
   return (
+    // <PrevArrowSidlerBanner/>
     <img
       className={`${className}`}
       src={activeArrowBig}
       alt="prev"
       onClick={onClick}
-      style={{ ...style, display: 'block', width: '28px', height: '28px', right: '-28px' }}
+      style={{ ...style, display: 'block', width: '28px', height: '28px', right: '-35px' }}
     />
   );
 }
@@ -34,7 +36,7 @@ function SamplePrevArrow(props: any) {
         display: 'block',
         width: '28px',
         height: '28px',
-        left: '-28px',
+        left: '-35px',
         transform: 'rotate(35deg) !important',
       }}
     />
@@ -49,7 +51,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
 
   let idTimer: any;
 
-  const settings = useMemo(
+  const settings: Settings = useMemo(
     () => ({
       dots: false,
       infinite: mediaList.length > 6,
@@ -58,8 +60,13 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
       slidesToScroll: SLIDE_PER_PAGE,
       autoplay: false,
       fade: false,
+      arrows: mediaList.filter((image: any) => image?.id % 2 !== 1).length > 1,
       prevArrow: <SamplePrevArrow isPrev={true} />,
       nextArrow: <SampleNextArrow isNext={true} />,
+      afterChange: (index: number) => {
+        const banner = mediaList.filter((image: any) => image?.id % 2 !== 1)[index];
+        handleSelectImage(banner, true);
+      },
     }),
     // eslint-disable-next-line
     [],
@@ -119,7 +126,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
                 className="none-outline"
                 key={image?.id}
                 onClick={() => handleSelectImage(image, true)}
-                style={{ outline: 'none', width: 110 }}
+                style={{ outline: 'none', width: 50 }}
               >
                 <img src={image?.thumbnail_url} alt="banner" className={cx} />
               </div>

@@ -1,13 +1,34 @@
-import './styles.scss';
+import { BSCIcon, ETHIcon, PolygonIconWhite, Project1, SolanaIconWhite } from 'src/assets/icons';
 import CardProject from './components/CardProject';
-import { PolygonIconWhite, Project1, SolanaIconWhite, BSCIcon, ETHIcon } from 'src/assets/icons';
+import './styles.scss';
 
-import Slider from 'react-slick';
 import { get } from 'lodash';
+import { useState } from 'react';
+import Slider, { Settings } from 'react-slick';
+import { NextArrowSlider, PrevArrowSlider } from 'src/assets/icons/IconComponent';
 import { useFetch } from 'src/hooks/useFetch';
+
+function NextArrow(props: any) {
+  const { className, onClick, lastPage } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <NextArrowSlider color={lastPage ? '#59595c' : '#ffffff'} />
+    </div>
+  );
+}
+
+function PrevArrow(props: any) {
+  const { className, onClick, currentSlide } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <PrevArrowSlider color={currentSlide === 0 ? '#59595c' : '#ffffff'} />
+    </div>
+  );
+}
 
 const ProjectsSection: React.FC = () => {
   const { data } = useFetch(`${process.env.REACT_APP_API_ENDPOINT}/vispx-project-list`);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
 
   const getNetwork = (projectNetwork: string) => {
     switch (projectNetwork) {
@@ -22,12 +43,21 @@ const ProjectsSection: React.FC = () => {
     }
   };
 
-  const settings = {
+  const settings: Settings = {
     dots: true,
-    infinite: get(data, 'data.data', []).length > 3 ? true : false,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    rows: 2,
+    nextArrow: <NextArrow lastPage={currentSlide === Math.floor(20 / 8) * 4} />,
+    prevArrow: <PrevArrow currentSlide={currentSlide} />,
+
+    afterChange: (index) => {
+      console.log(index);
+      setCurrentSlide(index);
+    },
+
     responsive: [
       {
         breakpoint: 2048,
@@ -75,7 +105,7 @@ const ProjectsSection: React.FC = () => {
         <div className="title-1">Projects in VispX Factory</div>
         <div className="list-card">
           <Slider {...settings}>
-            {get(data, 'data.data', []).map((card: any) => {
+            {[...get(data, 'data.data', []), ...get(data, 'data.data', [])].map((card: any) => {
               return (
                 <CardProject
                   project_status={card?.project_status}
