@@ -88,6 +88,10 @@ const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => 
     },
   ];
 
+  const defaultNoRecord = () => {
+    return <div className="table-empty">No record found</div>;
+  };
+
   return (
     <Table
       style={{ marginTop: '60px' }}
@@ -96,6 +100,7 @@ const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => 
       dataSource={dataSources}
       pagination={false}
       rowKey={'project_name'}
+      locale={{ emptyText: !dataSources.length && defaultNoRecord }}
     />
   );
 };

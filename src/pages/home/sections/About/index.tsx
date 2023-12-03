@@ -1,8 +1,33 @@
-import { Icon1, Icon2, Icon3 } from 'src/assets/icons';
+import _ from 'lodash';
+import { useEffect, useState } from 'react';
 import Card from './components/Card';
 import './styles.scss';
+import axios from 'src/services/axios';
 
 const AboutSection: React.FC = () => {
+  const [aboutPool, setAboutPool] = useState<any>([]);
+  const getListAboutPool = async () => {
+    try {
+      const resp = (await axios.get('/vispx-about-invest-pool')) as any;
+      const data = _.get(resp, 'data.data.data', []) as any[];
+      if (data.length > 0) {
+        const item = data[0];
+        const result = {
+          ...item,
+          id: 'STATIC',
+        };
+        console.log({ result });
+        setAboutPool(result);
+      }
+    } catch (err: any) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    getListAboutPool();
+  }, []);
+
   return (
     <div className="about-section">
       <div className="layout">
@@ -12,7 +37,10 @@ const AboutSection: React.FC = () => {
           pool of their choice with ZERO barrier of entry
         </div>
         <div className="list-card">
-          <Card
+          {aboutPool.map((item: any) => (
+            <Card icon={item.icon} title={item.title} description={item.description} />
+          ))}
+          {/* <Card
             icon={Icon1}
             title="VispX Genesis NFT Pool"
             description="VispX has a Genesis Collection of 2,500 NFT holders, ready to invest in your project. XPAD is specifically designed to give exclusive access to our NFT holders amongst some of the biggest utilities in launchpad arena."
@@ -31,7 +59,7 @@ const AboutSection: React.FC = () => {
             icon={Icon3}
             title="Open Pool"
             description="VispX is the first-ever launchpad to allow direct participation in IDOs with ZERO barrier of entry. Within 4 simple clicks, retail investors can invest into your projects IDO"
-          />
+          /> */}
         </div>
       </div>
     </div>

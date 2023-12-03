@@ -1,0 +1,44 @@
+.filter-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40px;
+  span {
+    color: #fff;
+  }
+  .filter-item {
+    background: #fff;
+    opacity: 60%;
+    border-radius: 10px;
+    padding: 7px 10px;
+    cursor: pointer;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 2px;
+      margin-top: 2px;
+    }
+    .label {
+      color: #000;
+      line-height: 16px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .active-filter {
+    opacity: 1 !important;
+  }
+
+  .filter-left {
+    display: flex;
+    align-items: center;
+  }
+  .search-right {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}

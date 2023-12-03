@@ -131,4 +131,8 @@
     color: var(--btn-contained-text-color, $color-neutral-white) !important;
     top: 4.8%;
   }
+
+  @include maxWidth($tablet) {
+    margin-top: 20px;
+  }
 }

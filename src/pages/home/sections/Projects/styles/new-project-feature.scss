@@ -1,0 +1,23 @@
+.new-project-feature {
+  display: flex;
+  margin: 65px 40px 32px;
+  .content {
+    padding: 45px;
+    height: 430px;
+    width: 420px;;
+    background-image: url('./boder-new-project.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    .title {
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .banner {
+  }
+}

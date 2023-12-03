@@ -9,6 +9,9 @@
 
 .ant-table {
   background: #05061c !important;
+  .ant-table-content {
+    overflow: hidden !important;
+  }
   table {
     overflow: hidden;
     border-radius: 8px !important;
@@ -55,4 +58,9 @@
     text-transform: capitalize;
     border-bottom: 1px solid #38383c;
   }
+}
+
+.table-empty {
+  color: #93939b;
+  margin: 20px 0;
 }

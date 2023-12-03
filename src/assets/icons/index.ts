@@ -180,3 +180,7 @@ export { default as Service } from '../images/Service.svg';
 export { default as Project1 } from '../images/project1.svg';
 export { default as ArrowNextActive } from '../icons/landing/arrow-next-active.svg';
 export { default as ArrowNextProject } from '../icons/landing/next-arrow.svg';
+export { default as ComingSoonFilter } from '../icons/landing/coming-soon-filter.svg';
+export { default as InProgressFilter } from '../icons/landing/in-progress-filter.svg';
+export { default as CompletedFilter } from '../icons/landing/completed-filter.svg';
+export { default as IconSearchInput } from '../icons/landing/icon-search.svg';

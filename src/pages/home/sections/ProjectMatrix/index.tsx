@@ -51,7 +51,7 @@ const ProjectMatrix: React.FC = () => {
     {
       key: '2',
       label: 'Yieldbox Injection',
-      children: <TableYieldboxInjection dataSources={dataShow} />,
+      children: <TableYieldboxInjection dataSources={[]} />,
     },
   ];
 

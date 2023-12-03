@@ -46,13 +46,15 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       },
       [theme.breakpoints.down(1440)]: {
         position: 'absolute',
-        bottom: (props: any) => (props.collapsed ? '10vh' : '0vh'),
+        bottom: (props: any) => (props.collapsed ? '10vh' : '10vh'),
         width: '100%',
       },
       [theme.breakpoints.down(600)]: {
-        position: 'absolute',
-        bottom: (props: any) => (props.collapsed ? '10vh' : '0'),
+        position: 'relative',
+        bottom: (props: any) => (props.collapsed ? '10vh' : '20vh'),
         width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
       },
     },
     overlay: {

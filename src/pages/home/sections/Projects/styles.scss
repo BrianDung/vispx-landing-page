@@ -10,7 +10,7 @@
     max-width: 1440px;
     margin: auto;
     @media only screen and (max-width: 1440px) {
-      padding: 0 130px;
+      padding: 0 80px;
     }
     @include maxWidth($tablet) {
       padding: 20px 20px;
@@ -42,6 +42,8 @@
   }
   .list-card {
     margin-top: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
     .slick-dots {
       bottom: -45px;
     }

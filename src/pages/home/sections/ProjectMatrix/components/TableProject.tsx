@@ -101,6 +101,9 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       render: (value: string) => formatATHPrice(value),
     },
   ];
+  const defaultNoRecord = () => {
+    return <div className="table-empty">No record found</div>;
+  };
 
   return (
     <Table
@@ -110,6 +113,7 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       dataSource={dataSources}
       pagination={false}
       rowKey={'project_name'}
+      locale={{ emptyText: !dataSources.length && defaultNoRecord }}
     />
   );
 };

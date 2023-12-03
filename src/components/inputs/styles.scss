@@ -5,19 +5,16 @@
   margin-bottom: 0;
   .ant-typograp hy {
     margin-bottom: 4px;
-    font-family: 'Hind-SemiBold';
   }
   .input-default {
-    height: 48px;
+    height: 32px;
     border: 1px solid var(--input-border-color, $color-neutral-neutral-5);
     border-radius: 12px;
     width: 100%;
     background: transparent;
     input {
       background: transparent;
-      font-family: 'Hind-Regular';
       font-size: $font-size-3;
-      margin-top: 2px;
     }
     &:focus-within {
       border: 1px solid var(--input-border-focus-color, $color-state-info) !important ;
