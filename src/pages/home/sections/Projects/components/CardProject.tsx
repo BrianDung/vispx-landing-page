@@ -48,52 +48,58 @@ const CardProject: React.FC<{
     }
   };
 
-  
-
   const color = () => {
-    if(project_status === STATUS_LANDING_PROJECT_AVAILABLE.IN_PROGRESS) {
-      return `rgba(31, 209, 180, 0.60)`
+    if (project_status === STATUS_LANDING_PROJECT_AVAILABLE.IN_PROGRESS) {
+      return `rgba(31, 209, 180, 0.60)`;
     }
-    if(project_status === STATUS_LANDING_PROJECT_AVAILABLE.COMING_SOON) {
-      return `rgba(249, 25, 61, 0.60)`
+    if (project_status === STATUS_LANDING_PROJECT_AVAILABLE.COMING_SOON) {
+      return `rgba(249, 25, 61, 0.60)`;
     }
-    return `rgba(31, 191, 209, 0.60)`
-  }
+    return `rgba(31, 191, 209, 0.60)`;
+  };
   return (
     <div className="card-project">
       <img
         src={icon}
         alt="icon"
-        className="icon"
+        className="icon banner-image-card"
         width={'100%'}
-        style={{ borderRadius: '24px 24px 0px 0px', maxHeight: 164 }}
+        style={{ maxHeight: 164 }}
       />
       <div className="layout-project">
         <div className="content">
           <div className="flex">
             <div className="title">{title}</div>
-            <Tag style={{ borderRadius: 24 , maxHeight:26 }} color={color()}>
+            <Tag style={{ borderRadius: 24, maxHeight: 26, marginRight: 0 }} color={color()}>
               {project_status || 'Completed'}
             </Tag>
           </div>
-          <div className="description-project">{description}</div>
-          <div className="flex blc-info">
-            <div style={{ marginRight: 20 }} className="text">
-              Blockchain
-            </div>
-            <div className="flex network-info">
-              <img src={networkIcon} alt="icon" style={{ marginRight: 6, objectFit: 'cover' }} />{' '}
-              <span className="network-name">{project_network}</span>
-            </div>
-          </div>
-          <div
-            className="flex justify-between pointer"
-            style={{ alignItems: 'center', marginTop: 42 }}
-          >
-            <ButtonLinear onClick={handleClickTrailer}>Trailer</ButtonLinear>
-            <div onClick={handleClickDetail} className="flex" style={{ alignItems: 'center' }}>
-              <div className="view-detail">View detail</div>
-              <img src={RightIcon} alt="icon" style={{ width: 16, height: 16 }} />
+          <div className="content-card">
+            <div className="description-project">{description}</div>
+            <div>
+              <div className="flex blc-info">
+                <div style={{ marginRight: 20 }} className="text">
+                  Blockchain
+                </div>
+                <div className="flex network-info">
+                  <img
+                    src={networkIcon}
+                    alt="icon"
+                    style={{ marginRight: 6, objectFit: 'cover' }}
+                  />
+                  <span className="network-name">{project_network}</span>
+                </div>
+              </div>
+              <div
+                className="flex justify-between pointer"
+                style={{ alignItems: 'center', marginTop: '20px' }}
+              >
+                <ButtonLinear onClick={handleClickTrailer}>Trailer</ButtonLinear>
+                <div onClick={handleClickDetail} className="flex" style={{ alignItems: 'center' }}>
+                  <div className="view-detail">View detail</div>
+                  <img src={RightIcon} alt="icon" style={{ width: 16, height: 16 }} />
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -32,4 +32,13 @@
       background: var(--btn-contained-bg-disable, $color-neutral-neutral-5);
     }
   }
+
+  &--btn-launch-pad {
+    color: var(--btn-contained-text-color, $color-neutral-white);
+    background: rgba(
+      $color: var(--btn-contained-bg-launch-pad, $color-btn-launch-pad),
+      $alpha: 0.1
+    );
+    border: none;
+  }
 }

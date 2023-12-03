@@ -1,15 +1,15 @@
-import { LogoVispx, Slider1Icon } from 'src/assets/icons';
-import './styles.scss';
 import { Col, Row } from 'antd';
-import About from './components/About';
 import ReactPlayer from 'react-player/lazy';
-
+import { LogoVispx, Slider1Icon } from 'src/assets/icons';
+import About from './components/About';
+import './styles.scss';
 import { CircularProgress, Grid } from '@material-ui/core';
+import LaunchBtnComponent from './components/LaunchBtnComponent';
 
 const Slider: React.FC<any> = (props: any) => {
   const { staticItem } = props;
   const renderInfor = () => {
-    console.log({src: staticItem?.media_link_upload})
+    console.log({ src: staticItem?.media_link_upload });
     if (staticItem?.media_link_type === 'video') {
       return (
         <ReactPlayer
@@ -59,6 +59,11 @@ const Slider: React.FC<any> = (props: any) => {
         </Col>
         <Col xl={12} xxl={12} lg={12} xs={24} md={24} className="wrapper-icon-slider">
           {renderInfor()}
+        </Col>
+        <Col className="button-join-revolution">
+          <div className="button-launch-pad">
+            <LaunchBtnComponent isStatic={false} title="Join The Revolution" />
+          </div>
         </Col>
       </Row>
     </div>

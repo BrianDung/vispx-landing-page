@@ -1,8 +1,11 @@
-import './styles.scss';
-import TableProjectComponent from './components/TableProject';
-import { useFetch } from 'src/hooks/useFetch';
+import { TabsProps } from 'antd';
 import { get } from 'lodash';
 import { useEffect, useState } from 'react';
+import CustomTabs from 'src/components/tabs';
+import { useFetch } from 'src/hooks/useFetch';
+import TableProjectComponent from './components/TableProject';
+import './styles.scss';
+import TableYieldboxInjection from './components/TableYieldboxInjection';
 
 const ProjectMatrix: React.FC = () => {
   const { data } = useFetch<any>(`${process.env.REACT_APP_API_ENDPOINT}/vispx-matrix-list`);
@@ -39,12 +42,25 @@ const ProjectMatrix: React.FC = () => {
 
   const dataShow = get(data, 'data.data', []);
 
+  const items: TabsProps['items'] = [
+    {
+      key: '1',
+      label: 'Project matrix',
+      children: <TableProjectComponent dataSources={dataShow} />,
+    },
+    {
+      key: '2',
+      label: 'Yieldbox Injection',
+      children: <TableYieldboxInjection dataSources={[]} />,
+    },
+  ];
+
   return (
     <div className="project-matrix">
       <div className="layout">
-        <div className="header flex justify-center align-center">
+        {/* <div className="header flex justify-center align-center">
           <div className="label center">Project matrix</div>
-          {/* <div className="paging">
+          <div className="paging">
             <div className={`button ${isPrevious ? '' : 'disabled'}`} onClick={onPreviousPage}>
               <ArrowPrevious color={isPrevious ? '#fff' : '#64646c'} />
             </div>
@@ -55,9 +71,9 @@ const ProjectMatrix: React.FC = () => {
             <div className={`button ${isNext ? '' : 'disabled'}`} onClick={onNextPage}>
               <ArrowNext color={isNext ? '#fff' : '#64646c'} />
             </div>
-          </div> */}
-        </div>
-        {!!data && <TableProjectComponent dataSources={dataShow} />}
+          </div>
+        </div> */}
+        {!!data && <CustomTabs type="card" tabs={items} />}
       </div>
     </div>
   );

@@ -3,8 +3,13 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme: any) => {
   return {
     container: {
-      width: '100%',
+      width: '100px',
       margin: 'auto',
+      marginRight: '100px',
+      [theme.breakpoints.down(600)]: {
+        marginRight: 'unset',
+        margin: 'auto',
+      },
     },
     thumbnail: {
       cursor: 'pointer',
@@ -17,7 +22,7 @@ const useStyles = makeStyles((theme: any) => {
         height: '100px',
       },
       [theme.breakpoints.up(1200)]: {
-        height: '120px',
+        height: '60px',
       },
       [theme.breakpoints.up(1440)]: {
         height: '60px',

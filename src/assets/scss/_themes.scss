@@ -68,6 +68,7 @@ body[data-theme='Light'] {
 
   // >>> BTN
   --btn-contained-bg: #{$color-primary-primary};
+  --btn-contained-bg-launch-pad: #{$color-btn-launch-pad};
   --btn-contained-bg-rgb: #{$color-primary-rgb};
   --btn-contained-bg-hover: #{$color-neutral-blue};
   --btn-contained-bg-disable: #{$color-neutral-neutral-5};

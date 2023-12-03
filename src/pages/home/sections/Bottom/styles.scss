@@ -1,4 +1,4 @@
-@import "../../../../responsive.scss";
+@import '../../../../responsive.scss';
 
 .bottom {
   background: #030407;
@@ -71,6 +71,10 @@
       font-weight: 600;
       line-height: 20px;
       color: #cecece;
+      margin-bottom: 12px;
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
     }
   }
 }

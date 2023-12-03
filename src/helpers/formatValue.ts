@@ -34,4 +34,29 @@ const formatDate = (date: any, formatTime = DATE_TIME_FORMAT) => {
   return dayjs(date).format(formatTime);
 };
 
-export { verifyValue, formatValue, formatDuration, formatDate };
+const formatATHROI = (number: string) => {
+  if (isNaN(Number(number))) {
+    return number;
+  } else {
+    return `x${new BigNumber(number || 0).toFormat()}`;
+  }
+};
+
+const formatATHPrice = (number: string) => {
+  const allPart = number?.split('_');
+  let price = '';
+  let post_fix = '';
+  let final = `${new BigNumber(price || 0).toFormat()} ${post_fix}`;
+  if (allPart?.length > 1) {
+    price = allPart[0];
+    post_fix = allPart[1];
+    final = `${new BigNumber(price || 0).toFormat()} ${post_fix}`;
+  } else if (isNaN(Number(number))) {
+    return number;
+  } else {
+    return new BigNumber(number || 0).toFormat();
+  }
+  return final;
+};
+
+export { verifyValue, formatValue, formatDuration, formatDate, formatATHROI, formatATHPrice };

@@ -15,7 +15,7 @@ interface TableTxProps {
   dataSources: any[];
 }
 
-const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
+const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => {
   const { dataSources } = props;
   const getNetwork = (projectNetwork: string) => {
     switch (projectNetwork) {
@@ -52,32 +52,25 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       },
     },
     {
-      title: 'ATH ROI',
+      title: 'TOKEN',
       dataIndex: 'ath_roi',
       align: 'center',
       width: '100px',
       render: (value: string) => formatATHROI(value),
     },
     {
-      title: 'TOTAL RAISE',
+      title: 'AMOUNT INJECTED',
       dataIndex: 'total_raise',
       align: 'center',
       key: 'total_raise',
       render: (value: string) => `$ ${new BigNumber(value || 0).toFormat()}`,
     },
     {
-      title: 'CATEGORY',
-      dataIndex: 'category',
+      title: 'ATH PRICE',
       align: 'center',
-      key: 'category',
-      render: (value: string, row: any) => {
-        return (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', justifyContent: 'center' }}>
-            {row?.category1 && <Tag color="#2E90FA">{row?.category1}</Tag>}
-            {row?.category2 && <Tag color="#3F2AA5">{row?.category2}</Tag>}
-          </div>
-        );
-      },
+      dataIndex: 'ath_price',
+      key: 'ath_price',
+      render: (value: string) => formatATHPrice(value),
     },
     {
       title: 'CHAIN',
@@ -87,20 +80,14 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       render: (value: string) => getNetwork(value),
     },
     {
-      title: 'TOTAL SUPPLY',
+      title: 'ATH VALUE',
       align: 'center',
       dataIndex: 'total_supply',
       key: 'total_supply',
       render: (value: string) => new BigNumber(value || 0).toFormat(),
     },
-    {
-      title: 'ATH PRICE',
-      align: 'center',
-      dataIndex: 'ath_price',
-      key: 'ath_price',
-      render: (value: string) => formatATHPrice(value),
-    },
   ];
+
   const defaultNoRecord = () => {
     return <div className="table-empty">No record found</div>;
   };
@@ -118,4 +105,4 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
   );
 };
 
-export default TableProjectComponent;
+export default TableYieldboxInjection;
