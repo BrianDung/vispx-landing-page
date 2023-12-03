@@ -4,7 +4,6 @@ import useStyles from './style';
 
 import activeArrowBig from 'src/assets/icons/landing/next-arrow-big.svg';
 import activeArrowPrevBig from 'src/assets/icons/landing/prev-arrow-enable.svg';
-import { PrevArrowSidlerBanner } from 'src/assets/icons/IconComponent';
 
 const DELAY_TIME = 150000;
 const SLIDE_PER_PAGE = 1;

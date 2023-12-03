@@ -1,14 +1,18 @@
 @import '../../../../../responsive.scss';
 
 .ant-table-cell {
-  border-bottom: 1px solid #38383C !important;
+  border-bottom: 1px solid #38383c !important;
   &::before {
-    background-color: #11122E !important;
+    background-color: #11122e !important;
   }
 }
 
 .ant-table {
   background: #05061c !important;
+  table {
+    overflow: hidden;
+    border-radius: 8px !important;
+  }
 }
 
 .ant-table-cell-row-hover {
@@ -19,7 +23,7 @@
   background: #11123e !important;
 }
 
-.ant-table-wrapper .ant-table-tbody >tr.ant-table-row:hover>td {
+.ant-table-wrapper .ant-table-tbody > tr.ant-table-row:hover > td {
   background: #11123e !important;
 }
 

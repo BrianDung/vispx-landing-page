@@ -1,15 +1,8 @@
-import { Col, Row } from 'antd';
-import './styles.scss';
-import Card from './components/Card';
 import { Icon1, Icon2, Icon3 } from 'src/assets/icons';
-
-const colProps = {
-  xs: 24,
-  md: 8,
-};
+import Card from './components/Card';
+import './styles.scss';
 
 const AboutSection: React.FC = () => {
-  const a = [1, 2, 3, 4];
   return (
     <div className="about-section">
       <div className="layout">

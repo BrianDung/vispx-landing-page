@@ -1,10 +1,9 @@
 import BigNumber from 'bignumber.js';
+import get from 'lodash/get';
+import { voteeToast } from 'src/components/Toast';
 import { SECONDS_IN_DAY, SECONDS_IN_MONTH, TYPE_FILE, ValueStatus } from 'src/constants';
 import { STABLE_COINS } from 'src/constants/exchange';
 import { convertRoundFloor } from './formatNumber';
-import get from 'lodash/get';
-import { voteeToast } from 'src/components/Toast';
-import { isNaN } from 'lodash';
 
 export const KEY_CODE = {
   E: 69, //e
