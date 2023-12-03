@@ -10,15 +10,7 @@ const AboutSection: React.FC = () => {
     try {
       const resp = (await axios.get('/vispx-about-invest-pool')) as any;
       const data = _.get(resp, 'data.data.data', []) as any[];
-      if (data.length > 0) {
-        const item = data[0];
-        const result = {
-          ...item,
-          id: 'STATIC',
-        };
-        console.log({ result });
-        setAboutPool(result);
-      }
+      setAboutPool(data);
     } catch (err: any) {
       console.error(err);
     }
@@ -37,8 +29,8 @@ const AboutSection: React.FC = () => {
           pool of their choice with ZERO barrier of entry
         </div>
         <div className="list-card">
-          {aboutPool.map((item: any) => (
-            <Card icon={item.icon} title={item.title} description={item.description} />
+          {aboutPool?.map((item: any) => (
+            <Card icon="" title={item?.title} description={item?.description} />
           ))}
           {/* <Card
             icon={Icon1}

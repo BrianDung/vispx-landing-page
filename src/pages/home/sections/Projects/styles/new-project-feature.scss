@@ -1,13 +1,23 @@
+@import '../../../../../responsive.scss';
+
 .new-project-feature {
-  display: flex;
-  margin: 65px 40px 32px;
+  display: flex !important;
+  margin: 65px auto 32px;
+  justify-content: center;
+  @include maxWidth($tablet) {
+    margin: 65px auto 32px;
+  }
   .content {
     padding: 45px;
-    height: 430px;
-    width: 420px;;
+    height: 350px;
+    width: 340px;
     background-image: url('./boder-new-project.svg');
     background-size: cover;
     background-repeat: no-repeat;
+    @include maxWidth($tablet) {
+      height: auto;
+      width: auto;
+    }
     .title {
       font-size: 30px;
       line-height: 30px;
@@ -17,7 +27,77 @@
       justify-content: space-between;
       align-items: center;
     }
+    .social-new-project {
+      margin: 34px 0;
+      display: flex;
+      img {
+        cursor: pointer;
+        margin-right: 20px;
+      }
+    }
+    .value-new-project {
+      display: flex;
+      .block-value-new-project {
+        border-radius: 20px;
+        background-color: #fff;
+        margin-right: 36px;
+        height: 79px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:last-child {
+          margin-right: 0;
+        }
+        .block-value {
+          font-weight: 700;
+          font-size: 25px;
+          line-height: 30px;
+          color: #161726;
+        }
+        .block-label {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 20px;
+          color: #a0a2ae;
+        }
+      }
+    }
+    .status-project-feature {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 34px 0;
+      .title-status {
+        color: #98a2b3;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .label-status {
+        color: #fff;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 2px;
+        }
+      }
+    }
   }
   .banner {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
   }
+}
+
+.h-50px {
+  height: 50px !important;
 }

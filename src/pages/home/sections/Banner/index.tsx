@@ -14,6 +14,7 @@ import iconTrailer from 'src/assets/icons/landing/game.svg';
 import Slider from '../Slider';
 import '../Slider/styles.scss';
 import LaunchBtnComponent from '../Slider/components/LaunchBtnComponent';
+import { TwitterIconLanding } from 'src/assets/icons';
 
 interface BannerMediaProps {
   currentBanner?: {
@@ -245,7 +246,7 @@ const Banner = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={'images/landing/twitter.svg'} alt="" />
+                <img src={TwitterIconLanding} alt="" />
               </a>
               <a
                 className={`${styles.socials}__container--item`}

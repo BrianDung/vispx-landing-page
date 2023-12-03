@@ -184,3 +184,6 @@ export { default as ComingSoonFilter } from '../icons/landing/coming-soon-filter
 export { default as InProgressFilter } from '../icons/landing/in-progress-filter.svg';
 export { default as CompletedFilter } from '../icons/landing/completed-filter.svg';
 export { default as IconSearchInput } from '../icons/landing/icon-search.svg';
+export { default as IconEarth } from '../icons/landing/earth.svg';
+export { default as TwitterIconLanding } from '../icons/landing/x-logo-icon.svg';
+export { default as TelegramIconLanding } from '../icons/landing/telegram-landing.svg';

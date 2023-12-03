@@ -9,7 +9,7 @@ import '../styles/filter.scss';
 
 export enum SLIDER_PROJECT_STATUS {
   UPCOMING = 'Upcoming',
-  INPROGRESS = 'In progress',
+  INPROGRESS = 'In Progress',
   COMPLETED = 'Completed',
 }
 

@@ -8,12 +8,17 @@ import './styles.scss';
 import TableYieldboxInjection from './components/TableYieldboxInjection';
 
 const ProjectMatrix: React.FC = () => {
-  const { data } = useFetch<any>(`${process.env.REACT_APP_API_ENDPOINT}/vispx-matrix-list`);
+  const { data: matrixProject } = useFetch<any>(
+    `${process.env.REACT_APP_API_ENDPOINT}/vispx-matrix-list`,
+  );
+  const { data: yieldBox } = useFetch<any>(
+    `${process.env.REACT_APP_API_ENDPOINT}/vispx-yieldbox-inject`,
+  );
 
   const [isNext, setIsNext] = useState(false);
   const [isPrevious, setIsPrevious] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const maxPage = Number(Math.ceil(data?.data?.total / 4) || 1);
+  const maxPage = Number(Math.ceil(matrixProject?.data?.total / 4) || 1);
 
   useEffect(() => {
     if (currentPage < maxPage) {
@@ -40,18 +45,19 @@ const ProjectMatrix: React.FC = () => {
     }
   };
 
-  const dataShow = get(data, 'data.data', []);
+  const dataShowMatrix = get(matrixProject, 'data.data', []);
+  const dataShowYeildBox = get(yieldBox, 'data.data', []);
 
   const items: TabsProps['items'] = [
     {
       key: '1',
       label: 'Project matrix',
-      children: <TableProjectComponent dataSources={dataShow} />,
+      children: <TableProjectComponent dataSources={dataShowMatrix} />,
     },
     {
       key: '2',
       label: 'Yieldbox Injection',
-      children: <TableYieldboxInjection dataSources={[]} />,
+      children: <TableYieldboxInjection dataSources={dataShowYeildBox} />,
     },
   ];
 
@@ -73,7 +79,7 @@ const ProjectMatrix: React.FC = () => {
             </div>
           </div>
         </div> */}
-        {!!data && <CustomTabs type="card" tabs={items} />}
+        {!!matrixProject && <CustomTabs type="card" tabs={items} />}
       </div>
     </div>
   );

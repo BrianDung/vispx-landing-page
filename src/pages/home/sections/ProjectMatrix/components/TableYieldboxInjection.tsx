@@ -17,6 +17,7 @@ interface TableTxProps {
 
 const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => {
   const { dataSources } = props;
+  console.log('data', dataSources);
   const getNetwork = (projectNetwork: string) => {
     switch (projectNetwork) {
       case 'bsc':
@@ -53,17 +54,17 @@ const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => 
     },
     {
       title: 'TOKEN',
-      dataIndex: 'ath_roi',
+      dataIndex: 'token',
       align: 'center',
       width: '100px',
-      render: (value: string) => formatATHROI(value),
+      render: (value: string) => `$${value}`,
     },
     {
       title: 'AMOUNT INJECTED',
-      dataIndex: 'total_raise',
+      dataIndex: 'amount_inject',
       align: 'center',
-      key: 'total_raise',
-      render: (value: string) => `$ ${new BigNumber(value || 0).toFormat()}`,
+      key: 'amount_inject',
+      render: (value: string) => new BigNumber(value || 0).toFormat(),
     },
     {
       title: 'ATH PRICE',
@@ -82,9 +83,9 @@ const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => 
     {
       title: 'ATH VALUE',
       align: 'center',
-      dataIndex: 'total_supply',
-      key: 'total_supply',
-      render: (value: string) => new BigNumber(value || 0).toFormat(),
+      dataIndex: 'ath_value',
+      key: 'ath_value',
+      render: (value: string) => formatATHPrice(value),
     },
   ];
 

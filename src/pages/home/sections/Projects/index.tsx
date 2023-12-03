@@ -1,15 +1,16 @@
-import { BSCIcon, ETHIcon, PolygonIconWhite, Project1, SolanaIconWhite } from 'src/assets/icons';
-import CardProject from './components/CardProject';
-import './styles.scss';
-
-import _, { get } from 'lodash';
+import _ from 'lodash';
 import { useEffect, useMemo, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import { BSCIcon, ETHIcon, PolygonIconWhite, Project1, SolanaIconWhite } from 'src/assets/icons';
 import { NextArrowSlider, PrevArrowSlider } from 'src/assets/icons/IconComponent';
-import { useFetch } from 'src/hooks/useFetch';
-import FilterProject from './components/FilterProject';
+import useDebounce from 'src/hooks/useDebounce';
 import axios from 'src/services/axios';
+import CardProject from './components/CardProject';
+import FilterProject from './components/FilterProject';
 import NewProject from './components/NewProject';
+import './styles.scss';
 
 function NextArrow(props: any) {
   const { className, onClick, lastPage } = props;
@@ -34,6 +35,7 @@ const ProjectsSection: React.FC = () => {
   const [projects, setProjects] = useState<any>([]);
   const [activeFilter, setActiveFilter] = useState<any>('');
   const [search, setSearch] = useState<any>('');
+  const debounceSearch = useDebounce(search, 1000);
 
   const getProjects = async () => {
     try {
@@ -50,7 +52,7 @@ const ProjectsSection: React.FC = () => {
   useEffect(() => {
     getProjects();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeFilter]);
+  }, [activeFilter, debounceSearch]);
 
   const getNetwork = (projectNetwork: string) => {
     switch (projectNetwork) {
@@ -70,9 +72,6 @@ const ProjectsSection: React.FC = () => {
       dots: true,
       infinite: false,
       speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      rows: projects.length > 3 ? 2 : 1,
       nextArrow: <NextArrow lastPage={currentSlide === Math.floor(projects.length / 8) * 4} />,
       prevArrow: <PrevArrow currentSlide={currentSlide} />,
 
@@ -87,6 +86,7 @@ const ProjectsSection: React.FC = () => {
           settings: {
             slidesToShow: 4,
             slidesToScroll: 4,
+            rows: 2,
           },
         },
         {
@@ -94,13 +94,16 @@ const ProjectsSection: React.FC = () => {
           settings: {
             slidesToShow: 4,
             slidesToScroll: 4,
+            rows: 2,
           },
         },
         {
           breakpoint: 1439,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 4,
+            slidesPerRow: 4,
+            slidesToScroll: 1,
+            rows: 2,
           },
         },
         {
@@ -117,6 +120,9 @@ const ProjectsSection: React.FC = () => {
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
+            rows: 1,
+            nextArrow: <></>,
+            prevArrow: <></>,
           },
         },
       ],
@@ -134,7 +140,7 @@ const ProjectsSection: React.FC = () => {
           setActiveFilter={setActiveFilter}
           setSearch={setSearch}
         />
-        {/* <NewProject /> */}
+        <NewProject />
         <div className="list-card">
           <Slider {...settings}>
             {projects.map((card: any) => {
