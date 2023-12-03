@@ -47,6 +47,10 @@
     .slick-dots {
       bottom: -45px;
     }
+    @include maxWidth($mobile) {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
   }
   .slick-arrow::before {
     display: none !important;

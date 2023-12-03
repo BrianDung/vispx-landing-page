@@ -1,4 +1,6 @@
 @import 'src/assets/scss/responsive.scss';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
 
 .App {
   text-align: center;
@@ -87,11 +89,11 @@
   width: 100%;
 }
 
-.w-110{
+.w-110 {
   width: 110px;
 }
 
-.h-62{
+.h-62 {
   height: 62px;
 }
 .hidden {

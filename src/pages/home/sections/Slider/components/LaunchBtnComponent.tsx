@@ -4,9 +4,15 @@ import '../styles.scss';
 interface LaunchBtnComponentProps {
   isStatic: boolean;
   title?: string;
-  route?: () => void;
+  route?: any;
+  className?: string;
 }
-const LaunchBtnComponent = ({ isStatic, title = 'Launch app', route }: LaunchBtnComponentProps) => {
+const LaunchBtnComponent = ({
+  isStatic,
+  className,
+  title = 'Launch app',
+  route,
+}: LaunchBtnComponentProps) => {
   const openXpad = () => {
     window.location.replace('/xpad');
   };
@@ -15,8 +21,8 @@ const LaunchBtnComponent = ({ isStatic, title = 'Launch app', route }: LaunchBtn
     <ButtonContained
       buttonType="btn-launch-pad"
       mode="medium"
-      className={`${isStatic ? 'is-static icon-fixed' : ''}  button-lunch-pad`}
-      onClick={route ?? openXpad}
+      className={`${isStatic ? 'is-static icon-fixed' : ''}  button-lunch-pad ${className}`}
+      onClick={route ? () => window.location.replace(route) : openXpad}
     >
       {title}
     </ButtonContained>

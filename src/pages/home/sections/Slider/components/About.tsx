@@ -12,7 +12,6 @@ const Information = ({ text1, text2 }: { text1: string; text2: string }) => {
 
 const About: React.FC<any> = (props: any) => {
   const { staticItem } = props;
-  console.log({ staticItem });
   const description = `Our XPAD 1.0 is a token-less and NFT powered omni-chain launchpad, focuses on bringing
   retail investors and projects closer together with zero barrier of entry`;
   const total_raise = staticItem?.total_raise || '';
@@ -21,7 +20,9 @@ const About: React.FC<any> = (props: any) => {
   const user = staticItem?.user || '';
   return (
     <div className="about-slider">
-      <div className="title flex">Multichain Investment Evolution</div>
+      <div className="title flex">
+        {staticItem.project_name}
+      </div>
       <div className="description">{staticItem?.description || description}</div>
       {/* <div className="button-launch-pad">
         <LaunchBtnComponent isStatic={false} />

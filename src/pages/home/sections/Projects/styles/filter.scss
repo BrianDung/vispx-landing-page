@@ -1,8 +1,13 @@
+@import '../../../../../responsive.scss';
+
 .filter-project {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 40px;
+  @include maxWidth($tablet) {
+    margin: 0 20px;
+  }
   span {
     color: #fff;
   }
@@ -36,6 +41,9 @@
   .filter-left {
     display: flex;
     align-items: center;
+    @include maxWidth($tablet) {
+      display: none;
+    }
   }
   .search-right {
     background-color: #fff;
