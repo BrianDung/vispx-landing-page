@@ -125,7 +125,7 @@ const ProjectsSection: React.FC = () => {
   return (
     <div className="projects-section">
       <div className="layout">
-        <div className="title-1">Projects in VispX Factory</div>
+        <div className="title-1">Project List</div>
         <FilterProject
           activeFilter={activeFilter}
           search={search}

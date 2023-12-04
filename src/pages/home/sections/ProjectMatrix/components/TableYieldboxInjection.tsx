@@ -1,6 +1,5 @@
-import { Table, Tag } from 'antd';
+import { Table } from 'antd';
 import { ColumnProps } from 'antd/es/table';
-import BigNumber from 'bignumber.js';
 import {
   BSCIcon,
   ETHIcon,
@@ -8,7 +7,7 @@ import {
   SolanaIconWhite,
   XborgProjectIcon,
 } from 'src/assets/icons';
-import { formatATHPrice, formatATHROI } from 'src/helpers/formatValue';
+import { formatATHPrice } from 'src/helpers/formatValue';
 import '../styles/table-tx.scss';
 
 interface TableTxProps {

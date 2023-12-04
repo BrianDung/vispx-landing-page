@@ -5,7 +5,7 @@ import useStyles from './style';
 import activeArrowBig from 'src/assets/icons/landing/next-arrow-big.svg';
 import activeArrowPrevBig from 'src/assets/icons/landing/prev-arrow-enable.svg';
 
-const DELAY_TIME = 150000;
+const DELAY_TIME = 20000;
 const SLIDE_PER_PAGE = 1;
 
 function SampleNextArrow(props: any) {

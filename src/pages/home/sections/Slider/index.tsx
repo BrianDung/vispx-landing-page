@@ -62,7 +62,7 @@ const Slider: React.FC<any> = (props: any) => {
         </Col>
         <Col className="button-join-revolution">
           <div className="button-launch-pad">
-            <LaunchBtnComponent isStatic={false} title="Join The Revolution" />
+            <LaunchBtnComponent isStatic={false} title="Explore Apps" />
           </div>
         </Col>
       </Row>
