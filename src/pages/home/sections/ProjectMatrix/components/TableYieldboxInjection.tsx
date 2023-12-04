@@ -54,10 +54,10 @@ const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => 
     },
     {
       title: 'TOKEN',
-      dataIndex: 'pre_token',
+      dataIndex: 'token',
       align: 'center',
       width: '100px',
-      render: (value: string) => value,
+      render: (value: string, item) => `${item.pre_token}${value}`,
     },
     {
       title: 'AMOUNT INJECTED',

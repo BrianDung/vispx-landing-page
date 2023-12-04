@@ -95,10 +95,10 @@
         top: 0;
         padding: 10px 8px;
         .title-show {
-          font-size: 12px;
+          font-size: 14px;
         }
         .description-show {
-          font-size: 10px;
+          font-size: 12px;
         }
       }
     }
@@ -157,7 +157,7 @@
       padding: 24px;
       @include maxWidth($tablet) {
         padding: 5px;
-        font-size: 12px;
+        font-size: 14px;
         overflow: hidden;
         text-overflow: ellipsis;
       }
