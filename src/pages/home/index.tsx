@@ -1,3 +1,4 @@
+import React from 'react';
 import AboutSection from './sections/About';
 import Banner from './sections/Banner';
 import Bottom from './sections/Bottom';

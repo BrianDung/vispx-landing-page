@@ -1,5 +1,4 @@
-import ButtonContained from 'src/components/02.buttons/ButtonContained';
-import '../styles.scss';
+import '../styles/button-launch-app.scss';
 
 interface LaunchBtnComponentProps {
   isStatic: boolean;
@@ -7,25 +6,15 @@ interface LaunchBtnComponentProps {
   route?: any;
   className?: string;
 }
-const LaunchBtnComponent = ({
-  isStatic,
-  className,
-  title = 'Launch app',
-  route,
-}: LaunchBtnComponentProps) => {
-  const openXpad = () => {
-    window.location.replace('/xpad');
-  };
-
+const LaunchBtnComponent = ({ isStatic, title = 'Launch app', route }: LaunchBtnComponentProps) => {
   return (
-    <ButtonContained
-      buttonType="btn-launch-pad"
-      mode="medium"
-      className={`${isStatic ? 'is-static icon-fixed' : ''}  button-lunch-pad ${className}`}
-      onClick={route ? () => window.location.replace(route) : openXpad}
-    >
-      {title}
-    </ButtonContained>
+    <div className={`${isStatic ? 'is-static icon-fixed' : ''} explore-apps flex`}>
+      <div className="btn-dark-container">
+        <a className="btn btn-dark flex middle center" href={route ? route : '/xpad'}>
+          <span className="flex middle center expand">{title}</span>
+        </a>
+      </div>
+    </div>
   );
 };
 

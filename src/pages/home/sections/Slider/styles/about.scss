@@ -3,6 +3,7 @@
 .about-slider {
   max-width: 90%;
   margin-top: 150px;
+  min-height: 50vh;
   .title {
     display: flex;
     font-weight: 700;
@@ -30,15 +31,6 @@
     line-height: 24px;
     color: #c3c3c3;
     margin-top: 32px;
-  }
-
-  .button-launch-pad {
-    margin-top: 32px;
-    display: flex;
-    &:hover {
-      -webkit-transform: translateY(0px);
-      transform: translateY(-2px);
-    }
   }
 
   .information {
@@ -82,69 +74,3 @@
     }
   }
 }
-
-// @property --angle {
-//   syntax: '<angle>';
-//   initial-value: 90deg;
-//   inherits: true;
-// }
-
-// @property --gradX {
-//   syntax: '<percentage>';
-//   initial-value: 50%;
-//   inherits: true;
-// }
-
-// @property --gradY {
-//   syntax: '<percentage>';
-//   initial-value: 0%;
-//   inherits: true;
-// }
-
-// :root {
-//   --d: 2500ms;
-//   --angle: 90deg;
-//   --gradX: 100%;
-//   --gradY: 50%;
-//   --c1: rgba(168, 239, 255, 1);
-//   --c2: rgba(168, 239, 255, 0.1);
-// }
-
-// .wrapper {
-//   min-width: min(40rem, 100%);
-// }
-
-// .box {
-//   font-size: 3vw;
-//   margin: max(1rem, 3vw);
-//   border: 0.35rem solid;
-//   padding: 3vw;
-// }
-// .box:hover {
-//   border-image: conic-gradient(
-//       from var(--angle),
-//       var(--c2),
-//       var(--c1) 0.1turn,
-//       var(--c1) 0.15turn,
-//       var(--c2) 0.25turn
-//     )
-//     30;
-//   animation: borderRotate var(--d) linear infinite forwards;
-// }
-
-// .box:hover:nth-child(2) {
-//   border-image: radial-gradient(
-//       ellipse at var(--gradX) var(--gradY),
-//       var(--c1),
-//       var(--c1) 10%,
-//       var(--c2) 40%
-//     )
-//     30;
-//   animation: borderRadial var(--d) linear infinite forwards;
-// }
-
-// @keyframes borderRotate {
-//   100% {
-//     --angle: 420deg;
-//   }
-// }

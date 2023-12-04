@@ -1,4 +1,5 @@
 @import 'src/assets/scss/variable.scss';
+@import 'src/assets/scss/responsive.scss';
 
 .custom-tab {
   display: flex;
@@ -8,9 +9,10 @@
     padding: 0;
   }
 
-  // .ant-tabs-tab.ant-tabs-tab-active:not(:first-child) {
-  //   border-left: 1px solid #21175f;
-  // }
+  .ant-tabs-tab.ant-tabs-tab-active:not(:first-child) {
+    border-left: 2px solid #211860 !important;
+    border-top-left-radius: 0 !important;
+  }
   .ant-tabs-nav-list {
     width: 100%;
     .ant-tabs-tab {
@@ -21,6 +23,10 @@
     }
     .ant-tabs-tab.ant-tabs-tab-active {
       background-color: #3f2aa550 !important;
+    }
+    .ant-tabs-tab:first-child.ant-tabs-tab-active {
+      border-right: 2px solid #211860 !important;
+      border-top-right-radius: 0 !important;
     }
   }
 
@@ -38,6 +44,9 @@
     font-size: 40px;
     line-height: 48px;
     font-weight: 700;
+    @media (max-width: $screen-sm) {
+      font-size: 16px;
+    }
   }
   .ant-tabs-ink-bar {
     background: var(--tab-button-text-active-color, $color-neutral-neutral-1);

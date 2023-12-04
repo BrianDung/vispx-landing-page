@@ -1,7 +1,7 @@
 import { CircularProgress, Grid } from '@material-ui/core';
 import { Button } from 'src/components/Button';
 import _ from 'lodash';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import axios from 'src/services/axios';
 import CarouselImages from 'src/components/CarouseImages';
@@ -159,6 +159,7 @@ const Banner = () => {
           <div className={styles.overlay}>
             {isStaticPage ? (
               <div className={mainClass} />
+              // <div></div>
             ) : (
               <div className={mainClass}>
                 <span className={`${mainClass}__status`}>
