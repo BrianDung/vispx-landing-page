@@ -1,0 +1,17 @@
+@import '../../../../responsive.scss';
+@import 'src/assets/scss/_colors.scss';
+@import 'src/assets/scss/variable.scss';
+
+.button-join-revolution {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 50px;
+  position: relative;
+  .button-launch-pad {
+    position: sticky;
+    @include maxWidth($tablet) {
+      margin-top: 150px;
+    }
+  }
+}

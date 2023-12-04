@@ -6,10 +6,12 @@ import OurService from './sections/OurService';
 import ProjectMatrix from './sections/ProjectMatrix';
 import ProjectsSection from './sections/Projects';
 import './styles.scss';
+import ExploreApp from './sections/ExploreApp';
 const HomePage: React.FC = () => {
   return (
     <div className="home-vispx">
       <Banner />
+      <ExploreApp />
       <ProjectsSection />
       <ProjectMatrix />
       <AboutSection />
