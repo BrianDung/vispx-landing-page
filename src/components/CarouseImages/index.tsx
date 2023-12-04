@@ -75,7 +75,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
   const handleSelectImage = useCallback((image: any, isUserClicking: boolean) => {
     clearTimeout(idTimer);
 
-    const indexSlide = image?.id;
+    const indexSlide = image?.id === 'STATIC' ? 0 : image?.id;
 
     let nextImageIndex = indexSlide === mediaList.length - 1 ? 0 : indexSlide + 1;
     if (!mediaList[nextImageIndex]?.url) {
@@ -87,6 +87,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
 
     // eslint-disable-next-line
     idTimer = setTimeout(() => {
+      console.log('Data call back', mediaList[nextImageIndex], mediaList, nextImageIndex);
       handleSelectImage(mediaList[nextImageIndex], false);
     }, DELAY_TIME);
 
@@ -109,6 +110,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
     return () => clearTimeout(idTimer);
     // eslint-disable-next-line
   }, []);
+  console.log('imageIdSelected', imageIdSelected);
   return (
     <div className={classes.container} id="carousel-thumbnail">
       <Slider {...settings} ref={refSlider}>
