@@ -5,9 +5,9 @@ const useStyles = makeStyles((theme: any) => {
     container: {
       width: '100px',
       margin: 'auto',
-      marginRight: '100px',
+      // right: '15%',
       [theme.breakpoints.down(600)]: {
-        marginRight: 'unset',
+        // marginRight: 'unset',
         margin: 'auto',
       },
     },

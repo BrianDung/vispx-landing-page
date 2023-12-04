@@ -5,19 +5,18 @@ import {
   BSCIcon,
   ComingSoonFilter,
   CompletedFilter,
+  DiscordIconLanding,
   ETHIcon,
   IconEarth,
   InProgressFilter,
   PolygonIconWhite,
   SolanaIconWhite,
-  TelegramIconLanding,
   TwitterIconLanding,
 } from 'src/assets/icons';
 import axios from 'src/services/axios';
-import '../styles/new-project-feature.scss';
-import LaunchBtnComponent from '../../Slider/components/LaunchBtnComponent';
-import { SLIDER_PROJECT_STATUS } from './FilterProject';
 import ExploreButton from '../../Slider/components/ExploreButton';
+import '../styles/new-project-feature.scss';
+import { SLIDER_PROJECT_STATUS } from './FilterProject';
 
 const NewProject = () => {
   const [projects, setProjects] = useState<any>([]);
@@ -26,7 +25,6 @@ const NewProject = () => {
     try {
       const resp = (await axios.get(`/vispx-feature-project-list`)) as any;
       const data = _.get(resp, 'data.data.data', []) as any[];
-      console.log('data new', data);
       setProjects(data);
     } catch (err: any) {
       console.error(err);
@@ -80,15 +78,27 @@ const NewProject = () => {
                 <img src={getNetwork(item.project_network)} alt="icon" />
               </div>
               <div className="social-new-project">
-                <a href={item.twitter} target="_blank" rel="noreferrer">
-                  <img src={TwitterIconLanding} alt="icon" />
-                </a>
-                <a href={item.telegram} target="_blank" rel="noreferrer">
-                  <img src={TelegramIconLanding} alt="icon" />
-                </a>
-                <a href={item.website} target="_blank" rel="noreferrer">
-                  <img src={IconEarth} alt="icon" />
-                </a>
+                {item.twitter && (
+                  <a href={item.twitter} target="_blank" rel="noreferrer">
+                    <img src={TwitterIconLanding} alt="icon" width={20} height={20} />
+                  </a>
+                )}
+                {item.telegram && (
+                  <a href={item.telegram} target="_blank" rel="noreferrer">
+                    <img
+                      src={DiscordIconLanding}
+                      alt="icon"
+                      width={24}
+                      height={24}
+                      style={{ marginTop: '-2px' }}
+                    />
+                  </a>
+                )}
+                {item.website && (
+                  <a href={item.website} target="_blank" rel="noreferrer">
+                    <img src={IconEarth} alt="icon" width={20} height={20} />
+                  </a>
+                )}
               </div>
               <div className="value-new-project">
                 <div className="block-value-new-project">

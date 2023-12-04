@@ -186,4 +186,4 @@ export { default as CompletedFilter } from '../icons/landing/completed-filter.sv
 export { default as IconSearchInput } from '../icons/landing/icon-search.svg';
 export { default as IconEarth } from '../icons/landing/earth.svg';
 export { default as TwitterIconLanding } from '../icons/landing/x-logo-icon.svg';
-export { default as TelegramIconLanding } from '../icons/landing/telegram-landing.svg';
+export { default as DiscordIconLanding } from '../icons/landing/discord-landing.svg';

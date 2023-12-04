@@ -159,7 +159,6 @@ const Banner = () => {
           <div className={styles.overlay}>
             {isStaticPage ? (
               <div className={mainClass} />
-              // <div></div>
             ) : (
               <div className={mainClass}>
                 <span className={`${mainClass}__status`}>

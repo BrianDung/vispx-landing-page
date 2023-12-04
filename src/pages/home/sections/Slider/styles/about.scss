@@ -11,6 +11,9 @@
     line-height: 72px;
     color: #ffffff;
     padding-right: 30px;
+    @include maxWidth($tablet) {
+      line-height: 52px;
+    }
     .relative {
       position: relative;
       margin-left: 10px;

@@ -1,8 +1,6 @@
 import _ from 'lodash';
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
 import { BSCIcon, ETHIcon, PolygonIconWhite, Project1, SolanaIconWhite } from 'src/assets/icons';
 import { NextArrowSlider, PrevArrowSlider } from 'src/assets/icons/IconComponent';
 import useDebounce from 'src/hooks/useDebounce';
@@ -13,25 +11,24 @@ import NewProject from './components/NewProject';
 import './styles.scss';
 
 function NextArrow(props: any) {
-  const { className, onClick, lastPage } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <NextArrowSlider color={lastPage ? '#59595c' : '#ffffff'} />
+      <NextArrowSlider color="#ffffff" />
     </div>
   );
 }
 
 function PrevArrow(props: any) {
-  const { className, onClick, currentSlide } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <PrevArrowSlider color={currentSlide === 0 ? '#59595c' : '#ffffff'} />
+      <PrevArrowSlider color="#ffffff" />
     </div>
   );
 }
 
 const ProjectsSection: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [projects, setProjects] = useState<any>([]);
   const [activeFilter, setActiveFilter] = useState<any>('');
   const [search, setSearch] = useState<any>('');
@@ -72,13 +69,8 @@ const ProjectsSection: React.FC = () => {
       dots: true,
       infinite: false,
       speed: 500,
-      nextArrow: <NextArrow lastPage={currentSlide === Math.floor(projects.length / 8) * 4} />,
-      prevArrow: <PrevArrow currentSlide={currentSlide} />,
-
-      afterChange: (index) => {
-        console.log(index);
-        setCurrentSlide(index);
-      },
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
 
       responsive: [
         {
@@ -101,7 +93,6 @@ const ProjectsSection: React.FC = () => {
           breakpoint: 1439,
           settings: {
             slidesToShow: 4,
-            slidesPerRow: 4,
             slidesToScroll: 1,
             rows: 2,
           },
@@ -119,15 +110,15 @@ const ProjectsSection: React.FC = () => {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            dots: true,
             rows: 1,
-            nextArrow: <></>,
-            prevArrow: <></>,
+            nextArrow: <React.Fragment></React.Fragment>,
+            prevArrow: <React.Fragment></React.Fragment>,
           },
         },
       ],
     }),
-    [currentSlide, projects.length],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [activeFilter, projects],
   );
 
   return (
