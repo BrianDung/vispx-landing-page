@@ -54,7 +54,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       },
       [theme.breakpoints.down(600)]: {
         // position: 'relative',
-        bottom: (props: any) => (props.collapsed ? '10vh' : '-12vh'),
+        bottom: (props: any) => (props.collapsed ? '5vh' : '-12vh'),
         width: '100%',
         display: 'flex',
         justifyContent: 'center',

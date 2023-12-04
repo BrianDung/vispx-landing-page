@@ -3,15 +3,48 @@
 @import 'src/assets/scss/variable.scss';
 
 .button-join-revolution {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 50px;
-  position: relative;
+  // display: flex;
+  // width: 100%;
+  // justify-content: center;
+  // margin-bottom: 50px;
+  // margin-top: 50px;
+  // position: relative;
   .button-launch-pad {
-    position: sticky;
+    // position: sticky;
     @include maxWidth($tablet) {
       margin-top: 150px;
     }
+  }
+  //show fixed page
+  .fixed-explore {
+    position: fixed;
+    left: 8%;
+    z-index: 100;
+    bottom: 5%;
+    cursor: pointer;
+    display: none;
+    border-radius: 8px !important;
+    span {
+      line-height: 20px !important;
+    }
+
+    @include maxWidth($mobile) {
+      left: 5%;
+      bottom: 2%;
+    }
+  }
+}
+
+.show {
+  display: block !important;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
