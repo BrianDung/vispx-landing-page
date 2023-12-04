@@ -6,7 +6,9 @@
   justify-content: space-between;
   margin: 0 40px;
   @include maxWidth($tablet) {
-    margin: 0 20px;
+    margin: 0;
+    width: 100%;
+    flex-direction: column-reverse;
   }
   span {
     color: #fff;
@@ -42,11 +44,34 @@
     display: flex;
     align-items: center;
     @include maxWidth($tablet) {
-      display: none;
+      width: 100%;
+      margin-top: 10px;
+      .select-container {
+        width: 100% !important;
+        color: #000 !important;
+        .ant-select {
+          width: 100%;
+          color: #000 !important;
+          .ant-select-selection-item {
+            color: #000 !important;
+            font-weight: 600;
+          }
+        }
+      }
     }
   }
   .search-right {
     background-color: #fff;
     border-radius: 10px;
+
+    @include maxWidth($tablet) {
+      width: 100%;
+      height: 48px;
+      margin-top: 10px;
+      .input-box,
+      .input-default {
+        height: 100% !important;
+      }
+    }
   }
 }

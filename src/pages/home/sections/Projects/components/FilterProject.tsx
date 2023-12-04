@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   ComingSoonFilter,
   CompletedFilter,
@@ -5,6 +6,8 @@ import {
   InProgressFilter,
 } from 'src/assets/icons';
 import CustomInput from 'src/components/inputs';
+import CustomSelect from 'src/components/select';
+import useWindowSize from 'src/hooks/useWindowSize';
 import '../styles/filter.scss';
 
 export enum SLIDER_PROJECT_STATUS {
@@ -34,6 +37,7 @@ const FilterProject = ({
   setActiveFilter,
   setSearch,
 }: FilterProjectProps) => {
+  const { isMobile, isTablet } = useWindowSize();
   const filters = [
     { icon: '', value: '', label: 'All' },
     {
@@ -53,17 +57,24 @@ const FilterProject = ({
     },
   ];
 
+  console.log('activeFilter',activeFilter)
   return (
     <div className="filter-project">
       <div className="filter-left">
-        <span>Filter by:</span>
-        {filters?.map((item) => (
-          <FilterItem
-            item={item}
-            active={activeFilter === item.value}
-            onClick={() => setActiveFilter(item.value)}
-          />
-        ))}
+        {isMobile ? (
+          <CustomSelect value={activeFilter} options={filters} onChange={setActiveFilter} />
+        ) : (
+          <React.Fragment>
+            <span>Filter by:</span>
+            {filters?.map((item) => (
+              <FilterItem
+                item={item}
+                active={activeFilter === item.value}
+                onClick={() => setActiveFilter(item.value)}
+              />
+            ))}
+          </React.Fragment>
+        )}
       </div>
       <div className="search-right">
         <CustomInput

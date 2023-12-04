@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme: any) => {
       [theme.breakpoints.up(600)]: {
         height: '100px',
       },
+      [theme.breakpoints.down(600)]: {
+        marginTop: '0',
+      },
       [theme.breakpoints.up(1200)]: {
         height: '60px',
       },

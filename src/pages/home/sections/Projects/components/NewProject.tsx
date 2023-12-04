@@ -17,6 +17,7 @@ import axios from 'src/services/axios';
 import '../styles/new-project-feature.scss';
 import LaunchBtnComponent from '../../Slider/components/LaunchBtnComponent';
 import { SLIDER_PROJECT_STATUS } from './FilterProject';
+import ExploreButton from '../../Slider/components/ExploreButton';
 
 const NewProject = () => {
   const [projects, setProjects] = useState<any>([]);
@@ -113,12 +114,7 @@ const NewProject = () => {
                 </span>
               </div>
               <div className="button-launch-pad">
-                <LaunchBtnComponent
-                  className="w-full h-50px"
-                  isStatic={false}
-                  title="Explore"
-                  route={item.pool_id}
-                />
+                <ExploreButton className="w-full h-50px" title="Explore" route={item.pool_id} />
               </div>
             </div>
             <div className="banner">

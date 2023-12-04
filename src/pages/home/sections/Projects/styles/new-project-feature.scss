@@ -6,6 +6,7 @@
   justify-content: center;
   @include maxWidth($tablet) {
     margin: 65px auto 32px;
+    flex-direction: column !important;
   }
   .content {
     padding: 45px;
