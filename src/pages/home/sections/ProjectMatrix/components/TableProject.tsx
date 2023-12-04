@@ -56,14 +56,14 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       dataIndex: 'ath_roi',
       align: 'center',
       width: '100px',
-      render: (value: string) => formatATHROI(value),
+      render: (value: string) => value,
     },
     {
       title: 'TOTAL RAISE',
       dataIndex: 'total_raise',
       align: 'center',
       key: 'total_raise',
-      render: (value: string) => `$ ${new BigNumber(value || 0).toFormat()}`,
+      render: (value: string) => value,
     },
     {
       title: 'CATEGORY',
@@ -91,7 +91,7 @@ const TableProjectComponent: React.FC<TableTxProps> = (props: TableTxProps) => {
       align: 'center',
       dataIndex: 'total_supply',
       key: 'total_supply',
-      render: (value: string) => new BigNumber(value || 0).toFormat(),
+      render: (value: string) => value,
     },
     {
       title: 'ATH PRICE',

@@ -38,7 +38,7 @@ const formatATHROI = (number: string) => {
   if (isNaN(Number(number))) {
     return number;
   } else {
-    return `x${new BigNumber(number || 0).toFormat()}`;
+    return number;
   }
 };
 
