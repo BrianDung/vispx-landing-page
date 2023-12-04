@@ -12,7 +12,7 @@ const ExploreButton = ({ className, title = 'Launch app', route }: ExploreButton
       buttonType="btn-launch-pad"
       mode="medium"
       className={`button-explore ${className}`}
-      onClick={() => window.location.replace(route)}
+      onClick={() => window.open(route, '_blank')}
     >
       {title}
     </ButtonContained>

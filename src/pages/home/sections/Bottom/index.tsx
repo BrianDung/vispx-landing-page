@@ -1,6 +1,11 @@
 import { Col, Divider, Row } from 'antd';
 import './styles.scss';
 import { DiscordSocial, LogoVispx, TeleIcon, XCodeIcon } from 'src/assets/icons';
+
+const teleLink = process.env.REACT_APP_TELEGRAM_LINK || '';
+const twitterLink = process.env.REACT_APP_TWITTER_LINK || '';
+const discordLink = process.env.REACT_APP_DISCORD_LINK || '';
+
 const Info = ({
   text1,
   text2,
@@ -64,9 +69,15 @@ const Bottom: React.FC = () => {
               <div className="text1">Social media</div>
             </div>
             <div style={{ width: 120 }} className="flex justify-between">
-              <img src={TeleIcon} alt="icon-tele" />
-              <img src={DiscordSocial} alt="icon-discord" />
-              <img src={XCodeIcon} alt="icon-xcode" />
+              <a href={teleLink} target="_blank" rel="noreferrer">
+                <img src={TeleIcon} alt="icon-tele" />
+              </a>
+              <a href={discordLink} target="_blank" rel="noreferrer">
+                <img src={DiscordSocial} alt="icon-discord" />
+              </a>
+              <a href={twitterLink} target="_blank" rel="noreferrer">
+                <img src={XCodeIcon} alt="icon-xcode" />
+              </a>
             </div>
           </Col>
         </Row>

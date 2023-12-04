@@ -73,9 +73,14 @@ const NewProject = () => {
         return (
           <div className="new-project-feature">
             <div className="content">
-              <div className="title">
+              <div className="title" style={{ alignItems: 'center' }}>
                 <span>{item.project_name || 'MEME MEME'}</span>
-                <img src={getNetwork(item.project_network)} alt="icon" />
+                <img
+                  src={getNetwork(item.project_network)}
+                  alt="icon"
+                  width={24}
+                  style={{ marginTop: 5 }}
+                />
               </div>
               <div className="social-new-project">
                 {item.twitter && (

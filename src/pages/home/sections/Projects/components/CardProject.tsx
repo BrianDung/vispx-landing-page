@@ -85,6 +85,7 @@ const CardProject: React.FC<{
                   <img
                     src={networkIcon}
                     alt="icon"
+                    width={24}
                     style={{ marginRight: 6, objectFit: 'cover' }}
                   />
                   <span className="network-name">{project_network}</span>
