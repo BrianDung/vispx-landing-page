@@ -1,10 +1,9 @@
+import { CircularProgress, Grid } from '@material-ui/core';
 import { Col, Row } from 'antd';
 import ReactPlayer from 'react-player/lazy';
 import { LogoVispx, Slider1Icon } from 'src/assets/icons';
 import About from './components/About';
 import './styles.scss';
-import { CircularProgress, Grid } from '@material-ui/core';
-import LaunchBtnComponent from './components/LaunchBtnComponent';
 
 const Slider: React.FC<any> = (props: any) => {
   const { staticItem } = props;
@@ -60,11 +59,11 @@ const Slider: React.FC<any> = (props: any) => {
         <Col xl={12} xxl={12} lg={12} xs={24} md={24} className="wrapper-icon-slider">
           {renderInfor()}
         </Col>
-        <Col className="button-join-revolution">
+        {/* <Col className="button-join-revolution">
           <div className="button-launch-pad">
             <LaunchBtnComponent isStatic={false} title="Explore Apps" />
           </div>
-        </Col>
+        </Col> */}
       </Row>
     </div>
   );
