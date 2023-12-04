@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme: any) => {
       [theme.breakpoints.down(600)]: {
         // marginRight: 'unset',
         margin: 'auto',
+        // marginTop: '100px'
       },
     },
     thumbnail: {

@@ -54,7 +54,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
       },
       [theme.breakpoints.down(600)]: {
         // position: 'relative',
-        bottom: (props: any) => (props.collapsed ? '10vh' : '10vh'),
+        bottom: (props: any) => (props.collapsed ? '10vh' : '-12vh'),
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -78,6 +78,10 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
         alignSelf: 'flex-end',
         width: '600px',
         margin: 0,
+      },
+      [theme.breakpoints.down(600)]: {
+        // position: 'relative',
+        marginTop: '100px',
       },
     },
     socials: {
