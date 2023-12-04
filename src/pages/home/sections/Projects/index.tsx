@@ -111,6 +111,7 @@ const ProjectsSection: React.FC = () => {
             slidesToShow: 1,
             slidesToScroll: 1,
             rows: 1,
+            infinite: true,
             nextArrow: <React.Fragment></React.Fragment>,
             prevArrow: <React.Fragment></React.Fragment>,
           },
