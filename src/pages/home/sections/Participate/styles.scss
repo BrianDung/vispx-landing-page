@@ -1,0 +1,20 @@
+.participate-main {
+  padding: 80px 64px;
+  max-width: 1440px;
+  margin: auto;
+  .title-section {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .content-section {
+    .ant-col-8 {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+  }
+}

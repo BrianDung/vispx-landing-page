@@ -7,6 +7,9 @@ import ProjectMatrix from './sections/ProjectMatrix';
 import ProjectsSection from './sections/Projects';
 import './styles.scss';
 import ExploreApp from './sections/ExploreApp';
+import FAQ from './sections/FAQ';
+import Participate from './sections/Participate';
+
 const HomePage: React.FC = () => {
   return (
     <div className="home-vispx">
@@ -15,7 +18,9 @@ const HomePage: React.FC = () => {
       <ProjectsSection />
       <ProjectMatrix />
       <AboutSection />
+      <Participate />
       <OurService />
+      <FAQ />
       <Bottom />
       <div className="copy-right">©2023 VispX. All Rights Reserved.</div>
     </div>

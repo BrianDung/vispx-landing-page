@@ -187,3 +187,6 @@ export { default as IconSearchInput } from '../icons/landing/icon-search.svg';
 export { default as IconEarth } from '../icons/landing/earth.svg';
 export { default as TwitterIconLanding } from '../icons/landing/x-logo-icon.svg';
 export { default as DiscordIconLanding } from '../icons/landing/discord-landing.svg';
+export { default as IconClock } from '../icons/landing/card-clock.svg';
+export { default as IconExpandDown } from '../icons/landing/icon-expand-down.svg';
+export { default as IconExpandUp } from '../icons/landing/icon-expand-up.svg';
