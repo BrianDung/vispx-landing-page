@@ -29,8 +29,8 @@ const AboutSection: React.FC = () => {
           pool of their choice with ZERO barrier of entry
         </div>
         <div className="list-card">
-          {aboutPool?.map((item: any) => (
-            <Card icon="" title={item?.title} description={item?.description} />
+          {aboutPool?.map((item: any, key: number) => (
+            <Card icon="" key={key} title={item?.title} description={item?.description} />
           ))}
           {/* <Card
             icon={Icon1}

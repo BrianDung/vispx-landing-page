@@ -135,12 +135,12 @@ const ProjectsSection: React.FC = () => {
         <NewProject />
         <div className="list-card">
           <Slider {...settings}>
-            {projects.map((card: any) => {
+            {projects.map((card: any, index: number) => {
               return (
                 <CardProject
                   project_status={card?.project_status}
                   pool_id={card?.pool_id}
-                  key={card?.id}
+                  key={index}
                   networkIcon={getNetwork(card?.project_network)}
                   icon={card?.banner || Project1}
                   title={card?.project_name}

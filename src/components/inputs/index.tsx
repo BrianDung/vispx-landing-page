@@ -16,7 +16,7 @@ const CustomInput = ({
     <div className={`input-box ` + className}>
       {allowNegative ? (
         <Input
-          className={`input-default input-default ${widthFull ? 'w-full' : ''}`}
+          className={`input-default ${widthFull ? 'w-full' : ''}`}
           {...restProps}
         />
       ) : (

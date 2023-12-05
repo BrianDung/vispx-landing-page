@@ -37,7 +37,7 @@ const FilterProject = ({
   setActiveFilter,
   setSearch,
 }: FilterProjectProps) => {
-  const { isMobile, isTablet } = useWindowSize();
+  const { isMobile } = useWindowSize();
   const filters = [
     { icon: '', value: '', label: 'All' },
     {
@@ -57,7 +57,6 @@ const FilterProject = ({
     },
   ];
 
-  console.log('activeFilter',activeFilter)
   return (
     <div className="filter-project">
       <div className="filter-left">
@@ -66,8 +65,9 @@ const FilterProject = ({
         ) : (
           <React.Fragment>
             <span>Filter by:</span>
-            {filters?.map((item) => (
+            {filters?.map((item, index) => (
               <FilterItem
+                key={index}
                 item={item}
                 active={activeFilter === item.value}
                 onClick={() => setActiveFilter(item.value)}
@@ -78,7 +78,7 @@ const FilterProject = ({
       </div>
       <div className="search-right">
         <CustomInput
-          className="input"
+          // className="input"
           placeholder="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}

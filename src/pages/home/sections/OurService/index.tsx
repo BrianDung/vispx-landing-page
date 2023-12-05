@@ -20,8 +20,6 @@ const OurService: React.FC = () => {
     `${process.env.REACT_APP_API_ENDPOINT}/vispx-our-services?page=1&limit=50`,
   );
 
-  console.log({data : get(data, 'data.data[0]', itemsPlaceholderMobile) , isMobile})
-
   const [isNext, setIsNext] = useState(false);
   const [isPrevious, setIsPrevious] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,7 +54,7 @@ const OurService: React.FC = () => {
   };
 
   useEffect(() => {
-    let index = currentPage -1;
+    let index = currentPage - 1;
     setDataShow(
       isMobile
         ? [get(data, `data.data[${index}]`, itemsPlaceholderMobile)]
@@ -72,8 +70,8 @@ const OurService: React.FC = () => {
       <div className="layout">
         <div className="title-1">Our Services</div>
         <div className="description">
-          VispX offers extensive end to end solutions for blockchain projects with its
-          tailored services for project needs.
+          VispX offers extensive end to end solutions for blockchain projects with its tailored
+          services for project needs.
         </div>
         <div className="images">
           {(dataShow?.length < numberChange

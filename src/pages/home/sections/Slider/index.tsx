@@ -8,7 +8,6 @@ import './styles.scss';
 const Slider: React.FC<any> = (props: any) => {
   const { staticItem } = props;
   const renderInfor = () => {
-    console.log({ src: staticItem?.media_link_upload });
     if (staticItem?.media_link_type === 'video') {
       return (
         <ReactPlayer

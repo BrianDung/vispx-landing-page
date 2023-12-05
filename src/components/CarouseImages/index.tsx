@@ -87,7 +87,6 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
 
     // eslint-disable-next-line
     idTimer = setTimeout(() => {
-      console.log('Data call back', mediaList[nextImageIndex], mediaList, nextImageIndex);
       handleSelectImage(mediaList[nextImageIndex], false);
     }, DELAY_TIME);
 
@@ -110,7 +109,7 @@ export default function CarouselImages({ onClickImage, mediaList: mediaListAPI, 
     return () => clearTimeout(idTimer);
     // eslint-disable-next-line
   }, []);
-  console.log('imageIdSelected', imageIdSelected);
+
   return (
     <div className={classes.container} id="carousel-thumbnail">
       <Slider {...settings} ref={refSlider}>

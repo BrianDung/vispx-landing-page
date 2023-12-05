@@ -113,7 +113,6 @@ const Banner = () => {
             ...item,
             id: 'STATIC',
           };
-          console.log({ result });
           setStaticItem(result);
         }
       } catch (err: any) {

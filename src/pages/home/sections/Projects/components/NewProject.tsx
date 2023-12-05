@@ -69,9 +69,9 @@ const NewProject = () => {
 
   return (
     <Slider {...settings}>
-      {projects.map((item: any) => {
+      {projects.map((item: any, index: number) => {
         return (
-          <div className="new-project-feature">
+          <div key={index} className="new-project-feature">
             <div className="content">
               <div className="title" style={{ alignItems: 'center' }}>
                 <span>{item.project_name || 'MEME MEME'}</span>
