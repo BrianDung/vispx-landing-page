@@ -11,7 +11,7 @@ const itemsPlaceholderMobile = [1];
 const DATA_MOBILE = 1;
 const DATA_PC = 3;
 
-const OurService: React.FC = () => {
+const OurService = ({ dataOurService }: any) => {
   const { isMobile } = useWindowSize();
 
   const numberChange = isMobile ? DATA_MOBILE : DATA_PC;
@@ -19,8 +19,6 @@ const OurService: React.FC = () => {
   const { data } = useFetch<any>(
     `${process.env.REACT_APP_API_ENDPOINT}/vispx-our-services?page=1&limit=50`,
   );
-
-  console.log({data : get(data, 'data.data[0]', itemsPlaceholderMobile) , isMobile})
 
   const [isNext, setIsNext] = useState(false);
   const [isPrevious, setIsPrevious] = useState(false);
@@ -56,7 +54,7 @@ const OurService: React.FC = () => {
   };
 
   useEffect(() => {
-    let index = currentPage -1;
+    let index = currentPage - 1;
     setDataShow(
       isMobile
         ? [get(data, `data.data[${index}]`, itemsPlaceholderMobile)]
@@ -70,11 +68,8 @@ const OurService: React.FC = () => {
   return (
     <div className="ourservice-section">
       <div className="layout">
-        <div className="title-1">Our Services</div>
-        <div className="description">
-          VispX offers extensive end to end solutions for blockchain projects with its
-          tailored services for project needs.
-        </div>
+        <div className="title-1">{dataOurService?.title}</div>
+        <div className="description">{dataOurService?.description}</div>
         <div className="images">
           {(dataShow?.length < numberChange
             ? [...dataShow, ...itemsPlaceholder].slice(0, numberChange)

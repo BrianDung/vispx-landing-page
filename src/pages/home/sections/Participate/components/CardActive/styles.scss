@@ -1,0 +1,39 @@
+.participate-active-card {
+  // width: 282px !important;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #372d46;
+  // padding: 22px 24px 33px;
+
+  img.card-image {
+    width: 330px;
+    height: 430px;
+    object-fit: cover;
+  }
+  .title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 23px;
+  }
+  .content {
+    .image-nft {
+      padding: 8px;
+      background-color: #262628;
+      border-radius: 5px;
+      img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+      }
+      .name-nft-image {
+        font-weight: 400;
+        font-size: 12px;
+        color: #fff;
+        line-height: 19px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

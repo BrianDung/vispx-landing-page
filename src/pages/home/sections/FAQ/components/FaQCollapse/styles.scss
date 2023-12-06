@@ -1,0 +1,48 @@
+@import 'src/assets/scss/responsive-landing.scss';
+
+.faq-collapse.ant-collapse {
+  background: #11122e;
+  border: none;
+  margin-left: 100px;
+  @include mobileVispx {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .ant-collapse-item {
+    border: none;
+    .ant-collapse-header {
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 40px;
+      align-items: center;
+      .ant-collapse-expand-icon {
+        margin-right: 26px;
+      }
+    }
+    .ant-collapse-content {
+      background: transparent;
+      color: #cecece;
+      border: none;
+      font-size: 18px;
+      .ant-collapse-content-box {
+        padding: 0px 16px;
+        .category {
+          .title {
+            display: block;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 40px;
+          }
+          .description {
+            display: block;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

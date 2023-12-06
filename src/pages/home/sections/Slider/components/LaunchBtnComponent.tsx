@@ -8,7 +8,7 @@ interface LaunchBtnComponentProps {
 }
 
 const xpad = process.env.REACT_APP_LAUNCH_APP || '';
-const LaunchBtnComponent = ({ isStatic, title = 'Launch app', route }: LaunchBtnComponentProps) => {
+const LaunchBtnComponent = ({ isStatic, title, route }: LaunchBtnComponentProps) => {
   return (
     <div className={`${isStatic ? 'is-static icon-fixed' : ''} explore-apps flex`}>
       <div className="btn-dark-container">

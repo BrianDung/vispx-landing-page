@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { BSCIcon, ETHIcon, PolygonIconWhite, Project1, SolanaIconWhite } from 'src/assets/icons';
 import { NextArrowSlider, PrevArrowSlider } from 'src/assets/icons/IconComponent';
@@ -28,11 +28,12 @@ function PrevArrow(props: any) {
   );
 }
 
-const ProjectsSection: React.FC = () => {
+const ProjectsSection = ({ data, dataExplore }: any) => {
   const [projects, setProjects] = useState<any>([]);
   const [activeFilter, setActiveFilter] = useState<any>('');
   const [search, setSearch] = useState<any>('');
   const debounceSearch = useDebounce(search, 1000);
+  const sliderRef = useRef<any>(null);
 
   const getProjects = async () => {
     try {
@@ -41,6 +42,7 @@ const ProjectsSection: React.FC = () => {
       )) as any;
       const data = _.get(resp, 'data.data.data', []) as any[];
       setProjects(data);
+      sliderRef.current.slickGoTo(0);
     } catch (err: any) {
       console.error(err);
     }
@@ -111,7 +113,6 @@ const ProjectsSection: React.FC = () => {
             slidesToShow: 1,
             slidesToScroll: 1,
             rows: 1,
-            infinite: true,
             nextArrow: <React.Fragment></React.Fragment>,
             prevArrow: <React.Fragment></React.Fragment>,
           },
@@ -125,28 +126,30 @@ const ProjectsSection: React.FC = () => {
   return (
     <div className="projects-section">
       <div className="layout">
-        <div className="title-1">Project List</div>
+        <div className="title-1">{data?.title}</div>
         <FilterProject
           activeFilter={activeFilter}
           search={search}
           setActiveFilter={setActiveFilter}
           setSearch={setSearch}
         />
-        <NewProject />
+        <NewProject data={dataExplore} />
         <div className="list-card">
-          <Slider {...settings}>
-            {projects.map((card: any) => {
+          <Slider ref={sliderRef} {...settings}>
+            {projects.map((card: any, index: number) => {
               return (
                 <CardProject
                   project_status={card?.project_status}
                   pool_id={card?.pool_id}
-                  key={card?.id}
+                  key={index}
                   networkIcon={getNetwork(card?.project_network)}
                   icon={card?.banner || Project1}
                   title={card?.project_name}
                   description={card?.description}
                   project_network={card?.project_network}
                   trailer_link={card?.trailer_link}
+                  text_btn_1={data?.project_card_button_1}
+                  text_btn_2={data?.project_card_button_2}
                 />
               );
             })}

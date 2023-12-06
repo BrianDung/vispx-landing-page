@@ -31,7 +31,7 @@ const useStyles = makeStyles<Theme, Props>((theme: any) => {
         },
       },
       '& video': {
-        aspectRatio: '16/9',
+        // aspectRatio: '16/9',
       },
       '& iframe': {
         aspectRatio: '16/9',

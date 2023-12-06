@@ -1,0 +1,34 @@
+@import 'src/assets/scss/responsive-landing.scss';
+
+.wrapper-faq {
+  position: relative;
+  img.bg-faq {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .FAQ-main {
+    padding: 80px 64px;
+    max-width: 1440px;
+    margin: auto;
+    @include mobileVispx {
+      padding: 80px 20px;
+    }
+    .title-section {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      color: #fff;
+      text-align: center;
+    }
+    .content-section {
+      margin-top: 60px;
+    }
+  }
+}
+
+.ant-col,
+.ant-row {
+  margin: 0 !important;
+  padding: 0 !important;
+}

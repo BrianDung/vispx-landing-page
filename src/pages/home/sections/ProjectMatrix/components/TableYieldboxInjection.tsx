@@ -20,13 +20,13 @@ const TableYieldboxInjection: React.FC<TableTxProps> = (props: TableTxProps) => 
   const getNetwork = (projectNetwork: string) => {
     switch (projectNetwork) {
       case 'bsc':
-        return <img src={BSCIcon} alt="logo" />;
+        return <img src={BSCIcon} alt="logo" width={24} />;
       case 'sol':
-        return <img src={SolanaIconWhite} alt="logo" />;
+        return <img src={SolanaIconWhite} alt="logo" width={24} />;
       case 'polygon':
-        return <img src={PolygonIconWhite} alt="logo" />;
+        return <img src={PolygonIconWhite} alt="logo" width={24} />;
       default:
-        return <img src={ETHIcon} alt="logo" />;
+        return <img src={ETHIcon} alt="logo" width={24} />;
     }
   };
   const columns: ColumnProps<any>[] = [

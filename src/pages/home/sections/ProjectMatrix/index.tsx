@@ -7,7 +7,7 @@ import TableProjectComponent from './components/TableProject';
 import './styles.scss';
 import TableYieldboxInjection from './components/TableYieldboxInjection';
 
-const ProjectMatrix: React.FC = () => {
+const ProjectMatrix = ({ dataProjectMatrix, dataYieldBox }: any) => {
   const { data: matrixProject } = useFetch<any>(
     `${process.env.REACT_APP_API_ENDPOINT}/vispx-matrix-list`,
   );
@@ -46,18 +46,18 @@ const ProjectMatrix: React.FC = () => {
   };
 
   const dataShowMatrix = get(matrixProject, 'data.data', []);
-  const dataShowYeildBox = get(yieldBox, 'data.data', []);
+  const dataShowYieldBox = get(yieldBox, 'data.data', []);
 
   const items: TabsProps['items'] = [
     {
       key: '1',
-      label: 'Project matrix',
+      label: dataProjectMatrix?.title,
       children: <TableProjectComponent dataSources={dataShowMatrix} />,
     },
     {
       key: '2',
-      label: 'Yieldbox Injection',
-      children: <TableYieldboxInjection dataSources={dataShowYeildBox} />,
+      label: dataYieldBox?.title,
+      children: <TableYieldboxInjection dataSources={dataShowYieldBox} />,
     },
   ];
 

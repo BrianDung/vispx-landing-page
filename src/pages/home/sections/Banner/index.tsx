@@ -64,7 +64,7 @@ function BannerMedia({ currentBanner, muted }: BannerMediaProps) {
   );
 }
 
-const Banner = () => {
+const Banner = ({ data }: any) => {
   const [currentBanner, setCurrentBanner] = useState<any>();
   const [muted, setMuted] = useState<boolean>(true);
   const [staticItem, setStaticItem] = useState({
@@ -113,7 +113,6 @@ const Banner = () => {
             ...item,
             id: 'STATIC',
           };
-          console.log({ result });
           setStaticItem(result);
         }
       } catch (err: any) {
@@ -148,7 +147,7 @@ const Banner = () => {
   return (
     <div style={{ position: 'relative' }}>
       <div className={styles.container}>
-        <LaunchBtnComponent isStatic={true} />
+        <LaunchBtnComponent isStatic={true} title={data?.button_name} />
         <div className={styles.videoBannerParent}>
           <div id="videoBanner" className={styles.banner}>
             <BannerMedia currentBanner={currentBanner} muted={muted} />

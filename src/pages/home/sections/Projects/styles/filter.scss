@@ -48,12 +48,18 @@
       margin-top: 10px;
       .select-container {
         width: 100% !important;
-        color: #000 !important;
         .ant-select {
+          .ant-select-selector {
+            background-color: transparent !important;
+            border: 1px solid #646464;
+            &:focus-within {
+              border: 1px solid #646464;
+            }
+          }
           width: 100%;
-          color: #000 !important;
+          background-color: transparent !important;
           .ant-select-selection-item {
-            color: #000 !important;
+            color: #fff !important;
             font-weight: 600;
           }
         }
@@ -61,7 +67,6 @@
     }
   }
   .search-right {
-    background-color: #fff;
     border-radius: 10px;
 
     @include maxWidth($tablet) {
