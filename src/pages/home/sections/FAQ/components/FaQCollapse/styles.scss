@@ -1,6 +1,11 @@
-.participate-collapse.ant-collapse {
+@import 'src/assets/scss/responsive-landing.scss';
+
+.faq-collapse.ant-collapse {
   background: transparent;
   border: none;
+  @include mobileVispx {
+    margin-top: 30px;
+  }
   .ant-collapse-item {
     border: none;
     .ant-collapse-header {
@@ -10,6 +15,9 @@
       font-size: 24px;
       line-height: 40px;
       align-items: center;
+      .ant-collapse-expand-icon {
+        margin-right: 26px;
+      }
     }
     .ant-collapse-content {
       background: transparent;

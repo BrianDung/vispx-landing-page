@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { BSCIcon, ETHIcon, PolygonIconWhite, Project1, SolanaIconWhite } from 'src/assets/icons';
 import { NextArrowSlider, PrevArrowSlider } from 'src/assets/icons/IconComponent';
@@ -33,6 +33,7 @@ const ProjectsSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<any>('');
   const [search, setSearch] = useState<any>('');
   const debounceSearch = useDebounce(search, 1000);
+  const sliderRef = useRef<any>(null);
 
   const getProjects = async () => {
     try {
@@ -41,6 +42,7 @@ const ProjectsSection: React.FC = () => {
       )) as any;
       const data = _.get(resp, 'data.data.data', []) as any[];
       setProjects(data);
+      sliderRef.current.slickGoTo(0);
     } catch (err: any) {
       console.error(err);
     }
@@ -111,7 +113,6 @@ const ProjectsSection: React.FC = () => {
             slidesToShow: 1,
             slidesToScroll: 1,
             rows: 1,
-            infinite: true,
             nextArrow: <React.Fragment></React.Fragment>,
             prevArrow: <React.Fragment></React.Fragment>,
           },
@@ -134,7 +135,7 @@ const ProjectsSection: React.FC = () => {
         />
         <NewProject />
         <div className="list-card">
-          <Slider {...settings}>
+          <Slider ref={sliderRef} {...settings}>
             {projects.map((card: any, index: number) => {
               return (
                 <CardProject

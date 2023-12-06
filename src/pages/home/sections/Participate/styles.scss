@@ -1,7 +1,11 @@
+@import 'src/assets/scss/responsive-landing.scss';
 .participate-main {
   padding: 80px 64px;
   max-width: 1440px;
   margin: auto;
+  @include mobileVispx {
+    padding: 80px 20px
+  }
   .title-section {
     font-weight: 700;
     font-size: 40px;
@@ -11,10 +15,13 @@
     margin-bottom: 60px;
   }
   .content-section {
-    .ant-col-8 {
+    .right-participate.ant-col {
       display: flex;
       justify-content: center;
-      margin: auto;
+      margin: auto !important;
+      @include mobileVispx {
+        display: none;
+      }
     }
   }
 }

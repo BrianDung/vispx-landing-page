@@ -190,3 +190,6 @@ export { default as DiscordIconLanding } from '../icons/landing/discord-landing.
 export { default as IconClock } from '../icons/landing/card-clock.svg';
 export { default as IconExpandDown } from '../icons/landing/icon-expand-down.svg';
 export { default as IconExpandUp } from '../icons/landing/icon-expand-up.svg';
+export { default as BackgroundFAQ } from '../icons/landing/background-faq.svg';
+export { default as IconOpenFaQ } from '../icons/landing/open-faq-icon.svg';
+export { default as IconCloseFaQ } from '../icons/landing/close-faq-icon.svg';
