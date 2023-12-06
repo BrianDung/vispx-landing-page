@@ -6,7 +6,7 @@ interface ExploreButtonProps {
   route?: any;
   className?: string;
 }
-const ExploreButton = ({ className, title = 'Launch app', route }: ExploreButtonProps) => {
+const ExploreButton = ({ className, title, route }: ExploreButtonProps) => {
   return (
     <ButtonContained
       buttonType="btn-launch-pad"

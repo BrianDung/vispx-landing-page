@@ -8,7 +8,7 @@ export const STATUS_LANDING_PROJECT_AVAILABLE = {
   IN_PROGRESS: 'In progress',
 };
 
-const CardProject: React.FC<{
+interface ICardProjectProps {
   title: string;
   description: string;
   icon: string;
@@ -17,7 +17,11 @@ const CardProject: React.FC<{
   trailer_link: string;
   pool_id: string;
   project_status: string;
-}> = ({
+  text_btn_1?: string;
+  text_btn_2?: string;
+}
+
+const CardProject = ({
   title,
   description,
   icon,
@@ -26,16 +30,9 @@ const CardProject: React.FC<{
   trailer_link,
   pool_id,
   project_status,
-}: {
-  title: string;
-  description: string;
-  icon: string;
-  networkIcon: string;
-  project_network: string;
-  trailer_link: string;
-  pool_id: string;
-  project_status: string;
-}) => {
+  text_btn_1,
+  text_btn_2,
+}: ICardProjectProps) => {
   const handleClickTrailer = () => {
     if (trailer_link) {
       window.open(trailer_link, '_blank');
@@ -95,9 +92,9 @@ const CardProject: React.FC<{
                 className="flex justify-between pointer"
                 style={{ alignItems: 'center', marginTop: '20px' }}
               >
-                <ButtonLinear onClick={handleClickTrailer}>Trailer</ButtonLinear>
+                <ButtonLinear onClick={handleClickTrailer}>{text_btn_1}</ButtonLinear>
                 <div onClick={handleClickDetail} className="flex" style={{ alignItems: 'center' }}>
-                  <div className="view-detail">View detail</div>
+                  <div className="view-detail">{text_btn_2}</div>
                   <img src={RightIcon} alt="icon" style={{ width: 16, height: 16 }} />
                 </div>
               </div>

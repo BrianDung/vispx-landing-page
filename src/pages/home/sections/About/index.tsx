@@ -4,7 +4,7 @@ import Card from './components/Card';
 import './styles.scss';
 import axios from 'src/services/axios';
 
-const AboutSection: React.FC = () => {
+const AboutSection = ({ data }: any) => {
   const [aboutPool, setAboutPool] = useState<any>([]);
   const getListAboutPool = async () => {
     try {
@@ -23,11 +23,8 @@ const AboutSection: React.FC = () => {
   return (
     <div className="about-section">
       <div className="layout">
-        <div className="title-1">Investment Pool</div>
-        <div className="description">
-          VispX is a “NO TOKEN” Protocol launchpad allowing investors to directly participate in the
-          pool of their choice with ZERO barrier of entry
-        </div>
+        <div className="title-1">{data?.title}</div>
+        <div className="description">{data?.description}</div>
         <div className="list-card">
           {aboutPool?.map((item: any, key: number) => (
             <Card icon="" key={key} title={item?.title} description={item?.description} />

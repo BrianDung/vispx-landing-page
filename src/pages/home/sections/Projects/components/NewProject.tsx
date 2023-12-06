@@ -18,7 +18,7 @@ import ExploreButton from '../../Slider/components/ExploreButton';
 import '../styles/new-project-feature.scss';
 import { SLIDER_PROJECT_STATUS } from './FilterProject';
 
-const NewProject = () => {
+const NewProject = ({ data }: any) => {
   const [projects, setProjects] = useState<any>([]);
 
   const getProjects = async () => {
@@ -74,7 +74,7 @@ const NewProject = () => {
           <div key={index} className="new-project-feature">
             <div className="content">
               <div className="title" style={{ alignItems: 'center' }}>
-                <span>{item.project_name || 'MEME MEME'}</span>
+                <span>{item.project_name}</span>
                 <img
                   src={getNetwork(item.project_network)}
                   alt="icon"
@@ -129,7 +129,11 @@ const NewProject = () => {
                 </span>
               </div>
               <div className="button-launch-pad">
-                <ExploreButton className="w-full h-50px" title="Explore" route={item.pool_id} />
+                <ExploreButton
+                  className="w-full h-50px"
+                  title={data?.button_name}
+                  route={item.pool_id}
+                />
               </div>
             </div>
             <div className="banner">

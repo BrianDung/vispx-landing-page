@@ -1,9 +1,8 @@
-import { BSCIcon, ETHIcon, IconClock, PolygonIconWhite, SolanaIconWhite } from 'src/assets/icons';
-import './styles.scss';
-import BackgroundCard from './bg-vispx-card.png';
+import { BSCIcon, ETHIcon, PolygonIconWhite, SolanaIconWhite } from 'src/assets/icons';
 import { ECardType } from '../../type';
+import './styles.scss';
 
-const ParticipateCard = ({ type }: { type: ECardType }) => {
+const ParticipateCard = ({ type, data }: { type: ECardType; data: any }) => {
   const getNetwork = (projectNetwork?: string) => {
     switch (projectNetwork) {
       case 'bsc':
@@ -19,7 +18,7 @@ const ParticipateCard = ({ type }: { type: ECardType }) => {
 
   return (
     <div className={`participate-card box-shadow-${type}`}>
-      <img src={BackgroundCard} alt="icon" className="banner-image-card" width={'100%'} />
+      {/* <img src={BackgroundCard} alt="icon" className="banner-image-card" width={'100%'} />
       <div className="participate-card-type">{type?.toUpperCase()}</div>
       <div className="layout-project">
         <div className="content">
@@ -49,7 +48,8 @@ const ParticipateCard = ({ type }: { type: ECardType }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <img src={data?.link_image} alt="card" className="card-image" />
     </div>
   );
 };

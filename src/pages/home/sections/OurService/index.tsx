@@ -11,7 +11,7 @@ const itemsPlaceholderMobile = [1];
 const DATA_MOBILE = 1;
 const DATA_PC = 3;
 
-const OurService: React.FC = () => {
+const OurService = ({ dataOurService }: any) => {
   const { isMobile } = useWindowSize();
 
   const numberChange = isMobile ? DATA_MOBILE : DATA_PC;
@@ -68,11 +68,8 @@ const OurService: React.FC = () => {
   return (
     <div className="ourservice-section">
       <div className="layout">
-        <div className="title-1">Our Services</div>
-        <div className="description">
-          VispX offers extensive end to end solutions for blockchain projects with its tailored
-          services for project needs.
-        </div>
+        <div className="title-1">{dataOurService?.title}</div>
+        <div className="description">{dataOurService?.description}</div>
         <div className="images">
           {(dataShow?.length < numberChange
             ? [...dataShow, ...itemsPlaceholder].slice(0, numberChange)

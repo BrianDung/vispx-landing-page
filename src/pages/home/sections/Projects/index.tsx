@@ -28,7 +28,7 @@ function PrevArrow(props: any) {
   );
 }
 
-const ProjectsSection: React.FC = () => {
+const ProjectsSection = ({ data, dataExplore }: any) => {
   const [projects, setProjects] = useState<any>([]);
   const [activeFilter, setActiveFilter] = useState<any>('');
   const [search, setSearch] = useState<any>('');
@@ -126,14 +126,14 @@ const ProjectsSection: React.FC = () => {
   return (
     <div className="projects-section">
       <div className="layout">
-        <div className="title-1">Project List</div>
+        <div className="title-1">{data?.title}</div>
         <FilterProject
           activeFilter={activeFilter}
           search={search}
           setActiveFilter={setActiveFilter}
           setSearch={setSearch}
         />
-        <NewProject />
+        <NewProject data={dataExplore} />
         <div className="list-card">
           <Slider ref={sliderRef} {...settings}>
             {projects.map((card: any, index: number) => {
@@ -148,6 +148,8 @@ const ProjectsSection: React.FC = () => {
                   description={card?.description}
                   project_network={card?.project_network}
                   trailer_link={card?.trailer_link}
+                  text_btn_1={data?.project_card_button_1}
+                  text_btn_2={data?.project_card_button_2}
                 />
               );
             })}

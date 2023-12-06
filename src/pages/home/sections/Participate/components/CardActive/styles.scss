@@ -1,8 +1,15 @@
 .participate-active-card {
-  width: 282px !important;
+  // width: 282px !important;
   border-radius: 10px;
+  overflow: hidden;
   background-color: #372d46;
-  padding: 22px 24px 33px;
+  // padding: 22px 24px 33px;
+
+  img.card-image {
+    width: 330px;
+    height: 430px;
+    object-fit: cover;
+  }
   .title {
     color: #fff;
     font-weight: 600;

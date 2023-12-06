@@ -3,7 +3,7 @@ import LaunchBtnComponent from '../Slider/components/LaunchBtnComponent';
 import './styles.scss';
 import { useEffect, useState } from 'react';
 
-const ExploreApp = () => {
+const ExploreApp = ({ data }: any) => {
   const [isScroll, setIsScroll] = useState<boolean>(false);
 
   const listenScrollEvent = () => {
@@ -23,7 +23,7 @@ const ExploreApp = () => {
   return (
     <Row className="button-join-revolution">
       <div className={`fixed-explore button-launch-pad ${isScroll ? 'show' : ''}`}>
-        <LaunchBtnComponent isStatic={false} title="Explore Apps" />
+        <LaunchBtnComponent isStatic={false} title={data?.button_name} />
       </div>
     </Row>
   );

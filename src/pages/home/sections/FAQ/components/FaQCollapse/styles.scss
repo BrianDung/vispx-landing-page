@@ -1,10 +1,12 @@
 @import 'src/assets/scss/responsive-landing.scss';
 
 .faq-collapse.ant-collapse {
-  background: transparent;
+  background: #11122e;
   border: none;
+  margin-left: 100px;
   @include mobileVispx {
     margin-top: 30px;
+    margin-left: 0;
   }
   .ant-collapse-item {
     border: none;
