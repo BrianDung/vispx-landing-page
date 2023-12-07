@@ -2,6 +2,8 @@ import { Collapse, CollapseProps } from 'antd';
 import React from 'react';
 import { IconExpandDown, IconExpandUp } from 'src/assets/icons';
 import './styles.scss';
+import useWindowSize from 'src/hooks/useWindowSize';
+import { getCardType } from '../..';
 // const text = `
 //   A dog is a type of domesticated animal.
 //   Known for its loyalty and faithfulness,
@@ -53,6 +55,7 @@ import './styles.scss';
 // ];
 
 const ParticipateCollapse = ({ data, setActiveCard }: any) => {
+  const { isMobile } = useWindowSize();
   const items: CollapseProps['items'] = data?.map((item: any, index: number) => ({
     key: index,
     label: item.title,
@@ -64,6 +67,7 @@ const ParticipateCollapse = ({ data, setActiveCard }: any) => {
             <span className="description">{step.description}</span>
           </div>
         ))}
+        {isMobile && <div className="card-is-mobile">{getCardType(item)}</div>}
       </React.Fragment>
     ),
   }));

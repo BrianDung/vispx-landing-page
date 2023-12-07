@@ -52,7 +52,7 @@ const FAQ = ({ data }: any) => {
       <div className="FAQ-main">
         <div className="title-section">{data?.title}</div>
         <div className="content-section">
-          <Row gutter={[100, 100]}>
+          <Row gutter={50}>
             <Col lg={9} sm={24} xs={24}>
               <MatrixFaQ
                 data={faqData}

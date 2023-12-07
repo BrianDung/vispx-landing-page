@@ -10,6 +10,7 @@
   }
   .ant-collapse-item {
     border: none;
+    margin-bottom: 20px !important;
     .ant-collapse-header {
       border: none;
       color: #fff;
@@ -44,5 +45,9 @@
         }
       }
     }
+  }
+
+  .ant-collapse-item-active {
+    padding-bottom: 15px !important;
   }
 }

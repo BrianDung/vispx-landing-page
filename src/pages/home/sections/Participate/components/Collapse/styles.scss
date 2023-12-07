@@ -3,6 +3,7 @@
   border: none;
   .ant-collapse-item {
     border: none;
+    padding-bottom: 10px;
     .ant-collapse-header {
       border: none;
       color: #fff;
@@ -29,8 +30,13 @@
             display: block;
             font-weight: 400;
             font-size: 14px;
-            line-height: 30px;
+            line-height: 20px;
           }
+        }
+        .card-is-mobile {
+          margin: 30px 0;
+          display: flex;
+          justify-content: center;
         }
       }
     }
