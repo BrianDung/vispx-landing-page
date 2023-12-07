@@ -8,6 +8,17 @@ import { ECardType } from './type';
 import _ from 'lodash';
 import axios from 'src/services/axios';
 
+export const getCardType = (item: any) => {
+  if (item && item?.link_image) {
+    if (item?.card_type === ECardType.ACTIVE) {
+      return <ParticipateCardActive data={item} />;
+    } else {
+      return <ParticipateCard type={item?.card_type} data={item} />;
+    }
+  }
+  return null;
+};
+
 const Participate = ({ data }: any) => {
   const [participateData, setParticipateData] = useState<any>([]);
   const [activeCard, setActiveCard] = useState<any>();
@@ -26,17 +37,6 @@ const Participate = ({ data }: any) => {
   useEffect(() => {
     getListAboutPool();
   }, []);
-
-  const getCardType = (item: any) => {
-    if (item && item?.link_image) {
-      if (item?.card_type === ECardType.ACTIVE) {
-        return <ParticipateCardActive data={item} />;
-      } else {
-        return <ParticipateCard type={item?.card_type} data={item} />;
-      }
-    }
-    return null;
-  };
 
   return (
     <div className="participate-main">
