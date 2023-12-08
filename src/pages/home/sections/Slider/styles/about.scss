@@ -38,8 +38,15 @@
 
   .information {
     margin-top: 32px;
+
+    .ant-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
     .block {
-      padding-top: 11px;
+      padding: 5px;
+      padding-top: 15px;
       width: 100%;
       flex-direction: column;
       background-image: url('./frame-tab-banner.svg');
