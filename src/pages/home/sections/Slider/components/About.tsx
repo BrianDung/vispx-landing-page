@@ -27,16 +27,16 @@ const About: React.FC<any> = (props: any) => {
       </div> */}
       <div className="information">
         <Row className="full-width" gutter={[20, 20]}>
-          <Col lg={6} md={6} sm={12} xs={12}>
+          <Col lg={5} md={6} sm={12} xs={12}>
             <Information text1={`$${total_raise}`} text2="Total Raise" />
           </Col>
-          <Col lg={6} md={6} sm={12} xs={12}>
+          <Col lg={5} md={6} sm={12} xs={12}>
             <Information text1={ave_eth} text2="Ave ATH" />
           </Col>
-          <Col lg={6} md={6} sm={12} xs={12}>
+          <Col lg={5} md={6} sm={12} xs={12}>
             <Information text1={total_project ? `${total_project}+` : ''} text2="Total Projects" />
           </Col>
-          <Col lg={6} md={6} sm={12} xs={12}>
+          <Col lg={5} md={6} sm={12} xs={12}>
             <Information text1={user ? `${user}+` : ''} text2="Users" />
           </Col>
         </Row>
