@@ -73,6 +73,11 @@
           font-size: 12px;
         }
       }
+      @include maxWidth($tablet) {
+        padding: 0 !important;
+        padding-top: 15px !important;
+      }
+
     }
   }
   @include maxWidth($tablet) {
