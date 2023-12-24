@@ -1,7 +1,7 @@
 @import 'src/assets/scss/responsive-landing.scss';
 
 .faq-collapse.ant-collapse {
-  background: #11122e;
+  // background: #11122e;
   border: none;
   margin-left: 100px;
   @include mobileVispx {
@@ -11,6 +11,8 @@
   .ant-collapse-item {
     border: none;
     margin-bottom: 20px !important;
+    border-radius: 10px;
+    background: #11122e;
     .ant-collapse-header {
       border: none;
       color: #fff;

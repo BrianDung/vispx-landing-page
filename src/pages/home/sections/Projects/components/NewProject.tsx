@@ -136,7 +136,7 @@ const NewProject = ({ data }: any) => {
                 />
               </div>
             </div>
-            <div className="banner">
+            <div className="banner border-gradient border-gradient-purple">
               <img src={item.banner} alt="banner" />
             </div>
           </div>

@@ -97,6 +97,29 @@
       object-fit: contain;
     }
   }
+  // .border-gradient {
+  //   border: 10px solid;
+  //   border-image-slice: 1;
+  //   border-width: 4px;
+  // }
+  // .border-gradient-purple {
+  //   border-image-source: linear-gradient(
+  //     102.92deg,
+  //     #11122e 6.55%,
+  //     #454cf9 47.11%,
+  //     #0961fe 71.51%,
+  //     #02acd3 98.22%
+  //   );
+  // @include mobile {
+  //   border-image-source: linear-gradient(
+  //     102.92deg,
+  //     #b347ff 6.55%,
+  //     #454cf9 47.11%,
+  //     #0961fe 71.51%,
+  //     #02acd3 98.22%
+  //   );
+  // }
+  // }
 }
 
 .h-50px {
