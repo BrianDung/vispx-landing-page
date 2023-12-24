@@ -32,7 +32,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-vispx">
       <Banner data={allCustomSection?.custom_launchapp} />
-      <ExploreApp data={allCustomSection?.custom_explore} />
+      {/* <ExploreApp data={allCustomSection?.custom_explore} /> */}
       <ProjectsSection
         data={allCustomSection?.custom_project_list}
         dataExplore={allCustomSection?.custom_explore_card}

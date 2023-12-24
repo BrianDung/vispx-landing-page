@@ -11,7 +11,7 @@ import useWindowSize from 'src/hooks/useWindowSize';
 import '../styles/filter.scss';
 
 export enum SLIDER_PROJECT_STATUS {
-  UPCOMING = 'Upcoming',
+  UPCOMING = 'Coming Soon',
   INPROGRESS = 'In Progress',
   COMPLETED = 'Completed',
 }
@@ -43,7 +43,7 @@ const FilterProject = ({
     {
       icon: <img src={ComingSoonFilter} alt="icon" />,
       value: SLIDER_PROJECT_STATUS.UPCOMING,
-      label: 'Coming soon',
+      label: 'Coming Soon',
     },
     {
       icon: <img src={InProgressFilter} alt="icon" />,
